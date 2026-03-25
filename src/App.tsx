@@ -20,6 +20,7 @@ import { useLanguage } from './LanguageContext';
 import { GlobePulse } from './components/ui/cobe-globe-pulse';
 import { CursorDrivenParticleTypography } from './components/ui/cursor-driven-particles-typography';
 import { LiquidMetalButton } from './components/ui/liquid-metal-button';
+import { DottedSurface } from './components/ui/dotted-surface';
 
 // --- Assets Data ---
 const serviceIcons = [
@@ -38,7 +39,7 @@ const projectAssets = [
   },
   {
     id: 2,
-    image: "https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
+    image: "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
     color: "from-yellow-600 to-amber-700",
     link: "https://naturajungle.ma/"
   },
@@ -120,7 +121,7 @@ const Navbar = () => {
               </button>
             </div>
             <a 
-              href="#contact" 
+              href="mailto:abdelnezar7@gmail.com" 
               className="hidden sm:block px-5 py-2.5 bg-white text-black text-sm font-medium rounded-full hover:bg-zinc-200 transition-colors"
             >
               {t.nav.letsTalk}
@@ -172,7 +173,7 @@ const Navbar = () => {
             </div>
             
             <a 
-              href="#contact" 
+              href="mailto:abdelnezar7@gmail.com" 
               onClick={() => setMobileMenuOpen(false)}
               className="px-6 py-4 bg-white text-black text-center font-medium rounded-full hover:bg-zinc-200 transition-colors"
             >
@@ -270,7 +271,7 @@ const Services = () => {
   const { t } = useLanguage();
 
   return (
-    <section id="services" className="py-32 relative z-10 bg-[#050505]">
+    <section id="services" className="py-32 relative z-10 bg-transparent">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="mb-16 md:mb-24">
           <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight mb-4">
@@ -315,87 +316,31 @@ const Services = () => {
   );
 };
 
-import { RadialScrollGallery } from './components/ui/portfolio-and-image-gallery';
 import { Badge } from './components/ui/badge';
 import { ArrowUpRight } from 'lucide-react';
+import { ExpandableGallery } from './components/ui/expandable-gallery';
 
 const Work = () => {
-  const { t, dir } = useLanguage();
+  const { t, language } = useLanguage();
+
+  const projects = t.work.projects.map((p, i) => ({
+    ...p,
+    image: projectAssets[i].image,
+    link: projectAssets[i].link
+  }));
+
+  const exploreMoreText = language === 'fr' ? 'Explorer plus de projets' : language === 'ar' ? 'استكشف المزيد من المشاريع' : 'Explore more projects';
+  const goBackText = language === 'fr' ? 'Retour' : language === 'ar' ? 'العودة' : 'Go back';
 
   return (
-    <section id="work" className="py-32 relative z-10 bg-[#050505] overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 mb-16 md:mb-24">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className="text-4xl md:text-6xl font-display font-bold tracking-tight mb-6">
-            {t.work.title}
-          </h2>
-          <p className="text-zinc-400 text-lg max-w-2xl">
-            {t.work.description}
-          </p>
-        </motion.div>
-      </div>
-
-      <div className="w-full">
-        <RadialScrollGallery
-          className="!min-h-[600px]"
-          baseRadius={400}
-          mobileRadius={250}
-          visiblePercentage={50}
-          scrollDuration={800}
-          direction={dir as 'ltr' | 'rtl'}
-        >
-          {(hoveredIndex) => {
-            const displayProjects = t.work.projects;
-            const displayAssets = projectAssets;
-            
-            return displayProjects.map((project, index) => {
-              const isActive = hoveredIndex === index;
-              const asset = displayAssets[index];
-              return (
-                <a 
-                  key={index}
-                  href={asset.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group relative w-[200px] h-[280px] sm:w-[240px] sm:h-[320px] overflow-hidden rounded-xl bg-zinc-900 border border-white/10 shadow-lg block"
-                >
-                  <div className="absolute inset-0 overflow-hidden">
-                    <img
-                      src={asset.image}
-                      alt={project.title}
-                      className={`h-full w-full object-cover transition-transform duration-700 ease-out ${
-                        isActive ? 'scale-110 blur-0' : 'scale-100 blur-[1px] grayscale-[30%]'
-                      }`}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/10 to-transparent opacity-80" />
-                  </div>
-
-                  <div className="absolute inset-0 flex flex-col justify-between p-4">
-                    <div className="flex justify-between items-start">
-                      <Badge variant="secondary" className="text-[10px] px-2 py-0 bg-black/80 text-white backdrop-blur border-white/10">
-                        {project.category}
-                      </Badge>
-                      <div className={`w-6 h-6 rounded-full bg-white text-black flex items-center justify-center transition-all duration-500 ${isActive ? 'opacity-100 rotate-0' : 'opacity-0 -rotate-45'}`}>
-                        <ArrowUpRight size={12} />
-                      </div>
-                    </div>
-
-                    <div className={`transition-transform duration-500 ${isActive ? 'translate-y-0' : 'translate-y-2'}`}>
-                      <h3 className="text-xl font-bold leading-tight text-white">{project.title}</h3>
-                      <div className={`h-0.5 bg-white mt-2 transition-all duration-500 ${isActive ? 'w-full opacity-100' : 'w-0 opacity-0'}`} />
-                    </div>
-                  </div>
-                </a>
-              );
-            });
-          }}
-        </RadialScrollGallery>
-      </div>
+    <section id="work" className="py-32 relative z-10 bg-transparent">
+      <ExpandableGallery 
+        projects={projects}
+        title={t.work.title}
+        description={t.work.description}
+        exploreMoreText={exploreMoreText}
+        goBackText={goBackText}
+      />
     </section>
   );
 };
@@ -404,7 +349,7 @@ const Contact = () => {
   const { t, dir } = useLanguage();
 
   return (
-    <section id="contact" className="py-32 relative z-10 bg-[#050505]">
+    <section id="contact" className="py-32 relative z-10 bg-transparent">
       <div className="max-w-5xl mx-auto px-6 md:px-12">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -451,7 +396,7 @@ const Footer = () => {
   const { t } = useLanguage();
 
   return (
-    <footer className="py-8 border-t border-white/10 bg-[#050505] relative z-10">
+    <footer className="py-8 border-t border-white/10 bg-transparent relative z-10">
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-4">
         <div className="text-zinc-500 text-sm">
           © {new Date().getFullYear()} {t.footer.rights}
@@ -476,7 +421,25 @@ export default function App() {
   const { dir } = useLanguage();
   
   return (
-    <div className="min-h-screen bg-[#050505] text-white selection:bg-blue-500/30" dir={dir}>
+    <div className="min-h-screen bg-[#050505] text-white selection:bg-blue-500/30 relative overflow-hidden" dir={dir}>
+      <DottedSurface className="opacity-40" />
+      
+      {/* Global Glow Effects */}
+      <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+        <div 
+          className="absolute -top-[10%] left-1/2 -translate-x-1/2 w-full h-full rounded-full opacity-20 blur-[120px]"
+          style={{ background: 'radial-gradient(circle at center, var(--color-accent), transparent 70%)' }}
+        />
+        <div 
+          className="absolute top-1/2 left-0 -translate-y-1/2 w-[500px] h-[500px] rounded-full opacity-10 blur-[100px]"
+          style={{ background: 'radial-gradient(circle at center, #8b5cf6, transparent 70%)' }}
+        />
+        <div 
+          className="absolute bottom-0 right-0 w-[600px] h-[600px] rounded-full opacity-10 blur-[120px]"
+          style={{ background: 'radial-gradient(circle at center, #ec4899, transparent 70%)' }}
+        />
+      </div>
+
       <Navbar />
       <main>
         <Hero />

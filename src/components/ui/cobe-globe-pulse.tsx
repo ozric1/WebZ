@@ -16,9 +16,23 @@ interface GlobePulseProps {
 }
 
 const defaultMarkers: PulseMarker[] = [
-  { id: "pulse-1", location: [31.7917, -7.0926], delay: 0 }, // Morocco
-  { id: "pulse-2", location: [46.2276, 2.2137], delay: 0.5 }, // France
-  { id: "pulse-3", location: [23.4241, 53.8478], delay: 1 }, // UAE
+  // Morocco (3 dots)
+  { id: "morocco-1", location: [31.7917, -7.0926], delay: 0 },
+  { id: "morocco-2", location: [33.5731, -7.5898], delay: 0.3 },
+  { id: "morocco-3", location: [34.0209, -6.8416], delay: 0.6 },
+  // France (3 dots)
+  { id: "france-1", location: [46.2276, 2.2137], delay: 0.5 },
+  { id: "france-2", location: [48.8566, 2.3522], delay: 0.8 },
+  { id: "france-3", location: [43.2965, 5.3698], delay: 1.1 },
+  // US (3 dots)
+  { id: "us-1", location: [40.7128, -74.0060], delay: 0.2 },
+  { id: "us-2", location: [34.0522, -118.2437], delay: 0.7 },
+  { id: "us-3", location: [41.8781, -87.6298], delay: 1.2 },
+  // England (2 dots)
+  { id: "england-1", location: [51.5074, -0.1278], delay: 0.4 },
+  { id: "england-2", location: [53.4808, -2.2426], delay: 0.9 },
+  // UAE (1 dot)
+  { id: "uae-1", location: [23.4241, 53.8478], delay: 1 },
 ]
 
 export function GlobePulse({
