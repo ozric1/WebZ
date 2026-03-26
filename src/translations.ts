@@ -46,22 +46,26 @@ export const translations = {
         {
           category: "Vie Nocturne & Divertissement",
           title: "Nightly",
-          description: "Une plateforme élégante au thème sombre redéfinissant la réservation et l'analyse de la vie nocturne avec une visualisation des données en temps réel."
+          description: "Une plateforme analytique de haute performance pour l'industrie de la nuit. Redéfinissez la gestion des réservations avec une visualisation des données en temps réel et un tableau de bord intuitif.",
+          features: ["Données Temps Réel", "Gestion de Réservation", "Analyse de Revenus"]
         },
         {
           category: "Éco-Resort & Sanctuaire",
           title: "Natura Jungle",
-          description: "Une expérience numérique immersive pour un sanctuaire de nature, invitant à 'Respirer la Nature' à travers des visuels élégants et une interface fluide."
+          description: "Une expérience numérique immersive pour un resort écologique de luxe. Nous avons combiné des visuels haute résolution avec des animations fluides pour présenter les activités équestres et aquatiques du sanctuaire.",
+          features: ["Design Immersif", "Système de Réservation", "Animations Fluides"]
         },
         {
           category: "Gestion d'Installations Sportives",
           title: "SportsArena",
-          description: "Interface à haute énergie basée sur une grille pour les réservations d'installations sportives haut de gamme et le suivi des événements."
+          description: "Une plateforme de gestion d'installations sportives à la pointe de la technologie. Utilise des visualisations 3D et un moteur de planification en temps réel pour simplifier les réservations complexes.",
+          features: ["Visualisation 3D", "Moteur de Planning", "Multi-Sports"]
         },
         {
-          category: "Gestion de l'Apprentissage en Entreprise",
+          category: "Formation en Anglais Exécutif",
           title: "Zentia World",
-          description: "Un tableau de bord clair et structuré conçu pour maîtriser la présence de l'entreprise et rationaliser la formation des employés."
+          description: "Un écosystème d'apprentissage complet pour la formation en anglais des cadres. Comprend un cursus interactif de 15 modules, un suivi automatisé des progrès et un tableau de bord personnalisé.",
+          features: ["E-Learning", "Suivi de Progrès", "Dashboard Client"]
         }
       ]
     },
@@ -128,22 +132,26 @@ export const translations = {
         {
           category: "Nightlife & Entertainment",
           title: "Nightly",
-          description: "A sleek, dark-themed platform redefining nightlife booking and analytics with real-time data visualization."
+          description: "A high-performance analytics dashboard for the nightlife industry. Redefine guest management with real-time data visualization and an intuitive dashboard.",
+          features: ["Real-time Data", "Booking Management", "Revenue Analytics"]
         },
         {
           category: "Eco-Resort & Sanctuary",
           title: "Natura Jungle",
-          description: "An immersive digital experience for a nature sanctuary, inviting visitors to 'Breathe Nature' through elegant visuals and a fluid interface."
+          description: "An immersive digital experience for a luxury eco-resort. We combined high-resolution visuals with smooth scroll animations to showcase the sanctuary's equestrian and aquatic activities.",
+          features: ["Immersive Design", "Booking System", "Smooth Animations"]
         },
         {
           category: "Sports Facility Management",
           title: "SportsArena",
-          description: "High-energy, grid-based interface for premium sports facility reservations and event tracking."
+          description: "A cutting-edge sports facility management platform. Utilizes 3D visualizations and a real-time scheduling engine to simplify complex booking workflows.",
+          features: ["3D Visualization", "Scheduling Engine", "Multi-Sport Support"]
         },
         {
-          category: "Corporate Learning Management",
+          category: "Executive English Training",
           title: "Zentia World",
-          description: "A clean, structured dashboard designed to master corporate presence and streamline employee training."
+          description: "A comprehensive e-learning ecosystem for executive English training. Features a 15-module interactive curriculum, automated progress tracking, and a custom student dashboard.",
+          features: ["E-Learning", "Progress Tracking", "Student Dashboard"]
         }
       ]
     },
@@ -210,22 +218,26 @@ export const translations = {
         {
           category: "الحياة الليلية والترفيه",
           title: "Nightly",
-          description: "منصة أنيقة ذات طابع داكن تعيد تعريف حجز الحياة الليلية والتحليلات مع تصور البيانات في الوقت الفعلي."
+          description: "لوحة تحكم تحليلية عالية الأداء لصناعة الحياة الليلية. أعد تعريف إدارة الضيوف من خلال تصور البيانات في الوقت الفعلي ولوحة تحكم بديهية.",
+          features: ["بيانات فورية", "إدارة الحجز", "تحليلات الإيرادات"]
         },
         {
           category: "منتجع بيئي ومحمية",
           title: "Natura Jungle",
-          description: "تجربة رقمية غامرة لمحمية طبيعية، تدعو الزوار لـ 'تنفس الطبيعة' من خلال صور أنيقة وواجهة سلسة."
+          description: "تجربة رقمية غامرة لمنتجع بيئي فاخر. قمنا بدمج صور عالية الدقة مع رسوم متحركة سلسة لعرض أنشطة الفروسية والمائية في المحمية.",
+          features: ["تصميم غامر", "نظام حجز", "رسوم متحركة سلسة"]
         },
         {
           category: "إدارة المرافق الرياضية",
           title: "SportsArena",
-          description: "واجهة عالية الطاقة قائمة على الشبكة لحجوزات المرافق الرياضية المتميزة وتتبع الأحداث."
+          description: "منصة متطورة لإدارة المرافق الرياضية. تستخدم تصورات ثلاثية الأبعاد ومحرك جدولة في الوقت الفعلي لتبسيط سير عمل الحجز المعقد.",
+          features: ["تصور ثلاثي الأبعاد", "محرك جدولة", "دعم رياضات متعددة"]
         },
         {
-          category: "إدارة التعلم المؤسسي",
+          category: "تدريب اللغة الإنجليزية التنفيذية",
           title: "Zentia World",
-          description: "لوحة معلومات نظيفة ومنظمة مصممة لإتقان التواجد المؤسسي وتبسيط تدريب الموظفين."
+          description: "نظام تعليمي إلكتروني شامل لتدريب اللغة الإنجليزية التنفيذية. يتميز بمنهج تفاعلي مكون من 15 وحدة، وتتبع تلقائي للتقدم، ولوحة تحكم مخصصة للطلاب.",
+          features: ["تعليم إلكتروني", "تتبع التقدم", "لوحة تحكم الطالب"]
         }
       ]
     },

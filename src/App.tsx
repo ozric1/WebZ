@@ -21,6 +21,8 @@ import { GlobePulse } from './components/ui/cobe-globe-pulse';
 import { CursorDrivenParticleTypography } from './components/ui/cursor-driven-particles-typography';
 import { LiquidMetalButton } from './components/ui/liquid-metal-button';
 import { DottedSurface } from './components/ui/dotted-surface';
+import BookingModal from './components/BookingModal';
+import FAQ from './components/FAQ';
 
 // --- Assets Data ---
 const serviceIcons = [
@@ -39,19 +41,19 @@ const projectAssets = [
   },
   {
     id: 2,
-    image: "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
+    image: "/naatura.png",
     color: "from-yellow-600 to-amber-700",
     link: "https://naturajungle.ma/"
   },
   {
     id: 3,
-    image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
+    image: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
     color: "from-orange-500 to-red-600",
     link: "https://soccer-eight-henna.vercel.app/fr"
   },
   {
     id: 4,
-    image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
+    image: "/zentiaa.png",
     color: "from-blue-500 to-cyan-600",
     link: "https://zentia.world/"
   }
@@ -246,7 +248,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 pointer-events-auto"
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 pointer-events-auto mb-16"
         >
           <a 
             href="#work" 
@@ -261,6 +263,22 @@ const Hero = () => {
           >
             {t.hero.whatIDo}
           </a>
+        </motion.div>
+
+        {/* Tech Stack Marquee */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.8 }}
+          className="max-w-3xl mx-auto overflow-hidden pointer-events-auto"
+        >
+          <div className="flex items-center justify-center gap-8 md:gap-12 flex-wrap opacity-40 hover:opacity-100 transition-opacity duration-500">
+            {['React', 'Next.js', 'TypeScript', 'Tailwind', 'Framer Motion', 'Three.js', 'Node.js', 'PostgreSQL'].map((tech) => (
+              <span key={tech} className="text-sm font-medium tracking-widest uppercase text-zinc-500 hover:text-white transition-colors cursor-default">
+                {tech}
+              </span>
+            ))}
+          </div>
         </motion.div>
       </motion.div>
     </section>
@@ -347,6 +365,7 @@ const Work = () => {
 
 const Contact = () => {
   const { t, dir } = useLanguage();
+  const [isBookingOpen, setIsBookingOpen] = useState(false);
 
   return (
     <section id="contact" className="py-32 relative z-10 bg-transparent">
@@ -382,12 +401,19 @@ const Contact = () => {
           <div className="relative z-10 mt-4">
             <LiquidMetalButton 
               label={t.contact.startProject} 
-              onClick={() => window.open("https://wa.me/33634175357?text=Hi!%20I'd%20like%20to%20book%20a%20free%20consultation.", "_blank")}
+              onClick={() => setIsBookingOpen(true)}
               width={320}
             />
           </div>
+
+          <FAQ />
         </motion.div>
       </div>
+
+      <BookingModal 
+        isOpen={isBookingOpen} 
+        onClose={() => setIsBookingOpen(false)} 
+      />
     </section>
   );
 };

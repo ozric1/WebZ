@@ -14,6 +14,7 @@ interface Project {
   description: string;
   image: string;
   link: string;
+  features?: string[];
 }
 
 interface ExpandableGalleryProps {
@@ -57,6 +58,7 @@ export function ExpandableGallery({
     category: p.category,
     description: p.description,
     link: p.link,
+    features: p.features,
     rotation: i === 0 ? -15 : i === 1 ? -3 : i === 2 ? 12 : 0,
     x: i === 0 ? -90 : i === 1 ? -10 : i === 2 ? 75 : 0,
     y: i === 0 ? 10 : i === 1 ? -15 : i === 2 ? 5 : 0,
@@ -171,10 +173,22 @@ export function ExpandableGallery({
                         referrerPolicy="no-referrer"
                       />
                       {isExpanded && (
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-6 flex flex-col justify-end">
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent p-6 flex flex-col justify-end">
                           <span className="text-xs font-medium text-blue-400 uppercase tracking-wider mb-2">{item.category}</span>
-                          <h3 className="text-xl font-bold text-white mb-1">{item.title}</h3>
-                          <p className="text-zinc-400 text-sm line-clamp-2">{item.description}</p>
+                          <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
+                          <p className="text-zinc-300 text-sm mb-4 leading-relaxed">{item.description}</p>
+                          {item.features && (
+                            <div className="flex flex-wrap gap-2">
+                              {item.features.map((feature, idx) => (
+                                <span 
+                                  key={idx} 
+                                  className="px-2 py-1 rounded-md bg-white/10 border border-white/10 text-[10px] font-medium text-white uppercase tracking-tight"
+                                >
+                                  {feature}
+                                </span>
+                              ))}
+                            </div>
+                          )}
                         </div>
                       )}
                     </motion.div>
