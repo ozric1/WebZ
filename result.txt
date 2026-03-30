@@ -1,0 +1,12 @@
+ Volume in drive C has no label.
+ Volume Serial Number is 4263-26C4
+
+ Directory of C:\Users\USER\OneDrive\Desktop\Projects\WebZ-main\WebZ-main\src\assets
+
+30/03/2026  23:48    <DIR>          .
+30/03/2026  23:27    <DIR>          ..
+30/03/2026  21:08         4ÿ073ÿ307 naatura.png
+30/03/2026  21:08           307ÿ888 zen.png
+30/03/2026  21:08           629ÿ788 zentiaa.png
+               3 File(s)      5ÿ010ÿ983 bytes
+               2 Dir(s)  101ÿ164ÿ158ÿ976 bytes free

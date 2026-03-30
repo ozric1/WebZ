@@ -7,6 +7,7 @@ import { Button } from "./button";
 import { ArrowLeft01Icon, ArrowRight01Icon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { cn } from "../../lib/utils";
+import { Banner } from "./banner";
 
 interface Project {
   title: string;
@@ -171,6 +172,13 @@ export function ExpandableGallery({
                         alt={item.alt}
                         className="w-full h-full object-cover object-top select-none pointer-events-none group-hover:scale-110 transition-transform duration-700 ease-out"
                       />
+                      {isExpanded && (index === 0 || index === 2) && (
+                        <Banner
+                          id={`status-banner-${index}`}
+                          variant="rainbow"
+                          height="2.5rem"
+                        />
+                      )}
                       {isExpanded && (
                         <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent p-6 flex flex-col justify-end">
                           <span className="text-xs font-medium text-blue-400 uppercase tracking-wider mb-2">{item.category}</span>
