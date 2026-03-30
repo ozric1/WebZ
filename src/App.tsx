@@ -23,7 +23,9 @@ import { LiquidMetalButton } from './components/ui/liquid-metal-button';
 import { DottedSurface } from './components/ui/dotted-surface';
 import BookingModal from './components/BookingModal';
 import FAQ from './components/FAQ';
+// @ts-ignore
 import naaturaImg from './assets/naatura.png';
+// @ts-ignore
 import zenImg from './assets/zen.png';
 
 // --- Assets Data ---
