@@ -23,6 +23,8 @@ import { LiquidMetalButton } from './components/ui/liquid-metal-button';
 import { DottedSurface } from './components/ui/dotted-surface';
 import BookingModal from './components/BookingModal';
 import FAQ from './components/FAQ';
+import naaturaImg from './assets/naatura.png';
+import zenImg from './assets/zen.png';
 
 // --- Assets Data ---
 const serviceIcons = [
@@ -41,7 +43,7 @@ const projectAssets = [
   },
   {
     id: 2,
-    image: "/naatura.png",
+    image: naaturaImg,
     color: "from-yellow-600 to-amber-700",
     link: "https://naturajungle.ma/"
   },
@@ -53,7 +55,7 @@ const projectAssets = [
   },
   {
     id: 4,
-    image: "/zentiaa.png",
+    image: zenImg,
     color: "from-blue-500 to-cyan-600",
     link: "https://zentia.world/"
   }
