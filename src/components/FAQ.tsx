@@ -19,9 +19,9 @@ const FAQ = () => {
         ar: "كم تكلفة موقع ويب جديد؟"
       },
       answer: {
-        fr: "3 000 DH pour un site internet de 5 pages sur mesure en français. Pour un site multilingue ou des fonctionnalités spécifiques, les prix dépasseront généralement cette fourchette, se situant entre 6 000 et 15 000 DH.",
-        en: "3,000 DH for a custom designed 5 pages website in French. As for a multilingual site, or specific features, prices will generally exceed this range, falling between 6,000 and 15,000 DH.",
-        ar: "3,000 درهم لموقع ويب مخصص من 5 صفحات باللغة الفرنسية. أما بالنسبة لموقع متعدد اللغات، أو ميزات محددة، فإن الأسعار ستتجاوز بشكل عام هذا النطاق، لتتراوح بين 6،000 و 15،000 درهم."
+        fr: "Les projets commencent à 2 000 DH. Le prix final dépend des fonctionnalités requises (comme les systèmes de réservation) et de la complexité. Nous fournissons toujours un devis clair et personnalisé après notre premier échange — pas de frais cachés.",
+        en: "Projects start at 2,000 DH. The final price depends on your required features (like booking systems) and complexity. We always provide a clear, custom quote after our first chat—no hidden fees.",
+        ar: "تبدأ المشاريع من 2000 درهم. يعتمد السعر النهائي على الميزات المطلوبة (مثل أنظمة الحجز) والتعقيد. نقدم دائمًا عرض سعر واضحًا ومخصصًا بعد محادثتنا الأولى - لا توجد رسوم خفية."
       }
     },
     {

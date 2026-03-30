@@ -59,10 +59,10 @@ export function ExpandableGallery({
     description: p.description,
     link: p.link,
     features: p.features,
-    rotation: i === 0 ? -15 : i === 1 ? -3 : i === 2 ? 12 : i === 3 ? 22 : 0,
-    x: i === 0 ? -90 : i === 1 ? -10 : i === 2 ? 75 : i === 3 ? 140 : 0,
-    y: i === 0 ? 10 : i === 1 ? -15 : i === 2 ? 5 : i === 3 ? 25 : 0,
-    zIndex: i === 0 ? 10 : i === 1 ? 20 : i === 2 ? 30 : i === 3 ? 40 : 0,
+    rotation: i === 0 ? -15 : i === 1 ? -3 : i === 2 ? 12 : 0,
+    x: i === 0 ? -90 : i === 1 ? -10 : i === 2 ? 75 : 0,
+    y: i === 0 ? 10 : i === 1 ? -15 : i === 2 ? 5 : 0,
+    zIndex: i === 0 ? 10 : i === 1 ? 20 : i === 2 ? 30 : 10,
   }));
 
   return (
@@ -113,7 +113,7 @@ export function ExpandableGallery({
               )}
             >
               {galleryItems.map((item, index) => {
-                const isPrimary = index < 4;
+                const isPrimary = index < 3;
                 if (!isPrimary && !isExpanded) return null;
 
                 return (
@@ -147,7 +147,7 @@ export function ExpandableGallery({
                         : { scale: 1.02 }
                     }
                     className={cn(
-                      "group cursor-pointer overflow-hidden bg-zinc-900/50 backdrop-blur-sm",
+                      "cursor-pointer overflow-hidden bg-zinc-900/50 backdrop-blur-sm",
                       isExpanded
                         ? "relative aspect-[4/5] rounded-[2rem] md:rounded-[3rem] border-4 md:border-[6px] border-white/5 shadow-lg"
                         : "absolute w-44 h-44 md:w-60 md:h-60 rounded-[2.5rem] md:rounded-[3rem] border-[6px] border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.3)]"
@@ -169,7 +169,8 @@ export function ExpandableGallery({
                       <img
                         src={item.src}
                         alt={item.alt}
-                        className="w-full h-full object-cover object-top select-none pointer-events-none group-hover:scale-110 transition-transform duration-700 ease-out"
+                        className="w-full h-full object-cover select-none pointer-events-none"
+                        referrerPolicy="no-referrer"
                       />
                       {isExpanded && (
                         <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent p-6 flex flex-col justify-end">
