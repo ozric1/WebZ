@@ -53,7 +53,7 @@ const projectAssets = [
   },
   {
     id: 4,
-    image: "/zen.png",
+    image: "/zentiaa.png",
     color: "from-blue-500 to-cyan-600",
     link: "https://zentia.world/"
   }

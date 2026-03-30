@@ -147,7 +147,7 @@ export function ExpandableGallery({
                         : { scale: 1.02 }
                     }
                     className={cn(
-                      "cursor-pointer overflow-hidden bg-zinc-900/50 backdrop-blur-sm",
+                      "group cursor-pointer overflow-hidden bg-zinc-900/50 backdrop-blur-sm",
                       isExpanded
                         ? "relative aspect-[4/5] rounded-[2rem] md:rounded-[3rem] border-4 md:border-[6px] border-white/5 shadow-lg"
                         : "absolute w-44 h-44 md:w-60 md:h-60 rounded-[2.5rem] md:rounded-[3rem] border-[6px] border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.3)]"
@@ -169,7 +169,7 @@ export function ExpandableGallery({
                       <img
                         src={item.src}
                         alt={item.alt}
-                        className="w-full h-full object-cover select-none pointer-events-none"
+                        className="w-full h-full object-cover object-top select-none pointer-events-none group-hover:scale-110 transition-transform duration-700 ease-out"
                         referrerPolicy="no-referrer"
                       />
                       {isExpanded && (
