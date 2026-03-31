@@ -85,6 +85,10 @@ export const translations = {
     },
     footer: {
       rights: "webZ. Tous droits réservés."
+    },
+    banner: {
+      construction: "Nightly & SportsArena : En cours, en construction 🔨",
+      underConstruction: "En construction 🔨"
     }
   },
   en: {
@@ -171,6 +175,10 @@ export const translations = {
     },
     footer: {
       rights: "webZ. All rights reserved."
+    },
+    banner: {
+      construction: "Nightly & SportsArena: On-Going, Under Construction 🔨",
+      underConstruction: "Under Construction 🔨"
     }
   },
   ar: {
@@ -257,6 +265,10 @@ export const translations = {
     },
     footer: {
       rights: "webZ. جميع الحقوق محفوظة."
+    },
+    banner: {
+      construction: "Nightly & SportsArena: قيد التنفيذ، تحت الإنشاء 🔨",
+      underConstruction: "تحت الإنشاء 🔨"
     }
   }
 };

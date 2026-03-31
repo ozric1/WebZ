@@ -7,7 +7,9 @@ import { Button } from "./button";
 import { ArrowLeft01Icon, ArrowRight01Icon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { cn } from "../../lib/utils";
-import { Banner } from "./banner";
+
+import { useLanguage } from "../../LanguageContext";
+import { Hammer } from "lucide-react";
 
 interface Project {
   title: string;
@@ -43,6 +45,7 @@ export function ExpandableGallery({
   const [isExpanded, setIsExpanded] = useState(false);
   const layoutGroupId = useId();
   const containerRef = useRef<HTMLDivElement>(null);
+  const { t } = useLanguage();
 
   useOutsideClick(containerRef, () => {
     if (isExpanded) {
@@ -60,10 +63,11 @@ export function ExpandableGallery({
     description: p.description,
     link: p.link,
     features: p.features,
-    rotation: i === 0 ? -8 : i === 1 ? 8 : i === 2 ? 12 : i === 3 ? 22 : 0,
-    x: i === 0 ? -40 : i === 1 ? 40 : i === 2 ? 75 : i === 3 ? 140 : 0,
-    y: i === 0 ? 5 : i === 1 ? 5 : i === 2 ? 5 : i === 3 ? 25 : 0,
-    zIndex: i === 0 ? 10 : i === 1 ? 20 : i === 2 ? 30 : i === 3 ? 40 : 0,
+    isUnderConstruction: p.title === "Nightly" || p.title === "SportsArena",
+    rotation: i === 0 ? -15 : i === 1 ? -3 : i === 2 ? 12 : 0,
+    x: i === 0 ? -90 : i === 1 ? -10 : i === 2 ? 75 : 0,
+    y: i === 0 ? 10 : i === 1 ? -15 : i === 2 ? 5 : 0,
+    zIndex: i === 0 ? 10 : i === 1 ? 20 : i === 2 ? 30 : 10,
   }));
 
   return (
@@ -114,7 +118,7 @@ export function ExpandableGallery({
               )}
             >
               {galleryItems.map((item, index) => {
-                const isPrimary = index < 2;
+                const isPrimary = index < 3;
                 if (!isPrimary && !isExpanded) return null;
 
                 return (
@@ -167,18 +171,18 @@ export function ExpandableGallery({
                       className="w-full h-full relative"
                       transition={transition}
                     >
+                      {item.isUnderConstruction && (
+                        <div className="absolute top-4 right-4 z-20 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-blue-500/30 text-[10px] font-bold text-blue-400 uppercase tracking-widest shadow-[0_0_15px_rgba(59,130,246,0.3)]">
+                          <Hammer className="w-3 h-3 animate-pulse" />
+                          {t.banner.underConstruction}
+                        </div>
+                      )}
                       <img
                         src={item.src}
                         alt={item.alt}
-                        className="w-full h-full object-cover object-top select-none pointer-events-none group-hover:scale-110 transition-transform duration-700 ease-out"
+                        className="w-full h-full object-cover select-none pointer-events-none"
+                        referrerPolicy="no-referrer"
                       />
-                      {isExpanded && (index === 0 || index === 2) && (
-                        <Banner
-                          id={`status-banner-${index}`}
-                          variant="rainbow"
-                          height="2.5rem"
-                        />
-                      )}
                       {isExpanded && (
                         <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent p-6 flex flex-col justify-end">
                           <span className="text-xs font-medium text-blue-400 uppercase tracking-wider mb-2">{item.category}</span>

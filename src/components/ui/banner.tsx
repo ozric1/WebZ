@@ -2,7 +2,62 @@
 import { type HTMLAttributes, useEffect, useState } from "react";
 import { X, Hammer } from "lucide-react";
 import { cn } from "../../lib/utils";
-import { Button, buttonVariants } from "./button";
+import * as React from "react"
+import { Slot } from "@radix-ui/react-slot"
+import { cva, type VariantProps } from "class-variance-authority"
+
+
+const buttonVariants = cva(
+  "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+  {
+    variants: {
+      variant: {
+        default: "bg-primary text-primary-foreground hover:bg-primary/90",
+        destructive:
+          "bg-destructive text-destructive-foreground hover:bg-destructive/90",
+        outline:
+          "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
+        secondary:
+          "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+        ghost: "hover:bg-accent hover:text-accent-foreground",
+        link: "text-primary underline-offset-4 hover:underline",
+      },
+      size: {
+        default: "h-10 px-4 py-2",
+        sm: "h-9 rounded-md px-3",
+        lg: "h-11 rounded-md px-8",
+        icon: "h-10 w-10",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+      size: "default",
+    },
+  },
+)
+
+export interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    VariantProps<typeof buttonVariants> {
+  asChild?: boolean
+}
+
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ className, variant, size, asChild = false, ...props }, ref) => {
+    const Comp = asChild ? Slot : "button"
+    return (
+      <Comp
+        className={cn(buttonVariants({ variant, size, className }))}
+        ref={ref}
+        {...props}
+      />
+    )
+  },
+)
+Button.displayName = "Button"
+
+export { Button, buttonVariants }
+
 
 type BannerVariant = "rainbow" | "normal";
 
@@ -13,10 +68,10 @@ export function Banner({
   changeLayout = true,
   height = "3rem",
   rainbowColors = [
-    "rgba(0,149,255,0.56)",
-    "rgba(231,77,255,0.77)",
-    "rgba(255,0,0,0.73)",
-    "rgba(131,255,166,0.66)",
+    "rgba(59,130,246,0.6)", // Blue
+    "rgba(139,92,246,0.6)", // Purple
+    "rgba(6,182,212,0.6)", // Cyan
+    "rgba(59,130,246,0.6)", // Blue
   ],
   ...props
 }: HTMLAttributes<HTMLDivElement> & {
@@ -45,7 +100,7 @@ export function Banner({
   changeLayout?: boolean;
 }) {
   const [open, setOpen] = useState(true);
-  const globalKey = id ? `webz-banner-${id}` : null;
+  const globalKey = id ? `nd-banner-${id}` : null;
 
   useEffect(() => {
     if (globalKey) setOpen(localStorage.getItem(globalKey) !== "true");
@@ -58,9 +113,9 @@ export function Banner({
       id={id}
       {...props}
       className={cn(
-        "absolute top-0 left-0 w-full z-40 flex flex-row items-center justify-center px-4 text-center text-sm font-bold tracking-wide",
-        variant === "normal" && "bg-zinc-900 border-b border-white/10",
-        variant === "rainbow" && "bg-transparent backdrop-blur-md border-b text-white border-white/20",
+        "sticky top-0 z-[60] flex flex-row items-center justify-center px-4 text-center text-sm font-medium border-b border-white/10 backdrop-blur-md shadow-[0_0_20px_rgba(59,130,246,0.1)]",
+        variant === "normal" && "bg-zinc-900/80 text-zinc-200",
+        variant === "rainbow" && "bg-black/40 text-white",
         !open && "hidden",
         props.className,
       )}
@@ -71,28 +126,41 @@ export function Banner({
       {changeLayout && open ? (
         <style>
           {globalKey
-            ? `:root:not(.${globalKey}) { --banner-height: ${height}; }`
-            : `:root { --banner-height: ${height}; }`}
+            ? `:root:not(.${globalKey}) { --fd-banner-height: ${height}; }`
+            : `:root { --fd-banner-height: ${height}; }`}
         </style>
       ) : null}
-      
+      {globalKey ? (
+        <style>{`.${globalKey} #${id} { display: none; }`}</style>
+      ) : null}
+      {globalKey ? (
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `if (localStorage.getItem('${globalKey}') === 'true') document.documentElement.classList.add('${globalKey}');`,
+          }}
+        />
+      ) : null}
+
       {variant === "rainbow"
         ? flow({
             colors: rainbowColors,
           })
         : null}
-
-      <div className="flex items-center justify-center gap-2">
-        <Hammer className="w-4 h-4 text-yellow-500 animate-pulse" />
-        <span>{props.children || "ON-GOING . UNDER CONSTRUCTION"}</span>
+      
+      <div className="flex items-center gap-3 relative z-10">
+        <div className="p-1.5 rounded-full bg-blue-500/20 border border-blue-500/30 shadow-[0_0_15px_rgba(59,130,246,0.5)]">
+          <Hammer className="w-4 h-4 text-blue-400 animate-[pulse_2s_infinite]" />
+        </div>
+        <span className="tracking-wide drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]">
+          {props.children}
+        </span>
       </div>
 
       {id ? (
         <button
           type="button"
           aria-label="Close Banner"
-          onClick={(e) => {
-            e.stopPropagation();
+          onClick={() => {
             setOpen(false);
             if (globalKey) {
               localStorage.setItem(globalKey, "true");
@@ -103,12 +171,12 @@ export function Banner({
             buttonVariants({
               variant: "ghost",
               className:
-                "absolute cursor-pointer border-none bg-transparent hover:bg-white/10 right-2 md:right-4 top-1/2 -translate-y-1/2 text-white/50 hover:text-white transition-colors",
+                "absolute cursor-pointer end-2 md:end-10 top-1/2 -translate-y-1/2 text-white/50 hover:text-white hover:bg-white/10 transition-all duration-300 hover:scale-110 active:scale-95 group",
               size: "icon",
             }),
           )}
         >
-          <X color={xColor || "currentColor"} size={16} />
+          <X color={xColor} className="w-4 h-4 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]" />
         </button>
       ) : null}
     </div>
@@ -122,20 +190,20 @@ function flow({ colors }: { colors: string[] }) {
   return (
     <>
       <div
-        className="absolute inset-0 z-[-1] pointer-events-none opacity-80"
+        className="absolute inset-0 z-[-1]"
         style={
           {
             maskImage,
             maskComposite: "intersect",
-            animation: "banner-moving 20s linear infinite",
+            animation: "fd-moving-banner 20s linear infinite",
             backgroundImage: `repeating-linear-gradient(70deg, ${[...colors, colors[0]].map((color, i) => `${color} ${(i * 50) / colors.length}%`).join(", ")})`,
             backgroundSize: "200% 100%",
-            filter: "saturate(1.5)",
+            filter: "saturate(2) blur(20px)",
           } as object
         }
       />
       <style>
-        {`@keyframes banner-moving {
+        {`@keyframes fd-moving-banner {
             from { background-position: 0% 0;  }
             to { background-position: 100% 0;  }
          }`}

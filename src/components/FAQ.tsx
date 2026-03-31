@@ -19,9 +19,9 @@ const FAQ = () => {
         ar: "كم تكلفة موقع ويب جديد؟"
       },
       answer: {
-        fr: "Les projets commencent à 3 000 DH pour un site vitrine de 5 pages sur mesure en français. Quant à un site multilingue ou à des fonctionnalités spécifiques, les prix dépasseront généralement cette fourchette, se situant entre 5 000 et 15 000 DH.",
-        en: "Projects start at 3,000 DH for a custom designed 5 pages website in French. As for a multilingual site, or specific features, prices will generally exceed this range, falling between 5,000 and 15,000 DH.",
-        ar: "تبدأ المشاريع من 3000 درهم لموقع ويب مخصص من 5 صفحات باللغة الفرنسية. بالنسبة لموقع متعدد اللغات أو ميزات محددة، ستتجاوز الأسعار عمومًا هذا النطاق، لتتراوح بين 5000 و 15000 درهم."
+        fr: "Les projets commencent à 3 000 DH pour un site vitrine de 5 pages sur mesure en français. Quant à un site multilingue ou à des fonctionnalités spécifiques, les prix dépasseront généralement cette fourchette, se situant entre 5 000 et 15 000 DH +",
+        en: "Projects start at 3,000 DH for a custom 5-page showcase site in French. For multilingual sites or specific features, prices will generally exceed this range, typically between 5,000 and 15,000 DH +",
+        ar: "تبدأ المشاريع من 3000 درهم لموقع عرض مخصص مكون من 5 صفحات باللغة الفرنسية. بالنسبة للمواقع متعددة اللغات أو الميزات المحددة، ستتجاوز الأسعار عمومًا هذا النطاق، وتتراوح عادةً بين 5000 و 15000 درهم +",
       }
     },
     {

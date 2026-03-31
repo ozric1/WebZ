@@ -43,10 +43,10 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) => {
     }
   }, [language]);
 
-  // Allowed days: Monday (1), Tuesday (2)
+  // Allowed days: Monday (1), Tuesday (2), Thursday (4)
   const isDayAllowed = (date: Date) => {
     const day = getDay(date);
-    return [1, 2].includes(day);
+    return [1, 2, 4].includes(day);
   };
 
   const isDateDisabled = (date: Date) => {
@@ -187,7 +187,7 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) => {
               </div>
               <div className="flex items-center gap-1.5">
                 <div className="w-2 h-2 rounded-full bg-white/20" />
-                {language === 'fr' ? 'Disponible (Lun, Mar)' : 'Available (Mon, Tue)'}
+                {language === 'fr' ? 'Disponible (Lun, Mar, Jeu)' : 'Available (Mon, Tue, Thu)'}
               </div>
             </div>
           </div>

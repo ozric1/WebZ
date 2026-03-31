@@ -21,8 +21,10 @@ import { GlobePulse } from './components/ui/cobe-globe-pulse';
 import { CursorDrivenParticleTypography } from './components/ui/cursor-driven-particles-typography';
 import { LiquidMetalButton } from './components/ui/liquid-metal-button';
 import { DottedSurface } from './components/ui/dotted-surface';
+import { Banner } from './components/ui/banner';
 import BookingModal from './components/BookingModal';
 import FAQ from './components/FAQ';
+
 // --- Assets Data ---
 const serviceIcons = [
   <Palette className="w-6 h-6" />,
@@ -30,9 +32,6 @@ const serviceIcons = [
   <Box className="w-6 h-6" />,
   <Rocket className="w-6 h-6" />
 ];
-
-import naaturaImg from './assets/naatura.png';
-import zentiaaImg from './assets/zentiaa.png';
 
 const projectAssets = [
   {
@@ -43,7 +42,7 @@ const projectAssets = [
   },
   {
     id: 2,
-    image: naaturaImg,
+    image: "/naatura.png",
     color: "from-yellow-600 to-amber-700",
     link: "https://naturajungle.ma/"
   },
@@ -55,7 +54,7 @@ const projectAssets = [
   },
   {
     id: 4,
-    image: zentiaaImg,
+    image: "/zen.png",
     color: "from-blue-500 to-cyan-600",
     link: "https://zentia.world/"
   }
@@ -80,7 +79,8 @@ const Navbar = () => {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-        className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+        style={{ top: 'var(--fd-banner-height, 0px)' }}
+        className={`fixed w-full z-50 transition-all duration-300 ${
           scrolled ? 'bg-black/50 backdrop-blur-md border-b border-white/10 py-4' : 'bg-transparent py-6'
         }`}
       >
@@ -446,10 +446,13 @@ const Footer = () => {
 };
 
 export default function App() {
-  const { dir } = useLanguage();
+  const { dir, t } = useLanguage();
   
   return (
     <div className="min-h-screen bg-[#050505] text-white selection:bg-blue-500/30 relative overflow-hidden" dir={dir}>
+      <Banner id="construction-banner" variant="rainbow">
+        {t.banner.construction}
+      </Banner>
       <DottedSurface className="opacity-40" />
       
       {/* Global Glow Effects */}
