@@ -22,8 +22,13 @@ import { CursorDrivenParticleTypography } from './components/ui/cursor-driven-pa
 import { LiquidMetalButton } from './components/ui/liquid-metal-button';
 import { DottedSurface } from './components/ui/dotted-surface';
 import { Banner } from './components/ui/banner';
-import BookingModal from './components/BookingModal';
 import FAQ from './components/FAQ';
+
+// Import project images
+import nightlyImg from './assets/nightly.png';
+import naaturaImg from './assets/naatura.png';
+import sportsfieldsImg from './assets/sportsfields.png';
+import zentiaaImg from './assets/zentiaa.png';
 
 // --- Assets Data ---
 const serviceIcons = [
@@ -36,25 +41,25 @@ const serviceIcons = [
 const projectAssets = [
   {
     id: 1,
-    image: "/nightly.png",
+    image: nightlyImg,
     color: "from-purple-500 to-indigo-600",
     link: "https://nightllife.netlify.app/"
   },
   {
     id: 2,
-    image: "/naatura.png",
+    image: naaturaImg,
     color: "from-yellow-600 to-amber-700",
     link: "https://naturajungle.ma/"
   },
   {
     id: 3,
-    image: "/sportsfields.png",
+    image: sportsfieldsImg,
     color: "from-orange-500 to-red-600",
     link: "https://soccer-eight-henna.vercel.app/fr"
   },
   {
     id: 4,
-    image: "/zentiaa.png",
+    image: zentiaaImg,
     color: "from-blue-500 to-cyan-600",
     link: "https://zentia.world/"
   }
@@ -96,7 +101,7 @@ const Navbar = () => {
           <div className="hidden md:flex gap-8 text-sm font-medium text-zinc-400">
             <a href="#services" className="hover:text-white transition-colors">{t.nav.services}</a>
             <a href="#work" className="hover:text-white transition-colors">{t.nav.work}</a>
-            <a href="#contact" className="hover:text-white transition-colors">{t.nav.contact}</a>
+            <a href="mailto:abdelnezar7@gmail.com" className="hover:text-white transition-colors">{t.nav.contact}</a>
           </div>
           
           <div className="flex items-center gap-4">
@@ -147,7 +152,7 @@ const Navbar = () => {
           <div className="flex flex-col gap-6 text-2xl font-display font-medium mb-12">
             <a href="#services" onClick={() => setMobileMenuOpen(false)} className="text-zinc-400 hover:text-white transition-colors">{t.nav.services}</a>
             <a href="#work" onClick={() => setMobileMenuOpen(false)} className="text-zinc-400 hover:text-white transition-colors">{t.nav.work}</a>
-            <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="text-zinc-400 hover:text-white transition-colors">{t.nav.contact}</a>
+            <a href="mailto:abdelnezar7@gmail.com" onClick={() => setMobileMenuOpen(false)} className="text-zinc-400 hover:text-white transition-colors">{t.nav.contact}</a>
           </div>
           
           <div className="flex flex-col gap-6 mt-auto mb-12">
@@ -366,7 +371,6 @@ const Work = () => {
 
 const Contact = () => {
   const { t, dir } = useLanguage();
-  const [isBookingOpen, setIsBookingOpen] = useState(false);
 
   return (
     <section id="contact" className="py-32 relative z-10 bg-transparent">
@@ -402,7 +406,7 @@ const Contact = () => {
           <div className="relative z-10 mt-4">
             <LiquidMetalButton 
               label={t.contact.startProject} 
-              onClick={() => setIsBookingOpen(true)}
+              onClick={() => window.location.href = "mailto:abdelnezar7@gmail.com"}
               width={320}
             />
           </div>
@@ -410,11 +414,6 @@ const Contact = () => {
           <FAQ />
         </motion.div>
       </div>
-
-      <BookingModal 
-        isOpen={isBookingOpen} 
-        onClose={() => setIsBookingOpen(false)} 
-      />
     </section>
   );
 };
