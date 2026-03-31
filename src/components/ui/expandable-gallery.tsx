@@ -172,10 +172,10 @@ export function ExpandableGallery({
                         : { scale: 1.02 }
                     }
                     className={cn(
-                      "cursor-pointer overflow-hidden bg-zinc-900/50 backdrop-blur-sm",
+                      "cursor-pointer",
                       isExpanded
-                        ? "relative aspect-[4/5] rounded-[2rem] md:rounded-[3rem] border-4 md:border-[6px] border-white/5 shadow-lg"
-                        : "absolute w-44 h-44 md:w-60 md:h-60 rounded-[2.5rem] md:rounded-[3rem] border-[6px] border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.3)]"
+                        ? "relative flex flex-col gap-5 w-full"
+                        : "absolute w-44 h-44 md:w-60 md:h-60"
                     )}
                     onClick={() => {
                       if (!isExpanded) {
@@ -188,7 +188,12 @@ export function ExpandableGallery({
                     <motion.div
                       layoutId={`image-inner-${item.id}`}
                       layout="position"
-                      className="w-full h-full relative"
+                      className={cn(
+                        "w-full relative overflow-hidden bg-zinc-900/50 backdrop-blur-sm",
+                        isExpanded 
+                          ? "aspect-[4/5] rounded-[2rem] md:rounded-[3rem] border-4 md:border-[6px] border-white/5 shadow-lg" 
+                          : "h-full rounded-[2.5rem] md:rounded-[3rem] border-[6px] border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.3)]"
+                      )}
                       transition={transition}
                     >
                       {item.isUnderConstruction && (
@@ -225,8 +230,7 @@ export function ExpandableGallery({
                       {isExpanded && (
                         <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent p-6 flex flex-col justify-end">
                           <span className="text-xs font-medium text-blue-400 uppercase tracking-wider mb-2">{item.category}</span>
-                          <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
-                          <p className="text-zinc-300 text-sm mb-4 leading-relaxed">{item.description}</p>
+                          <h3 className="text-xl font-bold text-white mb-3">{item.title}</h3>
                           {item.features && (
                             <div className="flex flex-wrap gap-2">
                               {item.features.map((feature, idx) => (
@@ -242,6 +246,17 @@ export function ExpandableGallery({
                         </div>
                       )}
                     </motion.div>
+
+                    {isExpanded && (
+                      <motion.div 
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.1, duration: 0.4 }}
+                        className="px-2"
+                      >
+                        <p className="text-zinc-300 text-sm md:text-[15px] leading-relaxed">{item.description}</p>
+                      </motion.div>
+                    )}
                   </motion.div>
                 );
               })}
