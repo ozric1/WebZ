@@ -54,7 +54,7 @@ const projectAssets = [
   },
   {
     id: 4,
-    image: "/zen.png",
+    image: "/zentiaa.png",
     color: "from-blue-500 to-cyan-600",
     link: "https://zentia.world/"
   }
@@ -79,8 +79,7 @@ const Navbar = () => {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-        style={{ top: 'var(--fd-banner-height, 0px)' }}
-        className={`fixed w-full z-50 transition-all duration-300 ${
+        className={`fixed top-0 w-full z-50 transition-all duration-300 ${
           scrolled ? 'bg-black/50 backdrop-blur-md border-b border-white/10 py-4' : 'bg-transparent py-6'
         }`}
       >
@@ -450,9 +449,6 @@ export default function App() {
   
   return (
     <div className="min-h-screen bg-[#050505] text-white selection:bg-blue-500/30 relative overflow-hidden" dir={dir}>
-      <Banner id="construction-banner" variant="rainbow">
-        {t.banner.construction}
-      </Banner>
       <DottedSurface className="opacity-40" />
       
       {/* Global Glow Effects */}
