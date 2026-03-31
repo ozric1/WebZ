@@ -36,25 +36,25 @@ const serviceIcons = [
 const projectAssets = [
   {
     id: 1,
-    image: "https://ais-pre-nksosgsqlxlzqph53eit66-72480085445.europe-west2.run.app/nightly.png",
+    image: "/nightly.png",
     color: "from-purple-500 to-indigo-600",
     link: "https://nightllife.netlify.app/"
   },
   {
     id: 2,
-    image: "https://ais-pre-nksosgsqlxlzqph53eit66-72480085445.europe-west2.run.app/naatura.png",
+    image: "/naatura.png",
     color: "from-yellow-600 to-amber-700",
     link: "https://naturajungle.ma/"
   },
   {
     id: 3,
-    image: "https://ais-pre-nksosgsqlxlzqph53eit66-72480085445.europe-west2.run.app/nightevents.png",
+    image: "/sportsfields.png",
     color: "from-orange-500 to-red-600",
     link: "https://soccer-eight-henna.vercel.app/fr"
   },
   {
     id: 4,
-    image: "https://ais-pre-nksosgsqlxlzqph53eit66-72480085445.europe-west2.run.app/zentiaa.png",
+    image: "/zentiaa.png",
     color: "from-blue-500 to-cyan-600",
     link: "https://zentia.world/"
   }

@@ -9,7 +9,7 @@ import { HugeiconsIcon } from "@hugeicons/react";
 import { cn } from "../../lib/utils";
 
 import { useLanguage } from "../../LanguageContext";
-import { Hammer } from "lucide-react";
+import { Hammer, ExternalLink } from "lucide-react";
 
 interface Project {
   title: string;
@@ -54,21 +54,41 @@ export function ExpandableGallery({
   });
 
   // Map projects to the format expected by the gallery
-  const galleryItems = projects.map((p, i) => ({
-    id: `project-${i}`,
-    src: p.image,
-    alt: p.title,
-    title: p.title,
-    category: p.category,
-    description: p.description,
-    link: p.link,
-    features: p.features,
-    isUnderConstruction: p.title === "Nightly" || p.title === "SportsArena",
-    rotation: i === 0 ? -15 : i === 1 ? -3 : i === 2 ? 12 : 0,
-    x: i === 0 ? -90 : i === 1 ? -10 : i === 2 ? 75 : 0,
-    y: i === 0 ? 10 : i === 1 ? -15 : i === 2 ? 5 : 0,
-    zIndex: i === 0 ? 10 : i === 1 ? 20 : i === 2 ? 30 : 10,
-  }));
+  const galleryItems = projects.map((p, i) => {
+    const total = projects.length;
+    let rotation = 0;
+    let x = 0;
+    let y = 0;
+    let zIndex = 10;
+
+    if (total === 4) {
+      rotation = i === 0 ? -15 : i === 1 ? -5 : i === 2 ? 5 : 15;
+      x = i === 0 ? -100 : i === 1 ? -35 : i === 2 ? 35 : 100;
+      y = i === 0 ? 10 : i === 1 ? -10 : i === 2 ? -10 : 10;
+      zIndex = (i + 1) * 10;
+    } else {
+      rotation = i === 0 ? -15 : i === 1 ? -3 : i === 2 ? 12 : 0;
+      x = i === 0 ? -90 : i === 1 ? -10 : i === 2 ? 75 : 0;
+      y = i === 0 ? 10 : i === 1 ? -15 : i === 2 ? 5 : 0;
+      zIndex = i === 0 ? 10 : i === 1 ? 20 : i === 2 ? 30 : 10;
+    }
+
+    return {
+      id: `project-${i}`,
+      src: p.image,
+      alt: p.title,
+      title: p.title,
+      category: p.category,
+      description: p.description,
+      link: p.link,
+      features: p.features,
+      isUnderConstruction: p.title === "Nightly" || p.title === "SportsArena",
+      rotation,
+      x,
+      y,
+      zIndex,
+    };
+  });
 
   return (
     <section className="relative w-full px-4 md:px-8 bg-transparent flex flex-col items-center justify-start min-h-[850px] overflow-hidden">
@@ -180,9 +200,30 @@ export function ExpandableGallery({
                       <img
                         src={item.src}
                         alt={item.alt}
-                        className="w-full h-full object-cover select-none pointer-events-none"
+                        className="w-full h-full object-cover object-top select-none pointer-events-none"
                         referrerPolicy="no-referrer"
+                        loading="lazy"
                       />
+                      
+                      {/* Modern Clickable Button */}
+                      <div className={cn(
+                        "absolute top-4 z-20",
+                        item.isUnderConstruction ? "left-4" : "right-4"
+                      )}>
+                        <motion.a
+                          href={item.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
+                          whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.9)", color: "rgba(0, 0, 0, 1)" }}
+                          whileTap={{ scale: 0.95 }}
+                          className="flex items-center gap-1.5 px-3 py-1.5 bg-black/40 backdrop-blur-xl border border-white/10 rounded-full text-[9px] font-bold uppercase tracking-[0.1em] text-white/90 transition-all duration-300 shadow-lg"
+                        >
+                          <span>Visit Site</span>
+                          <ExternalLink className="w-2.5 h-2.5" />
+                        </motion.a>
+                      </div>
+
                       {isExpanded && (
                         <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent p-6 flex flex-col justify-end">
                           <span className="text-xs font-medium text-blue-400 uppercase tracking-wider mb-2">{item.category}</span>

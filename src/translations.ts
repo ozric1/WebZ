@@ -9,7 +9,7 @@ export const translations = {
       letsTalk: "Discutons",
     },
     hero: {
-      available: "Disponibles pour de nouveaux projets",
+      available: "Website/App Experts",
       title1: "Création d'Expériences",
       title2: "Digitales.",
       description: "Chez webZ, nous créons des sites web hautement modernes et interactifs qui ne sont pas seulement beaux, mais performants. Nous élevons les marques grâce à un design stratégique et un développement robuste.",
@@ -99,7 +99,7 @@ export const translations = {
       letsTalk: "Let's Talk",
     },
     hero: {
-      available: "Available for new projects",
+      available: "Website/App Experts",
       title1: "Crafting Digital",
       title2: "Experiences.",
       description: "At webZ, we build highly modern, interactive websites that don't just look good—they perform. Elevating brands through strategic design and robust development.",
@@ -189,7 +189,7 @@ export const translations = {
       letsTalk: "لنتحدث",
     },
     hero: {
-      available: "متاحون لمشاريع جديدة",
+      available: "Website/App Experts",
       title1: "صناعة تجارب",
       title2: "رقمية.",
       description: "في webZ، نقوم ببناء مواقع ويب تفاعلية وحديثة للغاية لا تبدو جيدة فحسب، بل تؤدي أداءً ممتازاً. نرتقي بالعلامات التجارية من خلال التصميم الاستراتيجي والتطوير القوي.",
