@@ -23,6 +23,7 @@ import { LiquidMetalButton } from './components/ui/liquid-metal-button';
 import { DottedSurface } from './components/ui/dotted-surface';
 import { Banner } from './components/ui/banner';
 import FAQ from './components/FAQ';
+import BookingModal from './components/BookingModal';
 
 // Import project images
 import nightlyImg from './assets/nightly.png';
@@ -101,7 +102,7 @@ const Navbar = () => {
           <div className="hidden md:flex gap-8 text-sm font-medium text-zinc-400">
             <a href="#services" className="hover:text-white transition-colors">{t.nav.services}</a>
             <a href="#work" className="hover:text-white transition-colors">{t.nav.work}</a>
-            <a href="mailto:abdelnezar7@gmail.com" className="hover:text-white transition-colors">{t.nav.contact}</a>
+            <a href="#contact" className="hover:text-white transition-colors">{t.nav.contact}</a>
           </div>
           
           <div className="flex items-center gap-4">
@@ -129,7 +130,7 @@ const Navbar = () => {
               </button>
             </div>
             <a 
-              href="mailto:abdelnezar7@gmail.com" 
+              href="#contact" 
               className="hidden sm:block px-5 py-2.5 bg-white text-black text-sm font-medium rounded-full hover:bg-zinc-200 transition-colors"
             >
               {t.nav.letsTalk}
@@ -152,7 +153,7 @@ const Navbar = () => {
           <div className="flex flex-col gap-6 text-2xl font-display font-medium mb-12">
             <a href="#services" onClick={() => setMobileMenuOpen(false)} className="text-zinc-400 hover:text-white transition-colors">{t.nav.services}</a>
             <a href="#work" onClick={() => setMobileMenuOpen(false)} className="text-zinc-400 hover:text-white transition-colors">{t.nav.work}</a>
-            <a href="mailto:abdelnezar7@gmail.com" onClick={() => setMobileMenuOpen(false)} className="text-zinc-400 hover:text-white transition-colors">{t.nav.contact}</a>
+            <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="text-zinc-400 hover:text-white transition-colors">{t.nav.contact}</a>
           </div>
           
           <div className="flex flex-col gap-6 mt-auto mb-12">
@@ -181,7 +182,7 @@ const Navbar = () => {
             </div>
             
             <a 
-              href="mailto:abdelnezar7@gmail.com" 
+              href="#contact" 
               onClick={() => setMobileMenuOpen(false)}
               className="px-6 py-4 bg-white text-black text-center font-medium rounded-full hover:bg-zinc-200 transition-colors"
             >
@@ -371,6 +372,7 @@ const Work = () => {
 
 const Contact = () => {
   const { t, dir } = useLanguage();
+  const [isBookingOpen, setIsBookingOpen] = useState(false);
 
   return (
     <section id="contact" className="py-32 relative z-10 bg-transparent">
@@ -406,7 +408,7 @@ const Contact = () => {
           <div className="relative z-10 mt-4">
             <LiquidMetalButton 
               label={t.contact.startProject} 
-              onClick={() => window.location.href = "mailto:abdelnezar7@gmail.com"}
+              onClick={() => setIsBookingOpen(true)}
               width={320}
             />
           </div>
@@ -414,6 +416,11 @@ const Contact = () => {
           <FAQ />
         </motion.div>
       </div>
+
+      <BookingModal 
+        isOpen={isBookingOpen} 
+        onClose={() => setIsBookingOpen(false)} 
+      />
     </section>
   );
 };
