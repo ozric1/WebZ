@@ -31,6 +31,9 @@ const serviceIcons = [
   <Rocket className="w-6 h-6" />
 ];
 
+import naaturaImg from './assets/naatura.png';
+import zentiaaImg from './assets/zentiaa.png';
+
 const projectAssets = [
   {
     id: 1,
@@ -40,7 +43,7 @@ const projectAssets = [
   },
   {
     id: 2,
-    image: "https://files.catbox.moe/0katmy.png",
+    image: naaturaImg,
     color: "from-yellow-600 to-amber-700",
     link: "https://naturajungle.ma/"
   },
@@ -52,7 +55,7 @@ const projectAssets = [
   },
   {
     id: 4,
-    image: "https://files.catbox.moe/pbd1iv.png",
+    image: zentiaaImg,
     color: "from-blue-500 to-cyan-600",
     link: "https://zentia.world/"
   }

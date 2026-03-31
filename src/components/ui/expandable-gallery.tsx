@@ -60,9 +60,9 @@ export function ExpandableGallery({
     description: p.description,
     link: p.link,
     features: p.features,
-    rotation: i === 0 ? -15 : i === 1 ? -3 : i === 2 ? 12 : i === 3 ? 22 : 0,
-    x: i === 0 ? -90 : i === 1 ? -10 : i === 2 ? 75 : i === 3 ? 140 : 0,
-    y: i === 0 ? 10 : i === 1 ? -15 : i === 2 ? 5 : i === 3 ? 25 : 0,
+    rotation: i === 0 ? -8 : i === 1 ? 8 : i === 2 ? 12 : i === 3 ? 22 : 0,
+    x: i === 0 ? -40 : i === 1 ? 40 : i === 2 ? 75 : i === 3 ? 140 : 0,
+    y: i === 0 ? 5 : i === 1 ? 5 : i === 2 ? 5 : i === 3 ? 25 : 0,
     zIndex: i === 0 ? 10 : i === 1 ? 20 : i === 2 ? 30 : i === 3 ? 40 : 0,
   }));
 
@@ -114,7 +114,7 @@ export function ExpandableGallery({
               )}
             >
               {galleryItems.map((item, index) => {
-                const isPrimary = index < 4;
+                const isPrimary = index < 2;
                 if (!isPrimary && !isExpanded) return null;
 
                 return (
