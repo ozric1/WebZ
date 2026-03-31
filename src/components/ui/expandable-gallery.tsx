@@ -201,8 +201,6 @@ export function ExpandableGallery({
                         src={item.src}
                         alt={item.alt}
                         className="w-full h-full object-cover object-top select-none pointer-events-none"
-                        referrerPolicy="no-referrer"
-                        loading="lazy"
                       />
                       
                       {/* Modern Clickable Button */}

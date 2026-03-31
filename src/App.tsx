@@ -25,12 +25,6 @@ import { Banner } from './components/ui/banner';
 import BookingModal from './components/BookingModal';
 import FAQ from './components/FAQ';
 
-// Import project images
-import nightlyImg from './assets/nightly.png';
-import naaturaImg from './assets/naatura.png';
-import sportsfieldsImg from './assets/sportsfields.png';
-import zentiaaImg from './assets/zentiaa.png';
-
 // --- Assets Data ---
 const serviceIcons = [
   <Palette className="w-6 h-6" />,
@@ -42,25 +36,25 @@ const serviceIcons = [
 const projectAssets = [
   {
     id: 1,
-    image: nightlyImg,
+    image: "/nightly.png",
     color: "from-purple-500 to-indigo-600",
     link: "https://nightllife.netlify.app/"
   },
   {
     id: 2,
-    image: naaturaImg,
+    image: "/naatura.png",
     color: "from-yellow-600 to-amber-700",
     link: "https://naturajungle.ma/"
   },
   {
     id: 3,
-    image: sportsfieldsImg,
+    image: "/sportsfields.png",
     color: "from-orange-500 to-red-600",
     link: "https://soccer-eight-henna.vercel.app/fr"
   },
   {
     id: 4,
-    image: zentiaaImg,
+    image: "/zentiaa.png",
     color: "from-blue-500 to-cyan-600",
     link: "https://zentia.world/"
   }
