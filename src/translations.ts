@@ -3,7 +3,9 @@ export type Language = 'fr' | 'en' | 'ar';
 export const translations = {
   fr: {
     nav: {
+      about: "À propos",
       services: "Services",
+      pricing: "Tarifs",
       work: "Réalisations",
       contact: "Contact",
       faq: "FAQ",
@@ -16,6 +18,64 @@ export const translations = {
       description: "Chez webZ, nous créons des sites web hautement modernes et interactifs qui ne sont pas seulement beaux, mais performants. Nous élevons les marques grâce à un design stratégique et un développement robuste.",
       viewWork: "Voir notre travail",
       whatIDo: "Ce que nous faisons",
+    },
+    about: {
+      title: "Pourquoi webZ ?",
+      subtitle: "L’Expertise Technique au Service de votre Croissance.",
+      cards: [
+        {
+          title: "Moteurs de Croissance",
+          description: "Nous ne nous contentons pas de coder des sites ; nous bâtissons des moteurs de croissance pour les entreprises marocaines."
+        },
+        {
+          title: "Expertise Locale",
+          description: "Nous comprenons les défis du marché local. D'un complexe sportif à un parc d'aventure, notre mission est de convertir."
+        },
+        {
+          title: "Tech & Proximité",
+          description: "Une technologie de pointe (React, Next.js), un design sur mesure, et un accompagnement transparent."
+        }
+      ]
+    },
+    pricing: {
+      title: "Nos Solutions \"Clés en Main\"",
+      subtitle: "Un investissement serein, pensé pour votre croissance.",
+      tiers: [
+        {
+          name: "L'Essentiel",
+          description: "Idéal pour les lancements",
+          price: "Paiement unique",
+          features: [
+            "Design Moderne & Responsive",
+            "Optimisation SEO de base",
+            "Formulaire de contact"
+          ],
+          button: "Commencer"
+        },
+        {
+          name: "Le Premium (WaaS)",
+          description: "Le choix des entreprises en croissance",
+          price: "Abonnement mensuel de 12 mois",
+          features: [
+            "Tout inclus : Hébergement & SEO",
+            "Mises à jour illimitées",
+            "Support Prioritaire 7j/7",
+            "Tableaux de bord personnalisés"
+          ],
+          popular: true,
+          button: "Choisir WaaS"
+        },
+        {
+          name: "Sur Mesure",
+          description: "Pour les projets complexes",
+          price: "Sur Devis",
+          features: [
+            "Applications Web & SaaS",
+            "Architecture Cloud (Azure/AWS)"
+          ],
+          button: "Demander un Devis"
+        }
+      ]
     },
     services: {
       title: "Notre Expertise.",
@@ -94,7 +154,9 @@ export const translations = {
   },
   en: {
     nav: {
+      about: "About",
       services: "Services",
+      pricing: "Pricing",
       work: "Work",
       contact: "Contact",
       faq: "FAQ",
@@ -107,6 +169,64 @@ export const translations = {
       description: "At webZ, we build highly modern, interactive websites that don't just look good—they perform. Elevating brands through strategic design and robust development.",
       viewWork: "View Our Work",
       whatIDo: "What We Do",
+    },
+    about: {
+      title: "Why webZ?",
+      subtitle: "Technical Expertise Driving Your Growth.",
+      cards: [
+        {
+          title: "Growth Engines",
+          description: "We don't just code websites; we build scalable growth engines for local and global businesses."
+        },
+        {
+          title: "Local Expertise",
+          description: "We understand market challenges. From sports arenas to adventure parks, our mission is to convert visitors."
+        },
+        {
+          title: "Tech & Proximity",
+          description: "Cutting-edge tech (React, Next.js), custom design, and incredibly transparent local support."
+        }
+      ]
+    },
+    pricing: {
+      title: "Turnkey Solutions",
+      subtitle: "A stress-free investment tailored for growth.",
+      tiers: [
+        {
+          name: "The Essential",
+          description: "Perfect for new launches",
+          price: "One-time Payment",
+          features: [
+            "Modern & Responsive Design",
+            "Basic SEO Optimization",
+            "Contact Forms"
+          ],
+          button: "Get Started"
+        },
+        {
+          name: "Premium (WaaS)",
+          description: "The choice of growing businesses",
+          price: "12-Month Monthly Subscription",
+          features: [
+            "All-Inclusive: Hosting & SEO",
+            "Unlimited Updates",
+            "Priority Support 24/7",
+            "Custom Client Dashboards"
+          ],
+          popular: true,
+          button: "Choose WaaS"
+        },
+        {
+          name: "Custom Build",
+          description: "For complex web architecture",
+          price: "Custom Quote",
+          features: [
+            "Web Applications & SaaS",
+            "Cloud Architecture (AWS/Azure)"
+          ],
+          button: "Request a Quote"
+        }
+      ]
     },
     services: {
       title: "Our Expertise.",
@@ -185,7 +305,9 @@ export const translations = {
   },
   ar: {
     nav: {
+      about: "من نحن",
       services: "خدماتنا",
+      pricing: "الأسعار",
       work: "أعمالنا",
       contact: "اتصل بنا",
       faq: "الأسئلة الشائعة",
@@ -198,6 +320,64 @@ export const translations = {
       description: "في webZ، نقوم ببناء مواقع ويب تفاعلية وحديثة للغاية لا تبدو جيدة فحسب، بل تؤدي أداءً ممتازاً. نرتقي بالعلامات التجارية من خلال التصميم الاستراتيجي والتطوير القوي.",
       viewWork: "شاهد أعمالنا",
       whatIDo: "ماذا نفعل",
+    },
+    about: {
+      title: "لماذا webZ؟",
+      subtitle: "الخبرة التقنية في خدمة نموك.",
+      cards: [
+        {
+          title: "محركات النمو",
+          description: "نحن لا نكتفي ببرمجة المواقع فحسب؛ بل نبني محركات نمو قابلة للتطوير للشركات."
+        },
+        {
+          title: "خبرة محلية",
+          description: "نتفهم تحديات السوق المحلي. مهمتنا هي تحويل زوار موقعك إلى عملاء مخلصين."
+        },
+        {
+          title: "تكنولوجيا وقرب",
+          description: "أحدث التقنيات (React, Next.js)، تصميم مخصص، ودعم شفاف وقريب منك."
+        }
+      ]
+    },
+    pricing: {
+      title: "حلول متكاملة",
+      subtitle: "استثمار خالٍ من التوتر ومصمم للنمو المستقبلي.",
+      tiers: [
+        {
+          name: "الأساسي",
+          description: "مثالي للمشاريع الناشئة",
+          price: "دفع لمرة واحدة",
+          features: [
+            "تصميم حديث ومتجاوب",
+            "تحسين محركات البحث الأساسي",
+            "نماذج الاتصال"
+          ],
+          button: "ابدأ الآن"
+        },
+        {
+          name: "الاحترافي (WaaS)",
+          description: "خيار الشركات النامية",
+          price: "اشتراك شهري لمدة 12 شهراً",
+          features: [
+            "شامل كلياً: استضافة و SEO",
+            "تحديثات غير محدودة",
+            "دعم أولوي على مدار الساعة",
+            "لوحات تحكم مخصصة"
+          ],
+          popular: true,
+          button: "اختر WaaS"
+        },
+        {
+          name: "بناء مخصص",
+          description: "للمشاريع المعقدة",
+          price: "تسعير حسب الطلب",
+          features: [
+            "تطبيقات الويب و SaaS",
+            "البنية التحتية السحابية (Azure/AWS)"
+          ],
+          button: "طلب عرض سعر"
+        }
+      ]
     },
     services: {
       title: "خبراتنا.",

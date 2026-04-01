@@ -98,8 +98,10 @@ const Navbar = () => {
           </motion.a>
           
           <div className="hidden md:flex gap-8 text-sm font-medium text-zinc-400">
+            <a href="#about" className="hover:text-white transition-colors">{t.nav.about}</a>
             <a href="#services" className="hover:text-white transition-colors">{t.nav.services}</a>
             <a href="#work" className="hover:text-white transition-colors">{t.nav.work}</a>
+            <a href="#pricing" className="hover:text-white transition-colors">{t.nav.pricing}</a>
             <a href="#faq" className="hover:text-white transition-colors">{t.nav.faq}</a>
             <a href="#contact" className="hover:text-white transition-colors">{t.nav.contact}</a>
           </div>
@@ -130,7 +132,7 @@ const Navbar = () => {
             </div>
             <a 
               href="#contact" 
-              className="hidden sm:block px-6 py-2.5 bg-teal-500 text-white text-sm font-bold rounded-full hover:bg-teal-400 transition-all duration-300 shadow-[0_0_20px_rgba(20,184,166,0.3)] hover:shadow-[0_0_25px_rgba(20,184,166,0.5)] border border-teal-400/50"
+              className="hidden sm:block px-6 py-2.5 bg-[#15803d] text-white text-sm font-bold rounded-full hover:bg-[#15803d]/90 transition-all duration-300 shadow-[0_0_20px_rgba(21,128,61,0.3)] hover:shadow-[0_0_25px_rgba(21,128,61,0.5)] border border-[#15803d]/50"
             >
               {t.nav.letsTalk}
             </a>
@@ -150,8 +152,10 @@ const Navbar = () => {
       {mobileMenuOpen && (
         <div className="fixed inset-0 z-40 bg-black/95 backdrop-blur-xl md:hidden pt-24 px-6 flex flex-col">
           <div className="flex flex-col gap-6 text-2xl font-display font-medium mb-12">
+            <a href="#about" onClick={() => setMobileMenuOpen(false)} className="text-zinc-400 hover:text-white transition-colors">{t.nav.about}</a>
             <a href="#services" onClick={() => setMobileMenuOpen(false)} className="text-zinc-400 hover:text-white transition-colors">{t.nav.services}</a>
             <a href="#work" onClick={() => setMobileMenuOpen(false)} className="text-zinc-400 hover:text-white transition-colors">{t.nav.work}</a>
+            <a href="#pricing" onClick={() => setMobileMenuOpen(false)} className="text-zinc-400 hover:text-white transition-colors">{t.nav.pricing}</a>
             <a href="#faq" onClick={() => setMobileMenuOpen(false)} className="text-zinc-400 hover:text-white transition-colors">{t.nav.faq}</a>
             <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="text-zinc-400 hover:text-white transition-colors">{t.nav.contact}</a>
           </div>
@@ -184,7 +188,7 @@ const Navbar = () => {
             <a 
               href="#contact" 
               onClick={() => setMobileMenuOpen(false)}
-              className="px-6 py-4 bg-teal-500 text-white text-center font-bold rounded-full hover:bg-teal-400 transition-all duration-300 shadow-[0_0_25px_rgba(20,184,166,0.4)] border border-teal-400/50"
+              className="px-6 py-4 bg-[#15803d] text-white text-center font-bold rounded-full hover:bg-[#15803d]/90 transition-all duration-300 shadow-[0_0_25px_rgba(21,128,61,0.4)] border border-[#15803d]/50"
             >
               {t.nav.letsTalk}
             </a>
@@ -294,6 +298,49 @@ const Hero = () => {
   );
 };
 
+const About = () => {
+  const { t } = useLanguage();
+
+  return (
+    <section id="about" className="py-20 md:py-24 relative z-10 bg-transparent">
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <div className="mb-12 md:mb-16 text-center">
+          <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight mb-4">
+            {t.about.title}
+          </h2>
+          <p className="text-xl md:text-2xl text-zinc-300 font-medium max-w-2xl mx-auto">
+            {t.about.subtitle}
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {t.about.cards.map((card: any, index: number) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="bg-[#0a0f18] p-8 rounded-3xl border border-white/5 flex flex-col items-center text-center shadow-lg relative overflow-hidden group"
+            >
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#15803d] to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className="mb-6 flex items-center justify-center">
+                <div className="w-12 h-12 rounded-full bg-[#15803d]/10 flex items-center justify-center text-[#15803d] shadow-[0_0_15px_rgba(21,128,61,0.2)]">
+                  {index === 0 && <Rocket className="w-6 h-6" />}
+                  {index === 1 && <Globe className="w-6 h-6" />}
+                  {index === 2 && <Code2 className="w-6 h-6" />}
+                </div>
+              </div>
+              <h3 className="text-2xl font-bold text-white tracking-tight mb-4">{card.title}</h3>
+              <p className="text-zinc-400 leading-relaxed text-[15px]">{card.description}</p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const Services = () => {
   const { t } = useLanguage();
 
@@ -363,6 +410,89 @@ const Work = () => {
         exploreMoreText={exploreMoreText}
         goBackText={goBackText}
       />
+    </section>
+  );
+};
+
+import { Check } from 'lucide-react';
+
+const Pricing = () => {
+  const { t, language } = useLanguage();
+
+  const getWhatsAppLink = (planName: string, lang: string) => {
+    const phone = '212634175357';
+    let message = '';
+    if (lang === 'fr') message = `Bonjour! Je suis intéressé(e) par le plan: ${planName}.`;
+    else if (lang === 'ar') message = `مرحباً! أنا مهتم بخطة: ${planName}.`;
+    else message = `Hello! I am interested in the ${planName} plan.`;
+    return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+  };
+
+  return (
+    <section id="pricing" className="py-20 md:py-32 relative z-10 bg-transparent">
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <div className="text-center mb-16 md:mb-24">
+          <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight mb-4 text-white">
+            {t.pricing.title}
+          </h2>
+          <p className="text-xl md:text-2xl text-zinc-300 font-medium">
+            {t.pricing.subtitle}
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {t.pricing.tiers.map((tier: any, index: number) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className={`rounded-[2rem] p-8 flex flex-col relative ${
+                tier.popular 
+                  ? 'bg-[#0a0f18] border-2 border-[#15803d] md:-mt-8 md:mb-8 scale-100 md:scale-105 z-10 shadow-[0_0_40px_rgba(21,128,61,0.15)]' 
+                  : 'bg-black/40 border border-white/10'
+              }`}
+            >
+              {tier.popular && (
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#15803d] text-white text-xs font-bold uppercase tracking-wider py-1.5 px-4 rounded-full">
+                  Recommandé
+                </div>
+              )}
+              
+              <div className="mb-8">
+                <h3 className="text-2xl font-bold text-white mb-2">{tier.name}</h3>
+                <p className="text-zinc-400 text-sm h-10">{tier.description}</p>
+                <div className="mt-6 flex items-baseline">
+                  <span className="text-[1.3rem] font-bold text-white">{tier.price}</span>
+                </div>
+              </div>
+
+              <div className="flex-grow space-y-4 mb-8">
+                {tier.features.map((feature: string, idx: number) => (
+                  <div key={idx} className="flex items-start gap-3">
+                    <Check className={`w-5 h-5 mt-0.5 shrink-0 ${tier.popular ? 'text-[#15803d]' : 'text-zinc-500'}`} />
+                    <span className="text-zinc-300 text-sm leading-tight">{feature}</span>
+                  </div>
+                ))}
+              </div>
+
+              <a
+                href={getWhatsAppLink(tier.name, language)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`w-full py-4 rounded-xl text-center font-bold text-sm transition-all duration-300 ${
+                  tier.popular
+                    ? 'bg-[#15803d] text-white hover:bg-[#15803d]/90 shadow-[0_0_20px_rgba(21,128,61,0.3)]'
+                    : 'bg-white/5 text-white hover:bg-white/10 border border-white/10'
+                }`}
+              >
+                {tier.button}
+              </a>
+            </motion.div>
+          ))}
+        </div>
+      </div>
     </section>
   );
 };
@@ -462,19 +592,21 @@ export default function App() {
         />
         <div 
           className="absolute top-1/3 -left-[10%] w-[600px] h-[600px] rounded-full opacity-20 blur-[120px]"
-          style={{ background: 'radial-gradient(circle at center, #3b82f6, transparent 70%)' }}
+          style={{ background: 'radial-gradient(circle at center, #1A5F7A, transparent 70%)' }}
         />
         <div 
           className="absolute bottom-[-10%] right-[-10%] w-[800px] h-[800px] rounded-full opacity-15 blur-[150px]"
-          style={{ background: 'radial-gradient(circle at center, #8b5cf6, transparent 70%)' }}
+          style={{ background: 'radial-gradient(circle at center, #15803d, transparent 70%)' }}
         />
       </div>
 
       <Navbar />
       <main>
         <Hero />
+        <About />
         <Services />
         <Work />
+        <Pricing />
         <Contact />
       </main>
       <Footer />

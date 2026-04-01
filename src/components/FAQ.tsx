@@ -33,40 +33,52 @@ const FAQ = () => {
       answer: {
         fr: (
           <div className="space-y-4">
-            <p>Nous proposons deux voies simples :</p>
+            <p>Nous proposons trois voies adaptées à vos besoins :</p>
             <div>
-              <p className="font-semibold text-white mb-1">Done-For-You (Abonnement) :</p>
-              <p>Frais d'installation réduits + tarif mensuel fixe. Nous gérons l'hébergement, les domaines et toutes les futures mises à jour.</p>
+              <p className="font-semibold text-[#15803d] mb-1">L'Essentiel (Paiement unique) :</p>
+              <p>Idéal pour un lancement rapide. Vous possédez le site avec un paiement en une seule fois.</p>
             </div>
             <div>
-              <p className="font-semibold text-white mb-1">Propriété Totale (Paiement Unique) :</p>
-              <p>50 % d'acompte, 50 % au lancement. Vous possédez entièrement le site et bénéficiez d'un tableau de bord personnalisé pour effectuer vos propres mises à jour.</p>
+              <p className="font-semibold text-[#15803d] mb-1">Le Premium WaaS (Abonnement mensuel de 12 mois) :</p>
+              <p>Tout inclus, sans tracas. Nous gérons l'hébergement, le SEO et les futures mises à jour illimitées pour vous accompagner.</p>
+            </div>
+            <div>
+              <p className="font-semibold text-[#15803d] mb-1">Sur Mesure (Sur Devis) :</p>
+              <p>Pour des applications web avancées et des plateformes SaaS nécessitant une architecture cloud spécifique.</p>
             </div>
           </div>
         ),
         en: (
           <div className="space-y-4">
-            <p>We offer two simple paths:</p>
+            <p>We offer three flexible paths:</p>
             <div>
-              <p className="font-semibold text-white mb-1">Done-For-You (Subscription):</p>
-              <p>Low setup fee + flat monthly rate. We handle hosting, domains, and all future updates.</p>
+              <p className="font-semibold text-[#15803d] mb-1">The Essential (One-Time Payment):</p>
+              <p>Perfect for quick launches. You own the site with a single upfront payment.</p>
             </div>
             <div>
-              <p className="font-semibold text-white mb-1">Total Ownership (One-Time):</p>
-              <p>50% upfront, 50% at launch. You own the site entirely and get a custom dashboard to make your own updates.</p>
+              <p className="font-semibold text-[#15803d] mb-1">Premium WaaS (12-Month Monthly Subscription):</p>
+              <p>All-inclusive and hassle-free. We handle hosting, SEO, and unlimited future updates to support your growth.</p>
+            </div>
+            <div>
+              <p className="font-semibold text-[#15803d] mb-1">Custom Build (Custom Quote):</p>
+              <p>For advanced web applications and SaaS platforms requiring custom cloud infrastructure.</p>
             </div>
           </div>
         ),
         ar: (
           <div className="space-y-4">
-            <p>نقدم مسارين بسيطين:</p>
+            <p>نقدم ثلاثة مسارات مرنة:</p>
             <div>
-              <p className="font-semibold text-white mb-1">Done-For-You (اشتراك):</p>
-              <p>رسوم إعداد منخفضة + سعر شهري ثابت. نتولى الاستضافة والنطاقات وجميع التحديثات المستقبلية.</p>
+              <p className="font-semibold text-[#15803d] mb-1">الأساسي (دفع لمرة واحدة):</p>
+              <p>مثالي للانطلاقات السريعة. تمتلك الموقع من خلال دفعة واحدة.</p>
             </div>
             <div>
-              <p className="font-semibold text-white mb-1">ملكية كاملة (مرة واحدة):</p>
-              <p>50% مقدمًا، 50% عند الإطلاق. تمتلك الموقع بالكامل وتحصل على لوحة تحكم مخصصة لإجراء تحديثاتك الخاصة.</p>
+              <p className="font-semibold text-[#15803d] mb-1">الاحترافي WaaS (اشتراك شهري لمدة 12 شهراً):</p>
+              <p>شامل كلياً وبدون متاعب. نتولى الاستضافة وتحسين محركات البحث والتحديثات المستقبلية غير المحدودة.</p>
+            </div>
+            <div>
+              <p className="font-semibold text-[#15803d] mb-1">بناء مخصص (تسعير حسب الطلب):</p>
+              <p>لتطبيقات الويب المتقدمة ومنصات SaaS التي تتطلب بنية تحتية سحابية مخصصة.</p>
             </div>
           </div>
         )
