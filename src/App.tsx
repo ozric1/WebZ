@@ -298,9 +298,9 @@ const Services = () => {
   const { t } = useLanguage();
 
   return (
-    <section id="services" className="py-32 relative z-10 bg-transparent">
+    <section id="services" className="py-20 md:py-24 relative z-10 bg-transparent">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="mb-16 md:mb-24">
+        <div className="mb-12 md:mb-16">
           <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight mb-4">
             {t.services.title}
           </h2>
@@ -355,7 +355,7 @@ const Work = () => {
   const goBackText = language === 'fr' ? 'Retour' : language === 'ar' ? 'العودة' : 'Go back';
 
   return (
-    <section id="work" className="py-32 relative z-10 bg-transparent">
+    <section id="work" className="py-20 md:py-24 relative z-10 bg-transparent">
       <ExpandableGallery 
         projects={projects}
         title={t.work.title}
@@ -372,7 +372,7 @@ const Contact = () => {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
 
   return (
-    <section id="contact" className="py-32 relative z-10 bg-transparent">
+    <section id="contact" className="py-20 md:py-24 relative z-10 bg-transparent">
       <div className="max-w-5xl mx-auto px-6 md:px-12">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
