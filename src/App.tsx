@@ -18,7 +18,7 @@ import {
 } from 'lucide-react';
 import { useLanguage } from './LanguageContext';
 import { GlobePulse } from './components/ui/cobe-globe-pulse';
-import { CursorDrivenParticleTypography } from './components/ui/cursor-driven-particles-typography';
+
 import { LiquidMetalButton } from './components/ui/liquid-metal-button';
 import { DottedSurface } from './components/ui/dotted-surface';
 import { Banner } from './components/ui/banner';
@@ -86,16 +86,21 @@ const Navbar = () => {
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
           <motion.a 
             href="#" 
-            className="text-2xl font-display font-bold tracking-tighter flex items-center gap-1 group"
+            className="text-2xl font-display font-bold tracking-tighter flex items-center gap-2 group"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            web<span className="text-blue-500 transition-colors duration-300 group-hover:text-purple-500">Z</span>
+            <div className="relative">
+              <Globe className="w-7 h-7 text-emerald-400 stroke-[2.5]" />
+              <div className="absolute inset-0 bg-emerald-400/20 blur-md rounded-full"></div>
+            </div>
+            web<span className="text-teal-400 transition-colors duration-300 group-hover:text-emerald-400">Z</span>
           </motion.a>
           
           <div className="hidden md:flex gap-8 text-sm font-medium text-zinc-400">
             <a href="#services" className="hover:text-white transition-colors">{t.nav.services}</a>
             <a href="#work" className="hover:text-white transition-colors">{t.nav.work}</a>
+            <a href="#faq" className="hover:text-white transition-colors">{t.nav.faq}</a>
             <a href="#contact" className="hover:text-white transition-colors">{t.nav.contact}</a>
           </div>
           
@@ -125,7 +130,7 @@ const Navbar = () => {
             </div>
             <a 
               href="#contact" 
-              className="hidden sm:block px-5 py-2.5 bg-white text-black text-sm font-medium rounded-full hover:bg-zinc-200 transition-colors"
+              className="hidden sm:block px-6 py-2.5 bg-teal-500 text-white text-sm font-bold rounded-full hover:bg-teal-400 transition-all duration-300 shadow-[0_0_20px_rgba(20,184,166,0.3)] hover:shadow-[0_0_25px_rgba(20,184,166,0.5)] border border-teal-400/50"
             >
               {t.nav.letsTalk}
             </a>
@@ -147,6 +152,7 @@ const Navbar = () => {
           <div className="flex flex-col gap-6 text-2xl font-display font-medium mb-12">
             <a href="#services" onClick={() => setMobileMenuOpen(false)} className="text-zinc-400 hover:text-white transition-colors">{t.nav.services}</a>
             <a href="#work" onClick={() => setMobileMenuOpen(false)} className="text-zinc-400 hover:text-white transition-colors">{t.nav.work}</a>
+            <a href="#faq" onClick={() => setMobileMenuOpen(false)} className="text-zinc-400 hover:text-white transition-colors">{t.nav.faq}</a>
             <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="text-zinc-400 hover:text-white transition-colors">{t.nav.contact}</a>
           </div>
           
@@ -178,7 +184,7 @@ const Navbar = () => {
             <a 
               href="#contact" 
               onClick={() => setMobileMenuOpen(false)}
-              className="px-6 py-4 bg-white text-black text-center font-medium rounded-full hover:bg-zinc-200 transition-colors"
+              className="px-6 py-4 bg-teal-500 text-white text-center font-bold rounded-full hover:bg-teal-400 transition-all duration-300 shadow-[0_0_25px_rgba(20,184,166,0.4)] border border-teal-400/50"
             >
               {t.nav.letsTalk}
             </a>
@@ -218,10 +224,12 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm mb-8 pointer-events-auto"
+          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-teal-500/30 bg-teal-500/10 backdrop-blur-sm mb-8 pointer-events-auto shadow-[0_0_15px_rgba(20,184,166,0.15)]"
         >
-          <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-          <span className="text-xs font-medium text-zinc-300 uppercase tracking-wider">{t.hero.available}</span>
+          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_rgba(52,211,153,0.8)]" />
+          <span className="text-xs font-bold text-teal-100 uppercase tracking-widest">
+            Made in Morocco
+          </span>
         </motion.div>
 
         <motion.h1 
@@ -302,29 +310,24 @@ const Services = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {t.services.items.map((service, index) => (
+          {t.services.items.map((service: any, index: number) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="p-8 rounded-3xl bg-zinc-900/50 border border-white/5 hover:border-white/10 transition-colors group"
+              className="p-8 rounded-3xl bg-[#0a0f18] border border-white/10 hover:border-teal-500/30 transition-colors group shadow-lg"
             >
-              <div className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center mb-6 text-white group-hover:scale-110 group-hover:bg-blue-500/20 group-hover:text-blue-400 transition-all duration-300">
+              <div className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center mb-6 text-white group-hover:scale-110 group-hover:bg-teal-500/20 group-hover:text-teal-400 transition-all duration-300">
                 {serviceIcons[index]}
               </div>
-              <div className="h-12 mb-3">
-                <CursorDrivenParticleTypography
-                  text={service.title}
-                  fontSize={24}
-                  particleDensity={3}
-                  dispersionStrength={10}
-                  color="#ffffff"
-                  className="w-full h-full"
-                />
+              <div className="mb-4">
+                <h3 className="text-2xl font-bold text-white tracking-tight">
+                  {service.title}
+                </h3>
               </div>
-              <p className="text-zinc-400 leading-relaxed">
+              <p className="text-zinc-300 leading-relaxed text-[15px]">
                 {service.description}
               </p>
             </motion.div>
@@ -448,22 +451,22 @@ export default function App() {
   const { dir, t } = useLanguage();
   
   return (
-    <div className="min-h-screen bg-[#050505] text-white selection:bg-blue-500/30 relative overflow-hidden" dir={dir}>
+    <div className="min-h-screen bg-[#05070A] text-white selection:bg-teal-500/30 relative overflow-hidden" dir={dir}>
       <DottedSurface className="opacity-40" />
       
       {/* Global Glow Effects */}
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
         <div 
-          className="absolute -top-[10%] left-1/2 -translate-x-1/2 w-full h-full rounded-full opacity-20 blur-[120px]"
-          style={{ background: 'radial-gradient(circle at center, var(--color-accent), transparent 70%)' }}
+          className="absolute -top-[10%] left-1/2 -translate-x-1/2 w-[80vw] h-[80vw] md:w-[60vw] md:h-[60vw] rounded-full opacity-30 blur-[140px]"
+          style={{ background: 'radial-gradient(circle at center, var(--color-accent), transparent 60%)' }}
         />
         <div 
-          className="absolute top-1/2 left-0 -translate-y-1/2 w-[500px] h-[500px] rounded-full opacity-10 blur-[100px]"
+          className="absolute top-1/3 -left-[10%] w-[600px] h-[600px] rounded-full opacity-20 blur-[120px]"
+          style={{ background: 'radial-gradient(circle at center, #3b82f6, transparent 70%)' }}
+        />
+        <div 
+          className="absolute bottom-[-10%] right-[-10%] w-[800px] h-[800px] rounded-full opacity-15 blur-[150px]"
           style={{ background: 'radial-gradient(circle at center, #8b5cf6, transparent 70%)' }}
-        />
-        <div 
-          className="absolute bottom-0 right-0 w-[600px] h-[600px] rounded-full opacity-10 blur-[120px]"
-          style={{ background: 'radial-gradient(circle at center, #ec4899, transparent 70%)' }}
         />
       </div>
 

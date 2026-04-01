@@ -6,6 +6,7 @@ export const translations = {
       services: "Services",
       work: "Réalisations",
       contact: "Contact",
+      faq: "FAQ",
       letsTalk: "Discutons",
     },
     hero: {
@@ -96,6 +97,7 @@ export const translations = {
       services: "Services",
       work: "Work",
       contact: "Contact",
+      faq: "FAQ",
       letsTalk: "Let's Talk",
     },
     hero: {
@@ -186,6 +188,7 @@ export const translations = {
       services: "خدماتنا",
       work: "أعمالنا",
       contact: "اتصل بنا",
+      faq: "الأسئلة الشائعة",
       letsTalk: "لنتحدث",
     },
     hero: {

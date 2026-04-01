@@ -6,11 +6,11 @@
   --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
   --font-arabic: "Tajawal", ui-sans-serif, system-ui, sans-serif;
   
-  --color-background: #050505;
+  --color-background: #05070A;
   --color-foreground: #ffffff;
   --color-muted: #a1a1aa;
   --color-border: #27272a;
-  --color-accent: #3b82f6;
+  --color-accent: #0cb9c1;
 }
 
 body {
