@@ -133,6 +133,12 @@ export const translations = {
           title: "AGEFIC",
           description: "Un portail web vitrine moderne et hautement optimisé pour un cabinet de conseil juridique, fiscal et comptable. Offre une navigation intuitive, des formulaires de contact fluides et une présentation épurée des services fiduciaires.",
           features: ["Fiduciaire & Audit", "Conseil Juridique", "Optimisation Fiscale"]
+        },
+        {
+          category: "Location de Voitures de Luxe",
+          title: "Hilton VIP Rentals",
+          description: "Une plateforme haut de gamme de location de voitures de luxe et services de chauffeur privé. Offrant une flotte d'exception et une expérience de réservation fluide pour une clientèle VIP.",
+          features: ["Réservation en Ligne", "Chauffeur Privé", "Flotte Premium"]
         }
       ]
     },
@@ -290,6 +296,12 @@ export const translations = {
           title: "AGEFIC",
           description: "A modern and highly optimized showcase website for a legal, tax, and accounting advisory firm. Features intuitive navigation, smooth contact options, and a clean layout of professional services.",
           features: ["Advisory & Audit", "Legal Council", "Tax Optimization"]
+        },
+        {
+          category: "Luxury Car Rental",
+          title: "Hilton VIP Rentals",
+          description: "A premium luxury car rental and private chauffeur service platform. Offering an exceptional fleet and a seamless booking experience tailored for VIP clients.",
+          features: ["Online Booking", "Private Chauffeur", "Premium Fleet"]
         }
       ]
     },
@@ -447,6 +459,12 @@ export const translations = {
           title: "AGEFIC",
           description: "موقع ويب تعريفي حديث ومحسن للغاية لمكتب استشارات قانونية وضريبية ومحاسبية. يتميز بتنقل بديهي، وخيارات اتصال سلسة، وعرض منسق للخدمات المهنية.",
           features: ["استشارات وتدقيق", "استشارة قانونية", "تحسين ضريبي"]
+        },
+        {
+          category: "تأجير السيارات الفاخرة",
+          title: "Hilton VIP Rentals",
+          description: "منصة راقية لتأجير السيارات الفاخرة وخدمات السائق الخاص. توفر أسطولاً استثنائياً وتجربة حجز سلسة مخصصة لكبار الشخصيات.",
+          features: ["الحجز عبر الإنترنت", "سائق خاص", "أسطول مميز"]
         }
       ]
     },

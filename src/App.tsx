@@ -10,7 +10,6 @@ import {
   MessageCircle,
   Github, 
   Linkedin, 
-  Twitter,
   ExternalLink,
   Globe,
   Menu,
@@ -36,33 +35,39 @@ const serviceIcons = [
 const projectAssets = [
   {
     id: 1,
-    image: "/nightly.png",
+    image: "/nightly.webp",
     color: "from-purple-500 to-indigo-600",
     link: "https://nightllife.netlify.app/"
   },
   {
     id: 2,
-    image: "/naatura.png",
+    image: "/naatura.webp",
     color: "from-yellow-600 to-amber-700",
     link: "https://naturajungle.ma/"
   },
   {
     id: 3,
-    image: "/sportsfields.png",
+    image: "/sportsfields.webp",
     color: "from-orange-500 to-red-600",
     link: "https://soccer-eight-henna.vercel.app/fr"
   },
   {
     id: 4,
-    image: "/zentiaa.png",
+    image: "/zentiaa.webp",
     color: "from-blue-500 to-cyan-600",
     link: "https://zentia.world/"
   },
   {
     id: 5,
-    image: "/agefic.png",
+    image: "/agefic.webp",
     color: "from-slate-800 to-indigo-950",
     link: "https://agefic.vercel.app/"
+  },
+  {
+    id: 6,
+    image: "/hilton.webp",
+    color: "from-amber-600 to-zinc-900",
+    link: "https://hilton-vip-rentals.vercel.app/"
   }
 ];
 
@@ -568,13 +573,20 @@ const Footer = () => {
           © {new Date().getFullYear()} {t.footer.rights}
         </div>
         <div className="flex gap-6">
-          <a href="#" className="text-zinc-500 hover:text-white transition-colors">
-            <Twitter className="w-5 h-5" />
-          </a>
-          <a href="#" className="text-zinc-500 hover:text-white transition-colors">
+          <a 
+            href="https://www.linkedin.com/in/nezar-abdeljalil/" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="text-zinc-500 hover:text-white transition-colors"
+          >
             <Linkedin className="w-5 h-5" />
           </a>
-          <a href="#" className="text-zinc-500 hover:text-white transition-colors">
+          <a 
+            href="https://github.com/ozric1" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="text-zinc-500 hover:text-white transition-colors"
+          >
             <Github className="w-5 h-5" />
           </a>
         </div>
