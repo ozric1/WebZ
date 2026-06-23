@@ -105,34 +105,34 @@ export const translations = {
       viewCaseStudy: "Voir l'étude de cas",
       projects: [
         {
-          category: "Vie Nocturne & Divertissement",
+          category: "Analyses sur Mesure & Clubbing High-End",
           title: "Nightly",
-          description: "Une plateforme analytique de haute performance pour l'industrie de la nuit. Redéfinissez la gestion des réservations avec une visualisation des données en temps réel et un tableau de bord intuitif.",
-          features: ["Données Temps Réel", "Gestion de Réservation", "Analyse de Revenus"]
+          description: "Une plateforme analytique d'élite dédiée aux établissements de prestige. Optimisez l'expérience VIP et la gestion des réservations en temps réel via un tableau de bord haute performance et immersif.",
+          features: ["VIP Table Tracking", "Visualisation Temps Réel", "Analyses Prédictives"]
         },
         {
-          category: "Éco-Resort & Sanctuaire",
+          category: "Eco-Luxe & Hôtellerie",
           title: "Natura Jungle",
-          description: "Une expérience numérique immersive pour un resort écologique de luxe. Nous avons combiné des visuels haute résolution avec des animations fluides pour présenter les activités équestres et aquatiques du sanctuaire.",
-          features: ["Design Immersif", "Système de Réservation", "Animations Fluides"]
+          description: "Une odyssée digitale captivante pour un éco-resort de luxe. Fusion d'animations fluides et d'interfaces épurées pour magnifier les expériences équestres et de bien-être du domaine.",
+          features: ["Expérience Immersive", "Réservations Intuitives", "Direction Artistique Web"]
         },
         {
-          category: "Gestion d'Installations Sportives",
+          category: "Complexes Sportifs Premium",
           title: "SportsArena",
-          description: "Une plateforme de gestion d'installations sportives à la pointe de la technologie. Utilise des visualisations 3D et un moteur de planification en temps réel pour simplifier les réservations complexes.",
-          features: ["Visualisation 3D", "Moteur de Planning", "Multi-Sports"]
+          description: "Un écosystème de réservation nouvelle génération pour complexes sportifs haut de gamme. Intégration de cartes 3D interactives et d'un moteur de planification instantanée.",
+          features: ["Cartographie 3D", "Moteur de Réservation", "Paiement Sécurisé"]
         },
         {
-          category: "Formation en Anglais Exécutif",
+          category: "E-Learning Corporatif & EdTech",
           title: "Zentia World",
-          description: "Un écosystème d'apprentissage complet pour la formation en anglais des cadres. Comprend un cursus interactif de 15 modules, un suivi automatisé des progrès et un tableau de bord personnalisé.",
-          features: ["E-Learning", "Suivi de Progrès", "Dashboard Client"]
+          description: "Une plateforme d'apprentissage sur-mesure destinée aux leaders et cadres dirigeants. Parcours interactif modulaire, suivi de progression intelligent et analytiques d'apprentissage.",
+          features: ["EdTech d'Élite", "Progression par IA", "Dashboard Premium"]
         },
         {
-          category: "Expertise & Conseil",
+          category: "Conseil Fiduciaire & Audit",
           title: "AGEFIC",
-          description: "Un portail web vitrine moderne et hautement optimisé pour un cabinet de conseil juridique, fiscal et comptable. Offre une navigation intuitive, des formulaires de contact fluides et une présentation épurée des services fiduciaires.",
-          features: ["Fiduciaire & Audit", "Conseil Juridique", "Optimisation Fiscale"]
+          description: "Une vitrine digitale institutionnelle de haute voltige pour un cabinet fiduciaire d'exception. Conception minimaliste, sécurité renforcée et valorisation épurée de l'expertise conseil.",
+          features: ["Design Minimaliste", "Conseil Stratégique", "Sécurité Intégrale"]
         },
         {
           category: "Location de Voitures de Luxe",
@@ -268,34 +268,34 @@ export const translations = {
       viewCaseStudy: "View Case Study",
       projects: [
         {
-          category: "Nightlife & Entertainment",
+          category: "Bespoke Analytics & Nightlife",
           title: "Nightly",
-          description: "A high-performance analytics dashboard for the nightlife industry. Redefine guest management with real-time data visualization and an intuitive dashboard.",
-          features: ["Real-time Data", "Booking Management", "Revenue Analytics"]
+          description: "An elite analytics platform engineered for prestige nightlife venues. Streamline VIP table management, reservations, and guest data through a high-performance, real-time dashboard.",
+          features: ["VIP Table Tracking", "Real-Time Analytics", "Predictive Revenue"]
         },
         {
-          category: "Eco-Resort & Sanctuary",
+          category: "Eco-Luxury & Hospitality",
           title: "Natura Jungle",
-          description: "An immersive digital experience for a luxury eco-resort. We combined high-resolution visuals with smooth scroll animations to showcase the sanctuary's equestrian and aquatic activities.",
-          features: ["Immersive Design", "Booking System", "Smooth Animations"]
+          description: "A captivating digital experience crafted for an ultra-luxury eco-resort. Blending fluid motion and high-fidelity visuals to showcase equestrian prestige and private wellness spaces.",
+          features: ["Immersive Experiences", "Intuitive Booking", "Bespoke Art Direction"]
         },
         {
-          category: "Sports Facility Management",
+          category: "Elite Sports Arenas & Booking",
           title: "SportsArena",
-          description: "A cutting-edge sports facility management platform. Utilizes 3D visualizations and a real-time scheduling engine to simplify complex booking workflows.",
-          features: ["3D Visualization", "Scheduling Engine", "Multi-Sport Support"]
+          description: "A next-generation booking ecosystem for elite sports complexes. Featuring interactive 3D field mapping and a real-time reservation engine built to scale.",
+          features: ["3D Field Mapping", "Instant Reservations", "Secure Payments"]
         },
         {
-          category: "Executive English Training",
+          category: "Corporate EdTech & Training",
           title: "Zentia World",
-          description: "A comprehensive e-learning ecosystem for executive English training. Features a 15-module interactive curriculum, automated progress tracking, and a custom student dashboard.",
-          features: ["E-Learning", "Progress Tracking", "Student Dashboard"]
+          description: "A bespoke learning platform tailored for corporate leaders and executives. Combining interactive modules, intelligent progress tracking, and personalized dashboards.",
+          features: ["Corporate EdTech", "Smart Progression Tracking", "Executive Dashboard"]
         },
         {
-          category: "Advisory & Accounting",
+          category: "Corporate Finance & Legal Advisory",
           title: "AGEFIC",
-          description: "A modern and highly optimized showcase website for a legal, tax, and accounting advisory firm. Features intuitive navigation, smooth contact options, and a clean layout of professional services.",
-          features: ["Advisory & Audit", "Legal Council", "Tax Optimization"]
+          description: "A high-end institutional showcase designed for a premier legal and tax advisory firm. Combining minimalist design principles with high-performance navigation and structural layout.",
+          features: ["Minimalist Identity", "Strategic Counsel", "Full Data Security"]
         },
         {
           category: "Luxury Car Rental",
@@ -431,34 +431,34 @@ export const translations = {
       viewCaseStudy: "عرض دراسة الحالة",
       projects: [
         {
-          category: "الحياة الليلية والترفيه",
+          category: "تحليلات مخصصة وقطاع السهر",
           title: "Nightly",
-          description: "لوحة تحكم تحليلية عالية الأداء لصناعة الحياة الليلية. أعد تعريف إدارة الضيوف من خلال تصور البيانات في الوقت الفعلي ولوحة تحكم بديهية.",
-          features: ["بيانات فورية", "إدارة الحجز", "تحليلات الإيرادات"]
+          description: "منصة تحليلات نخبوية مصممة لأرقى وجهات الحياة الليلية. تبسيط إدارة طاولات كبار الشخصيات والحجوزات عبر لوحة تحكم تفاعلية في الوقت الفعلي.",
+          features: ["تتبع طاولات كبار الشخصيات", "عرض البيانات الفوري", "التحليلات التنبؤية"]
         },
         {
-          category: "منتجع بيئي ومحمية",
+          category: "الضيافة الفاخرة المستدامة",
           title: "Natura Jungle",
-          description: "تجربة رقمية غامرة لمنتجع بيئي فاخر. قمنا بدمج صور عالية الدقة مع رسوم متحركة سلسة لعرض أنشطة الفروسية والمائية في المحمية.",
-          features: ["تصميم غامر", "نظام حجز", "رسوم متحركة سلسة"]
+          description: "تجربة رقمية آسرة مصممة لمنتجع بيئي فاخر. دمج الحركات الانسيابية والمرئيات عالية الدقة لاستعراض تجارب الفروسية والرفاهية الخاصة بالمحمية.",
+          features: ["تجربة تفاعلية غامرة", "حجز بديهي", "إخراج فني مخصص"]
         },
         {
-          category: "إدارة المرافق الرياضية",
+          category: "المنشآت الرياضية النخبوية",
           title: "SportsArena",
-          description: "منصة متطورة لإدارة المرافق الرياضية. تستخدم تصورات ثلاثية الأبعاد ومحرك جدولة في الوقت الفعلي لتبسيط سير عمل الحجز المعقد.",
-          features: ["تصور ثلاثي الأبعاد", "محرك جدولة", "دعم رياضات متعددة"]
+          description: "نظام حجز وجدولة متطور للمجمعات الرياضية النخبوية. يتميز بتخطيط ثلاثي الأبعاد تفاعلي ومحرك حجوزات فوري فائق السرعة.",
+          features: ["خرائط ثلاثية الأبعاد", "حجز فوري", "دفع آمن متعدد القنوات"]
         },
         {
-          category: "تدريب اللغة الإنجليزية التنفيذية",
+          category: "منصات التعليم المؤسسي",
           title: "Zentia World",
-          description: "نظام تعليمي إلكتروني شامل لتدريب اللغة الإنجليزية التنفيذية. يتميز بمنهج تفاعلي مكون من 15 وحدة، وتتبع تلقائي للتقدم، ولوحة تحكم مخصصة للطلاب.",
-          features: ["تعليم إلكتروني", "تتبع التقدم", "لوحة تحكم الطالب"]
+          description: "منصة تعليمية مخصصة للقادة والمدراء التنفيذيين. تجمع بين المناهج التفاعلية، وتتبع التقدم الذكي، ولوحات التحكم الشخصية.",
+          features: ["تعليم إلكتروني نخبوي", "تتبع مدعوم بالذكاء الاصطناعي", "لوحة تحكم للمدراء"]
         },
         {
-          category: "الاستشارات والمحاسبة",
+          category: "الاستشارات المالية والقانونية للشركات",
           title: "AGEFIC",
-          description: "موقع ويب تعريفي حديث ومحسن للغاية لمكتب استشارات قانونية وضريبية ومحاسبية. يتميز بتنقل بديهي، وخيارات اتصال سلسة، وعرض منسق للخدمات المهنية.",
-          features: ["استشارات وتدقيق", "استشارة قانونية", "تحسين ضريبي"]
+          description: "بوابة رقمية مؤسسية راقية مصممة لمكتب استشارات قانونية وضريبية رائد. تصميم بسيط وتصفح فائق السرعة يعكس الاحترافية العالية.",
+          features: ["هوية بصرية بسيطة", "استشارات استراتيجية", "أمان كامل للبيانات"]
         },
         {
           category: "تأجير السيارات الفاخرة",
