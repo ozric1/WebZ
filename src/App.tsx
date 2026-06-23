@@ -57,6 +57,12 @@ const projectAssets = [
     image: "/zentiaa.png",
     color: "from-blue-500 to-cyan-600",
     link: "https://zentia.world/"
+  },
+  {
+    id: 5,
+    image: "/agefic.png",
+    color: "from-slate-800 to-indigo-950",
+    link: "https://agefic.vercel.app/"
   }
 ];
 

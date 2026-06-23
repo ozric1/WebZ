@@ -127,6 +127,12 @@ export const translations = {
           title: "Zentia World",
           description: "Un écosystème d'apprentissage complet pour la formation en anglais des cadres. Comprend un cursus interactif de 15 modules, un suivi automatisé des progrès et un tableau de bord personnalisé.",
           features: ["E-Learning", "Suivi de Progrès", "Dashboard Client"]
+        },
+        {
+          category: "Expertise & Conseil",
+          title: "AGEFIC",
+          description: "Un portail web vitrine moderne et hautement optimisé pour un cabinet de conseil juridique, fiscal et comptable. Offre une navigation intuitive, des formulaires de contact fluides et une présentation épurée des services fiduciaires.",
+          features: ["Fiduciaire & Audit", "Conseil Juridique", "Optimisation Fiscale"]
         }
       ]
     },
@@ -278,6 +284,12 @@ export const translations = {
           title: "Zentia World",
           description: "A comprehensive e-learning ecosystem for executive English training. Features a 15-module interactive curriculum, automated progress tracking, and a custom student dashboard.",
           features: ["E-Learning", "Progress Tracking", "Student Dashboard"]
+        },
+        {
+          category: "Advisory & Accounting",
+          title: "AGEFIC",
+          description: "A modern and highly optimized showcase website for a legal, tax, and accounting advisory firm. Features intuitive navigation, smooth contact options, and a clean layout of professional services.",
+          features: ["Advisory & Audit", "Legal Council", "Tax Optimization"]
         }
       ]
     },
@@ -429,6 +441,12 @@ export const translations = {
           title: "Zentia World",
           description: "نظام تعليمي إلكتروني شامل لتدريب اللغة الإنجليزية التنفيذية. يتميز بمنهج تفاعلي مكون من 15 وحدة، وتتبع تلقائي للتقدم، ولوحة تحكم مخصصة للطلاب.",
           features: ["تعليم إلكتروني", "تتبع التقدم", "لوحة تحكم الطالب"]
+        },
+        {
+          category: "الاستشارات والمحاسبة",
+          title: "AGEFIC",
+          description: "موقع ويب تعريفي حديث ومحسن للغاية لمكتب استشارات قانونية وضريبية ومحاسبية. يتميز بتنقل بديهي، وخيارات اتصال سلسة، وعرض منسق للخدمات المهنية.",
+          features: ["استشارات وتدقيق", "استشارة قانونية", "تحسين ضريبي"]
         }
       ]
     },
