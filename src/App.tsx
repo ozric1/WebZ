@@ -17,6 +17,7 @@ import {
 } from 'lucide-react';
 import { useLanguage } from './LanguageContext';
 import { GlobePulse } from './components/ui/cobe-globe-pulse';
+import { Analytics } from '@vercel/analytics/react';
 
 import { LiquidMetalButton } from './components/ui/liquid-metal-button';
 import { DottedSurface } from './components/ui/dotted-surface';
@@ -628,6 +629,7 @@ export default function App() {
         <Contact />
       </main>
       <Footer />
+      <Analytics />
     </div>
   );
 }
