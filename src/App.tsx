@@ -13,7 +13,8 @@ import {
   ExternalLink,
   Globe,
   Menu,
-  X
+  X,
+  Check
 } from 'lucide-react';
 import { useLanguage } from './LanguageContext';
 import { GlobePulse } from './components/ui/cobe-globe-pulse';
@@ -24,6 +25,7 @@ import { DottedSurface } from './components/ui/dotted-surface';
 import { Banner } from './components/ui/banner';
 import FAQ from './components/FAQ';
 import BookingModal from './components/BookingModal';
+import { ExpandableGallery } from './components/ui/expandable-gallery';
 
 // --- Assets Data ---
 const serviceIcons = [
@@ -36,36 +38,42 @@ const serviceIcons = [
 const projectAssets = [
   {
     id: 1,
+    image: "/madibee.webp",
+    color: "from-[#eeff96] to-[#233102]",
+    link: "https://madibee.netlify.app/"
+  },
+  {
+    id: 2,
     image: "/nightly.webp",
     color: "from-purple-500 to-indigo-600",
     link: "https://nightllife.netlify.app/"
   },
   {
-    id: 2,
+    id: 3,
     image: "/naatura.webp",
     color: "from-yellow-600 to-amber-700",
     link: "https://naturajungle.ma/"
   },
   {
-    id: 3,
+    id: 4,
     image: "/sportsfields.webp",
     color: "from-orange-500 to-red-600",
     link: "https://soccer-eight-henna.vercel.app/fr"
   },
   {
-    id: 4,
+    id: 5,
     image: "/zentiaa.webp",
     color: "from-blue-500 to-cyan-600",
     link: "https://zentia.world/"
   },
   {
-    id: 5,
+    id: 6,
     image: "/agefic.webp",
     color: "from-slate-800 to-indigo-950",
     link: "https://agefic.vercel.app/"
   },
   {
-    id: 6,
+    id: 7,
     image: "/hilton.webp",
     color: "from-amber-600 to-zinc-900",
     link: "https://hilton-vip-rentals.vercel.app/"
@@ -397,17 +405,14 @@ const Services = () => {
   );
 };
 
-import { Badge } from './components/ui/badge';
-import { ArrowUpRight } from 'lucide-react';
-import { ExpandableGallery } from './components/ui/expandable-gallery';
-
 const Work = () => {
   const { t, language } = useLanguage();
 
   const projects = t.work.projects.map((p, i) => ({
     ...p,
-    image: projectAssets[i].image,
-    link: projectAssets[i].link
+    image: projectAssets[i]?.image || '',
+    link: projectAssets[i]?.link || '',
+    color: projectAssets[i]?.color || ''
   }));
 
   const exploreMoreText = language === 'fr' ? 'Explorer plus de projets' : language === 'ar' ? 'استكشف المزيد من المشاريع' : 'Explore more projects';
@@ -425,8 +430,6 @@ const Work = () => {
     </section>
   );
 };
-
-import { Check } from 'lucide-react';
 
 const Pricing = () => {
   const { t, language } = useLanguage();

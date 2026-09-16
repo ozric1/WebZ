@@ -105,6 +105,12 @@ export const translations = {
       viewCaseStudy: "Voir l'étude de cas",
       projects: [
         {
+          category: "Haute Parfumerie & Soins Capillaires de Luxe",
+          title: "Madibee",
+          description: "Une boutique e-commerce d'exception dédiée aux fragrances raffinées et aux soins capillaires botaniques de prestige. Une direction artistique élégante, des micro-interactions soignées et un parcours d'achat luxueux.",
+          features: ["Haute Parfumerie", "Soins Botaniques Rares", "E-Commerce de Luxe"]
+        },
+        {
           category: "Analyses sur Mesure & Clubbing High-End",
           title: "Nightly",
           description: "Une plateforme analytique d'élite dédiée aux établissements de prestige. Optimisez l'expérience VIP et la gestion des réservations en temps réel via un tableau de bord haute performance et immersif.",
@@ -268,6 +274,12 @@ export const translations = {
       viewCaseStudy: "View Case Study",
       projects: [
         {
+          category: "Luxury Fragrance & Botanical Hair Care",
+          title: "Madibee",
+          description: "An ultra-premium e-commerce flagship celebrating bespoke fragrances and prestige botanical hair care. Featuring refined editorial aesthetics, fluid interactions, and an effortless luxury shopping journey.",
+          features: ["Haute Parfumerie", "Botanical Hair Care", "Luxury E-Commerce"]
+        },
+        {
           category: "Bespoke Analytics & Nightlife",
           title: "Nightly",
           description: "An elite analytics platform engineered for prestige nightlife venues. Streamline VIP table management, reservations, and guest data through a high-performance, real-time dashboard.",
@@ -430,6 +442,12 @@ export const translations = {
       description: "عرض لمشاريعنا الأخيرة، يسلط الضوء على التصميم التفاعلي والهندسة القوية.",
       viewCaseStudy: "عرض دراسة الحالة",
       projects: [
+        {
+          category: "العطور الفاخرة والعناية بالشعر",
+          title: "Madibee",
+          description: "منصة تجارة إلكترونية راقية متخصصة في العطور الفاخرة ومستحضرات العناية النباتية بالشعر. تجمع بين الجماليات التحريرية والتجربة الحسية الغامرة لتوفير رحلة تسوق استثنائية.",
+          features: ["تجارة إلكترونية فاخرة", "عناية نباتية فائقة", "عطور حصرية"]
+        },
         {
           category: "تحليلات مخصصة وقطاع السهر",
           title: "Nightly",
