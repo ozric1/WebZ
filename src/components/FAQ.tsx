@@ -40,7 +40,7 @@ const FAQ = () => {
             </div>
             <div>
               <p className="font-semibold text-emerald-400 mb-1">2. Le Premium — Site géré (WaaS) :</p>
-              <p>2 500 DH de mise en place + 690 DH / mois (engagement 6 mois minimum). Hébergement cloud, sauvegardes quotidiennes, 2h/mois de mises à jour de contenu et support WhatsApp sous 24h ouvrées.</p>
+              <p>3 500 DH de mise en place + 690 DH / mois (abonnement de 12 mois). Hébergement cloud, sauvegardes quotidiennes, 2h/mois de mises à jour de contenu et support WhatsApp sous 24h ouvrées.</p>
             </div>
             <div>
               <p className="font-semibold text-emerald-400 mb-1">3. Sur Mesure (E-Commerce & Apps) :</p>
@@ -57,7 +57,7 @@ const FAQ = () => {
             </div>
             <div>
               <p className="font-semibold text-emerald-400 mb-1">2. The Premium — Managed Site (WaaS):</p>
-              <p>2,500 DH setup + 690 DH/month (6-month min commitment). Includes high-speed hosting, daily backups, 2h/month updates, and WhatsApp support under 24h.</p>
+              <p>3,500 DH setup + 690 DH/month (12-month commitment). Includes high-speed hosting, daily backups, 2h/month updates, and WhatsApp support under 24h.</p>
             </div>
             <div>
               <p className="font-semibold text-emerald-400 mb-1">3. Custom Build (E-Commerce & SaaS):</p>
@@ -74,7 +74,7 @@ const FAQ = () => {
             </div>
             <div>
               <p className="font-semibold text-emerald-400 mb-1">2. الاحترافي — الموقع المدار (WaaS):</p>
-              <p>2500 درهم إعداد أولي + 690 درهم شهرياً (التزام 6 أشهر كحد أدنى). يشمل الاستضافة السحابية والنسخ الاحتياطي وساعتين تحديثات شهرياً ودعم واتساب سريع.</p>
+              <p>3500 درهم إعداد أولي + 690 درهم شهرياً (اشتراك لمدة 12 شهراً). يشمل الاستضافة السحابية والنسخ الاحتياطي وساعتين تحديثات شهرياً ودعم واتساب سريع.</p>
             </div>
             <div>
               <p className="font-semibold text-emerald-400 mb-1">3. بناء مخصص (متاجر وتطبيقات):</p>

@@ -231,7 +231,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onBookCall }) =>
                   <span className="text-xs text-zinc-400 font-medium">/ mois</span>
                 </div>
                 <div className="text-xs text-emerald-300 font-semibold">
-                  {currency === 'MAD' ? '+ 2 500 MAD mise en place initiale' : currency === 'EUR' ? '+ 250 € setup' : '+ $290 setup'}
+                  {currency === 'MAD' ? '+ 3 500 MAD mise en place initiale' : currency === 'EUR' ? '+ 350 € setup' : '+ $390 setup'}
                 </div>
                 <div className="text-[11px] text-zinc-400 mt-1">
                   {isFr ? 'Abonnement mensuel de 12 mois' : isAr ? 'اشتراك شهري لمدة 12 شهراً' : '12-month monthly subscription'}
