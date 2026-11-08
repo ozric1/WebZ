@@ -7,25 +7,30 @@ import {
   Box, 
   ArrowRight, 
   Mail, 
-  MessageCircle,
+  MessageCircle, 
   Github, 
   Linkedin, 
-  ExternalLink,
-  Globe,
-  Menu,
-  X,
-  Check
+  ExternalLink, 
+  Globe, 
+  Menu, 
+  X, 
+  Check,
+  ShieldCheck,
+  Calendar as CalendarIcon,
+  Phone
 } from 'lucide-react';
 import { useLanguage } from './LanguageContext';
 import { GlobePulse } from './components/ui/cobe-globe-pulse';
 import { Analytics } from '@vercel/analytics/react';
 
-import { LiquidMetalButton } from './components/ui/liquid-metal-button';
 import { DottedSurface } from './components/ui/dotted-surface';
-import { Banner } from './components/ui/banner';
 import FAQ from './components/FAQ';
 import BookingModal from './components/BookingModal';
+import LegalModal from './components/LegalModal';
 import { ExpandableGallery } from './components/ui/expandable-gallery';
+import CaseStudyAndTestimonial from './components/CaseStudyAndTestimonial';
+import PricingSection from './components/PricingSection';
+import Founder from './components/Founder';
 
 // --- Assets Data ---
 const serviceIcons = [
@@ -35,42 +40,43 @@ const serviceIcons = [
   <Rocket className="w-6 h-6" />
 ];
 
+// Curated Project Assets: Top 4 are Live, followed by UI/3D prototypes
 const projectAssets = [
   {
     id: 1,
-    image: "/madibee.webp",
-    color: "from-[#eeff96] to-[#233102]",
-    link: "https://madibee.netlify.app/"
-  },
-  {
-    id: 2,
-    image: "/nightly.webp",
-    color: "from-purple-500 to-indigo-600",
-    link: "https://nightllife.netlify.app/"
-  },
-  {
-    id: 3,
     image: "/naatura.webp",
     color: "from-yellow-600 to-amber-700",
     link: "https://naturajungle.ma/"
   },
   {
-    id: 4,
-    image: "/sportsfields.webp",
-    color: "from-orange-500 to-red-600",
-    link: "https://soccer-eight-henna.vercel.app/fr"
-  },
-  {
-    id: 5,
+    id: 2,
     image: "/zentiaa.webp",
     color: "from-blue-500 to-cyan-600",
     link: "https://zentia.world/"
   },
   {
-    id: 6,
+    id: 3,
     image: "/agefic.webp",
     color: "from-slate-800 to-indigo-950",
     link: "https://agefic.vercel.app/"
+  },
+  {
+    id: 4,
+    image: "/madibee.webp",
+    color: "from-[#eeff96] to-[#233102]",
+    link: "https://madibee.netlify.app/"
+  },
+  {
+    id: 5,
+    image: "/sportsfields.webp",
+    color: "from-orange-500 to-red-600",
+    link: "https://soccer-eight-henna.vercel.app/fr"
+  },
+  {
+    id: 6,
+    image: "/nightly.webp",
+    color: "from-purple-500 to-indigo-600",
+    link: "https://nightllife.netlify.app/"
   },
   {
     id: 7,
@@ -80,12 +86,18 @@ const projectAssets = [
   }
 ];
 
-// --- Components ---
+// --- Navbar Component ---
+interface NavbarProps {
+  onBookCall: () => void;
+}
 
-const Navbar = () => {
+const Navbar: React.FC<NavbarProps> = ({ onBookCall }) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { t, language, setLanguage, dir } = useLanguage();
+
+  const isFr = language === 'fr';
+  const isAr = language === 'ar';
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -100,7 +112,7 @@ const Navbar = () => {
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-          scrolled ? 'bg-black/50 backdrop-blur-md border-b border-white/10 py-4' : 'bg-transparent py-6'
+          scrolled ? 'bg-black/60 backdrop-blur-md border-b border-white/10 py-4' : 'bg-transparent py-6'
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
@@ -117,11 +129,17 @@ const Navbar = () => {
             web<span className="text-teal-400 transition-colors duration-300 group-hover:text-emerald-400">Z</span>
           </motion.a>
           
-          <div className="hidden md:flex gap-8 text-sm font-medium text-zinc-400">
+          <div className="hidden lg:flex gap-7 text-sm font-medium text-zinc-400">
             <a href="#about" className="hover:text-white transition-colors">{t.nav.about}</a>
             <a href="#services" className="hover:text-white transition-colors">{t.nav.services}</a>
             <a href="#work" className="hover:text-white transition-colors">{t.nav.work}</a>
+            <a href="#casestudy" className="hover:text-white transition-colors">
+              {isFr ? 'Étude de Cas' : isAr ? 'دراسة حالة' : 'Case Study'}
+            </a>
             <a href="#pricing" className="hover:text-white transition-colors">{t.nav.pricing}</a>
+            <a href="#founder" className="hover:text-white transition-colors">
+              {isFr ? 'Fondateur' : isAr ? 'المؤسس' : 'Founder'}
+            </a>
             <a href="#faq" className="hover:text-white transition-colors">{t.nav.faq}</a>
             <a href="#contact" className="hover:text-white transition-colors">{t.nav.contact}</a>
           </div>
@@ -131,36 +149,39 @@ const Navbar = () => {
               <Globe className="w-4 h-4 text-zinc-400" />
               <button 
                 onClick={() => setLanguage('fr')} 
-                className={`text-xs font-medium transition-colors ${language === 'fr' ? 'text-white' : 'text-zinc-500 hover:text-zinc-300'}`}
+                className={`text-xs font-medium transition-colors ${language === 'fr' ? 'text-white font-bold' : 'text-zinc-500 hover:text-zinc-300'}`}
               >
                 FR
               </button>
               <span className="text-zinc-700">|</span>
               <button 
                 onClick={() => setLanguage('en')} 
-                className={`text-xs font-medium transition-colors ${language === 'en' ? 'text-white' : 'text-zinc-500 hover:text-zinc-300'}`}
+                className={`text-xs font-medium transition-colors ${language === 'en' ? 'text-white font-bold' : 'text-zinc-500 hover:text-zinc-300'}`}
               >
                 EN
               </button>
               <span className="text-zinc-700">|</span>
               <button 
                 onClick={() => setLanguage('ar')} 
-                className={`text-xs font-medium transition-colors ${language === 'ar' ? 'text-white' : 'text-zinc-500 hover:text-zinc-300'}`}
+                className={`text-xs font-medium transition-colors ${language === 'ar' ? 'text-white font-bold' : 'text-zinc-500 hover:text-zinc-300'}`}
               >
                 AR
               </button>
             </div>
-            <a 
-              href="#contact" 
-              className="hidden sm:block px-6 py-2.5 bg-[#15803d] text-white text-sm font-bold rounded-full hover:bg-[#15803d]/90 transition-all duration-300 shadow-[0_0_20px_rgba(21,128,61,0.3)] hover:shadow-[0_0_25px_rgba(21,128,61,0.5)] border border-[#15803d]/50"
+
+            <button 
+              onClick={onBookCall}
+              className="hidden sm:flex items-center gap-2 px-5 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold rounded-full transition-all duration-300 shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_25px_rgba(16,185,129,0.5)] border border-emerald-500/50 cursor-pointer active:scale-95"
             >
-              {t.nav.letsTalk}
-            </a>
+              <CalendarIcon className="w-3.5 h-3.5" />
+              <span>{t.nav.letsTalk}</span>
+            </button>
             
             {/* Mobile Menu Toggle */}
             <button 
-              className="md:hidden p-2 text-zinc-400 hover:text-white transition-colors"
+              className="lg:hidden p-2 text-zinc-400 hover:text-white transition-colors"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="Toggle menu"
             >
               {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -170,48 +191,53 @@ const Navbar = () => {
 
       {/* Mobile Menu Overlay */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-40 bg-black/95 backdrop-blur-xl md:hidden pt-24 px-6 flex flex-col">
-          <div className="flex flex-col gap-6 text-2xl font-display font-medium mb-12">
+        <div className="fixed inset-0 z-40 bg-black/95 backdrop-blur-xl lg:hidden pt-24 px-6 flex flex-col">
+          <div className="flex flex-col gap-5 text-xl font-display font-medium mb-12">
             <a href="#about" onClick={() => setMobileMenuOpen(false)} className="text-zinc-400 hover:text-white transition-colors">{t.nav.about}</a>
             <a href="#services" onClick={() => setMobileMenuOpen(false)} className="text-zinc-400 hover:text-white transition-colors">{t.nav.services}</a>
             <a href="#work" onClick={() => setMobileMenuOpen(false)} className="text-zinc-400 hover:text-white transition-colors">{t.nav.work}</a>
+            <a href="#casestudy" onClick={() => setMobileMenuOpen(false)} className="text-zinc-400 hover:text-white transition-colors">
+              {isFr ? 'Étude de Cas (Natura Jungle)' : 'Case Study'}
+            </a>
             <a href="#pricing" onClick={() => setMobileMenuOpen(false)} className="text-zinc-400 hover:text-white transition-colors">{t.nav.pricing}</a>
+            <a href="#founder" onClick={() => setMobileMenuOpen(false)} className="text-zinc-400 hover:text-white transition-colors">
+              {isFr ? 'Fondateur (Nezar)' : 'Founder'}
+            </a>
             <a href="#faq" onClick={() => setMobileMenuOpen(false)} className="text-zinc-400 hover:text-white transition-colors">{t.nav.faq}</a>
             <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="text-zinc-400 hover:text-white transition-colors">{t.nav.contact}</a>
           </div>
           
-          <div className="flex flex-col gap-6 mt-auto mb-12">
+          <div className="flex flex-col gap-5 mt-auto mb-10">
             <div className="flex items-center gap-4 bg-white/5 border border-white/10 rounded-full px-4 py-3 w-max">
               <Globe className="w-5 h-5 text-zinc-400" />
               <button 
                 onClick={() => { setLanguage('fr'); setMobileMenuOpen(false); }} 
-                className={`text-sm font-medium transition-colors ${language === 'fr' ? 'text-white' : 'text-zinc-500 hover:text-zinc-300'}`}
+                className={`text-sm font-medium transition-colors ${language === 'fr' ? 'text-white font-bold' : 'text-zinc-500 hover:text-zinc-300'}`}
               >
                 FR
               </button>
               <span className="text-zinc-700">|</span>
               <button 
                 onClick={() => { setLanguage('en'); setMobileMenuOpen(false); }} 
-                className={`text-sm font-medium transition-colors ${language === 'en' ? 'text-white' : 'text-zinc-500 hover:text-zinc-300'}`}
+                className={`text-sm font-medium transition-colors ${language === 'en' ? 'text-white font-bold' : 'text-zinc-500 hover:text-zinc-300'}`}
               >
                 EN
               </button>
               <span className="text-zinc-700">|</span>
               <button 
                 onClick={() => { setLanguage('ar'); setMobileMenuOpen(false); }} 
-                className={`text-sm font-medium transition-colors ${language === 'ar' ? 'text-white' : 'text-zinc-500 hover:text-zinc-300'}`}
+                className={`text-sm font-medium transition-colors ${language === 'ar' ? 'text-white font-bold' : 'text-zinc-500 hover:text-zinc-300'}`}
               >
                 AR
               </button>
             </div>
             
-            <a 
-              href="#contact" 
-              onClick={() => setMobileMenuOpen(false)}
-              className="px-6 py-4 bg-[#15803d] text-white text-center font-bold rounded-full hover:bg-[#15803d]/90 transition-all duration-300 shadow-[0_0_25px_rgba(21,128,61,0.4)] border border-[#15803d]/50"
+            <button 
+              onClick={() => { setMobileMenuOpen(false); onBookCall(); }}
+              className="px-6 py-4 bg-emerald-600 text-white text-center font-bold rounded-full hover:bg-emerald-500 transition-all shadow-[0_0_25px_rgba(16,185,129,0.4)] border border-emerald-500/50 cursor-pointer"
             >
               {t.nav.letsTalk}
-            </a>
+            </button>
           </div>
         </div>
       )}
@@ -219,21 +245,27 @@ const Navbar = () => {
   );
 };
 
-const Hero = () => {
+// --- Hero Component ---
+interface HeroProps {
+  onBookCall: () => void;
+}
+
+const Hero: React.FC<HeroProps> = ({ onBookCall }) => {
   const { scrollY } = useScroll();
   const y = useTransform(scrollY, [0, 1000], [0, 200]);
   const opacity = useTransform(scrollY, [0, 500], [1, 0]);
-  const { t, dir } = useLanguage();
+  const { t, language, dir } = useLanguage();
+
+  const isFr = language === 'fr';
+  const isAr = language === 'ar';
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-      {/* Abstract Background Elements */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-[120px]" />
-        <div className="absolute bottom-1/4 right-1/4 w-[30rem] h-[30rem] bg-purple-500/10 rounded-full blur-[150px]" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-emerald-500/15 rounded-full blur-[140px]" />
+        <div className="absolute bottom-1/4 right-1/4 w-[30rem] h-[30rem] bg-teal-500/10 rounded-full blur-[150px]" />
       </div>
 
-      {/* Globe Background */}
       <div className="absolute inset-0 z-0 flex items-center justify-center opacity-30 md:opacity-50 pointer-events-auto mt-20">
         <div className="w-full max-w-[600px] md:max-w-[800px]">
           <GlobePulse />
@@ -248,11 +280,11 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-teal-500/30 bg-teal-500/10 backdrop-blur-sm mb-8 pointer-events-auto shadow-[0_0_15px_rgba(20,184,166,0.15)]"
+          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-teal-500/30 bg-teal-500/10 backdrop-blur-sm mb-6 pointer-events-auto shadow-[0_0_15px_rgba(20,184,166,0.15)]"
         >
           <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_rgba(52,211,153,0.8)]" />
           <span className="text-xs font-bold text-teal-100 uppercase tracking-widest">
-            Made in Morocco
+            {isFr ? 'Nezar Abdeljalil • Casablanca & International' : isAr ? 'نزار عبد الجليل • المغرب ودولياً' : 'Nezar Abdeljalil • Casablanca & International'}
           </span>
         </motion.div>
 
@@ -263,7 +295,7 @@ const Hero = () => {
           className="text-5xl md:text-7xl lg:text-8xl font-display font-bold tracking-tighter leading-[1.1] mb-6"
         >
           {t.hero.title1} <br className="hidden md:block" />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-zinc-500">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-200 to-zinc-500">
             {t.hero.title2}
           </span>
         </motion.h1>
@@ -277,24 +309,27 @@ const Hero = () => {
           {t.hero.description}
         </motion.p>
 
+        {/* Dual Primary Call-to-Actions */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4 pointer-events-auto mb-16"
         >
+          <button 
+            onClick={onBookCall}
+            className="w-full sm:w-auto px-8 py-4 bg-emerald-500 hover:bg-emerald-400 text-black font-extrabold rounded-full transition-all duration-300 flex items-center justify-center gap-2.5 shadow-[0_0_25px_rgba(16,185,129,0.35)] hover:shadow-[0_0_35px_rgba(16,185,129,0.5)] active:scale-95 cursor-pointer group"
+          >
+            <CalendarIcon className="w-4 h-4 text-black" />
+            <span>{isFr ? 'Réserver un Appel' : isAr ? 'احجز استشارة مجانية' : 'Book a Discovery Call'}</span>
+            <ArrowRight className={`w-4 h-4 transition-transform ${dir === 'rtl' ? 'group-hover:-translate-x-1 rotate-180' : 'group-hover:translate-x-1'}`} />
+          </button>
+          
           <a 
             href="#work" 
-            className="w-full sm:w-auto px-8 py-4 bg-white text-black font-medium rounded-full hover:bg-zinc-200 transition-colors flex items-center justify-center gap-2 group"
+            className="w-full sm:w-auto px-8 py-4 bg-white/5 hover:bg-white/10 border border-white/20 text-white font-medium rounded-full transition-colors flex items-center justify-center gap-2"
           >
             {t.hero.viewWork}
-            <ArrowRight className={`w-4 h-4 transition-transform ${dir === 'rtl' ? 'group-hover:-translate-x-1 rotate-180' : 'group-hover:translate-x-1'}`} />
-          </a>
-          <a 
-            href="#services" 
-            className="w-full sm:w-auto px-8 py-4 bg-transparent border border-white/20 text-white font-medium rounded-full hover:bg-white/5 transition-colors"
-          >
-            {t.hero.whatIDo}
           </a>
         </motion.div>
 
@@ -306,8 +341,8 @@ const Hero = () => {
           className="max-w-3xl mx-auto overflow-hidden pointer-events-auto"
         >
           <div className="flex items-center justify-center gap-8 md:gap-12 flex-wrap opacity-40 hover:opacity-100 transition-opacity duration-500">
-            {['React', 'Next.js', 'TypeScript', 'Tailwind', 'Framer Motion', 'Three.js', 'Node.js', 'PostgreSQL'].map((tech) => (
-              <span key={tech} className="text-sm font-medium tracking-widest uppercase text-zinc-500 hover:text-white transition-colors cursor-default">
+            {['React 19', 'Next.js', 'TypeScript', 'Tailwind', 'Framer Motion', 'Node.js', 'PostgreSQL'].map((tech) => (
+              <span key={tech} className="text-xs font-semibold tracking-widest uppercase text-zinc-500 hover:text-white transition-colors cursor-default">
                 {tech}
               </span>
             ))}
@@ -318,11 +353,12 @@ const Hero = () => {
   );
 };
 
+// --- About Component ---
 const About = () => {
   const { t } = useLanguage();
 
   return (
-    <section id="about" className="py-20 md:py-24 relative z-10 bg-transparent">
+    <section id="about" className="py-20 md:py-24 relative z-10 bg-transparent scroll-mt-24">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="mb-12 md:mb-16 text-center">
           <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight mb-4">
@@ -341,11 +377,11 @@ const About = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-[#0a0f18] p-8 rounded-3xl border border-white/5 flex flex-col items-center text-center shadow-lg relative overflow-hidden group"
+              className="bg-[#0a0f18] p-8 rounded-3xl border border-white/5 flex flex-col items-center text-center shadow-lg relative overflow-hidden group hover:border-emerald-500/30 transition-colors"
             >
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#15803d] to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-emerald-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
               <div className="mb-6 flex items-center justify-center">
-                <div className="w-12 h-12 rounded-full bg-[#15803d]/10 flex items-center justify-center text-[#15803d] shadow-[0_0_15px_rgba(21,128,61,0.2)]">
+                <div className="w-12 h-12 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-400 shadow-[0_0_15px_rgba(16,185,129,0.2)]">
                   {index === 0 && <Rocket className="w-6 h-6" />}
                   {index === 1 && <Globe className="w-6 h-6" />}
                   {index === 2 && <Code2 className="w-6 h-6" />}
@@ -361,11 +397,12 @@ const About = () => {
   );
 };
 
+// --- Services Component ---
 const Services = () => {
   const { t } = useLanguage();
 
   return (
-    <section id="services" className="py-20 md:py-24 relative z-10 bg-transparent">
+    <section id="services" className="py-20 md:py-24 relative z-10 bg-transparent scroll-mt-24">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="mb-12 md:mb-16">
           <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight mb-4">
@@ -384,9 +421,9 @@ const Services = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="p-8 rounded-3xl bg-[#0a0f18] border border-white/10 hover:border-teal-500/30 transition-colors group shadow-lg"
+              className="p-8 rounded-3xl bg-[#0a0f18] border border-white/10 hover:border-emerald-500/30 transition-colors group shadow-lg"
             >
-              <div className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center mb-6 text-white group-hover:scale-110 group-hover:bg-teal-500/20 group-hover:text-teal-400 transition-all duration-300">
+              <div className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center mb-6 text-white group-hover:scale-110 group-hover:bg-emerald-500/20 group-hover:text-emerald-400 transition-all duration-300">
                 {serviceIcons[index]}
               </div>
               <div className="mb-4">
@@ -405,10 +442,11 @@ const Services = () => {
   );
 };
 
+// --- Work Component ---
 const Work = () => {
   const { t, language } = useLanguage();
 
-  const projects = t.work.projects.map((p, i) => ({
+  const projects = t.work.projects.map((p: any, i: number) => ({
     ...p,
     image: projectAssets[i]?.image || '',
     link: projectAssets[i]?.link || '',
@@ -419,7 +457,7 @@ const Work = () => {
   const goBackText = language === 'fr' ? 'Retour' : language === 'ar' ? 'العودة' : 'Go back';
 
   return (
-    <section id="work" className="py-20 md:py-24 relative z-10 bg-transparent">
+    <section id="work" className="py-20 md:py-24 relative z-10 bg-transparent scroll-mt-24">
       <ExpandableGallery 
         projects={projects}
         title={t.work.title}
@@ -431,157 +469,147 @@ const Work = () => {
   );
 };
 
-const Pricing = () => {
+// --- Contact Component ---
+interface ContactProps {
+  onBookCall: () => void;
+}
+
+const Contact: React.FC<ContactProps> = ({ onBookCall }) => {
   const { t, language } = useLanguage();
-
-  const getWhatsAppLink = (planName: string, lang: string) => {
-    const phone = '212634175357';
-    let message = '';
-    if (lang === 'fr') message = `Bonjour! Je suis intéressé(e) par le plan: ${planName}.`;
-    else if (lang === 'ar') message = `مرحباً! أنا مهتم بخطة: ${planName}.`;
-    else message = `Hello! I am interested in the ${planName} plan.`;
-    return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-  };
+  const isFr = language === 'fr';
+  const isAr = language === 'ar';
 
   return (
-    <section id="pricing" className="py-20 md:py-32 relative z-10 bg-transparent">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="text-center mb-16 md:mb-24">
-          <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight mb-4 text-white">
-            {t.pricing.title}
-          </h2>
-          <p className="text-xl md:text-2xl text-zinc-300 font-medium">
-            {t.pricing.subtitle}
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {t.pricing.tiers.map((tier: any, index: number) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`rounded-[2rem] p-8 flex flex-col relative ${
-                tier.popular 
-                  ? 'bg-[#0a0f18] border-2 border-[#15803d] md:-mt-8 md:mb-8 scale-100 md:scale-105 z-10 shadow-[0_0_40px_rgba(21,128,61,0.15)]' 
-                  : 'bg-black/40 border border-white/10'
-              }`}
-            >
-              {tier.popular && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#15803d] text-white text-xs font-bold uppercase tracking-wider py-1.5 px-4 rounded-full">
-                  Recommandé
-                </div>
-              )}
-              
-              <div className="mb-8">
-                <h3 className="text-2xl font-bold text-white mb-2">{tier.name}</h3>
-                <p className="text-zinc-400 text-sm h-10">{tier.description}</p>
-                <div className="mt-6 flex items-baseline">
-                  <span className="text-[1.3rem] font-bold text-white">{tier.price}</span>
-                </div>
-              </div>
-
-              <div className="flex-grow space-y-4 mb-8">
-                {tier.features.map((feature: string, idx: number) => (
-                  <div key={idx} className="flex items-start gap-3">
-                    <Check className={`w-5 h-5 mt-0.5 shrink-0 ${tier.popular ? 'text-[#15803d]' : 'text-zinc-500'}`} />
-                    <span className="text-zinc-300 text-sm leading-tight">{feature}</span>
-                  </div>
-                ))}
-              </div>
-
-              <a
-                href={getWhatsAppLink(tier.name, language)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`w-full py-4 rounded-xl text-center font-bold text-sm transition-all duration-300 ${
-                  tier.popular
-                    ? 'bg-[#15803d] text-white hover:bg-[#15803d]/90 shadow-[0_0_20px_rgba(21,128,61,0.3)]'
-                    : 'bg-white/5 text-white hover:bg-white/10 border border-white/10'
-                }`}
-              >
-                {tier.button}
-              </a>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
-
-const Contact = () => {
-  const { t, dir } = useLanguage();
-  const [isBookingOpen, setIsBookingOpen] = useState(false);
-
-  return (
-    <section id="contact" className="py-20 md:py-24 relative z-10 bg-transparent">
+    <section id="contact" className="py-20 md:py-24 relative z-10 bg-transparent scroll-mt-24">
       <div className="max-w-5xl mx-auto px-6 md:px-12">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="p-12 md:p-20 rounded-[3rem] bg-zinc-900/50 border border-white/5 relative overflow-hidden flex flex-col items-center text-center"
+          className="p-10 md:p-16 rounded-[3rem] bg-zinc-900/50 border border-white/5 relative overflow-hidden flex flex-col items-center text-center"
         >
-          <div className="absolute inset-0 bg-gradient-to-b from-blue-500/5 to-transparent pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-emerald-500/5 to-transparent pointer-events-none" />
           
-          <h2 className="text-4xl md:text-6xl font-display font-bold tracking-tight mb-16 relative z-10">
+          <h2 className="text-4xl md:text-6xl font-display font-bold tracking-tight mb-14 relative z-10">
             {t.contact.title1} <br className="hidden md:block" />
             <span className="text-zinc-500">{t.contact.title2}</span>
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left mb-16 relative z-10 w-full">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left mb-14 relative z-10 w-full">
             {t.contact.steps?.map((step: any, index: number) => (
-              <div key={index} className="bg-black/40 p-8 rounded-2xl border border-white/5 hover:border-white/10 transition-colors">
-                <div className="text-blue-500 font-mono text-sm mb-3">0{index + 1}</div>
-                <h3 className="text-xl font-bold text-white mb-3">{step.title}</h3>
-                <p className="text-zinc-400 leading-relaxed">{step.description}</p>
+              <div key={index} className="bg-black/40 p-7 rounded-2xl border border-white/5 hover:border-emerald-500/20 transition-colors">
+                <div className="text-emerald-400 font-mono text-xs font-bold mb-2">0{index + 1}</div>
+                <h3 className="text-lg font-bold text-white mb-2">{step.title}</h3>
+                <p className="text-zinc-400 text-sm leading-relaxed">{step.description}</p>
               </div>
             ))}
           </div>
 
-          <p className="text-zinc-300 text-xl md:text-2xl font-medium mb-10 max-w-2xl mx-auto relative z-10">
+          <p className="text-zinc-300 text-lg md:text-xl font-medium mb-8 max-w-2xl mx-auto relative z-10">
             {t.contact.description}
           </p>
           
-          <div className="relative z-10 mt-4">
-            <LiquidMetalButton 
-              label={t.contact.startProject} 
-              onClick={() => setIsBookingOpen(true)}
-              width={320}
-            />
+          {/* Working Next Steps: Dual Option */}
+          <div className="relative z-10 flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+            <button
+              onClick={onBookCall}
+              className="w-full sm:w-auto px-10 py-4 rounded-full bg-emerald-500 hover:bg-emerald-400 text-black font-extrabold text-sm flex items-center justify-center gap-2 shadow-[0_0_25px_rgba(16,185,129,0.35)] transition-all cursor-pointer active:scale-95"
+            >
+              <CalendarIcon className="w-4 h-4 text-black" />
+              <span>{isFr ? 'Réserver une Consultation Gratuite' : isAr ? 'احجز استشارة مجانية' : 'Book a Free Consultation'}</span>
+            </button>
+
+            <a
+              href="https://wa.me/212634175357"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto px-8 py-4 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-white font-bold text-sm flex items-center justify-center gap-2 transition-all"
+            >
+              <MessageCircle className="w-4 h-4 text-emerald-400" />
+              <span>WhatsApp</span>
+            </a>
           </div>
 
           <FAQ />
         </motion.div>
       </div>
-
-      <BookingModal 
-        isOpen={isBookingOpen} 
-        onClose={() => setIsBookingOpen(false)} 
-      />
     </section>
   );
 };
 
-const Footer = () => {
-  const { t } = useLanguage();
+// --- Footer Component ---
+interface FooterProps {
+  onOpenLegal: (tab: 'mentions' | 'terms' | 'privacy') => void;
+}
+
+const Footer: React.FC<FooterProps> = ({ onOpenLegal }) => {
+  const { t, language } = useLanguage();
+  const isFr = language === 'fr';
 
   return (
-    <footer className="py-8 border-t border-white/10 bg-transparent relative z-10">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-4">
-        <div className="text-zinc-500 text-sm">
-          © {new Date().getFullYear()} {t.footer.rights}
+    <footer className="py-12 border-t border-white/10 bg-[#05070a] relative z-10">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-6">
+        
+        <div className="flex flex-col items-center md:items-start gap-1">
+          <div className="text-zinc-400 text-sm font-semibold">
+            © {new Date().getFullYear()} webZ • Nezar Abdeljalil
+          </div>
+          <div className="text-zinc-500 text-xs">
+            {isFr 
+              ? 'Prestataire digital (Auto-Entrepreneur) • Casablanca, Maroc • Facturation avec ICE'
+              : 'Registered Digital Service Provider • Casablanca, Morocco'}
+          </div>
         </div>
-        <div className="flex gap-6">
+
+        {/* Legal Links */}
+        <div className="flex flex-wrap items-center justify-center gap-4 text-xs text-zinc-400 font-medium">
+          <button 
+            onClick={() => onOpenLegal('mentions')}
+            className="hover:text-emerald-400 transition-colors cursor-pointer"
+          >
+            {isFr ? 'Mentions Légales' : 'Legal Notice'}
+          </button>
+          <span>•</span>
+          <button 
+            onClick={() => onOpenLegal('terms')}
+            className="hover:text-emerald-400 transition-colors cursor-pointer"
+          >
+            {isFr ? 'Conditions de Prestation (CGV)' : 'Terms of Service'}
+          </button>
+          <span>•</span>
+          <button 
+            onClick={() => onOpenLegal('privacy')}
+            className="hover:text-emerald-400 transition-colors cursor-pointer"
+          >
+            {isFr ? 'Confidentialité' : 'Privacy Policy'}
+          </button>
+        </div>
+
+        {/* Social / Contact Icons */}
+        <div className="flex items-center gap-4">
+          <a 
+            href="https://wa.me/212634175357" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="text-zinc-400 hover:text-emerald-400 transition-colors"
+            aria-label="WhatsApp"
+          >
+            <MessageCircle className="w-5 h-5" />
+          </a>
+          <a 
+            href="mailto:abdelnezar7@gmail.com" 
+            className="text-zinc-400 hover:text-white transition-colors"
+            aria-label="Email"
+          >
+            <Mail className="w-5 h-5" />
+          </a>
           <a 
             href="https://www.linkedin.com/in/nezar-abdeljalil/" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="text-zinc-500 hover:text-white transition-colors"
+            className="text-zinc-400 hover:text-white transition-colors"
+            aria-label="LinkedIn"
           >
             <Linkedin className="w-5 h-5" />
           </a>
@@ -589,7 +617,8 @@ const Footer = () => {
             href="https://github.com/ozric1" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="text-zinc-500 hover:text-white transition-colors"
+            className="text-zinc-400 hover:text-white transition-colors"
+            aria-label="GitHub"
           >
             <Github className="w-5 h-5" />
           </a>
@@ -599,8 +628,12 @@ const Footer = () => {
   );
 };
 
+// --- Main App Root ---
 export default function App() {
-  const { dir, t } = useLanguage();
+  const { dir } = useLanguage();
+  const [isBookingOpen, setIsBookingOpen] = useState(false);
+  const [isLegalOpen, setIsLegalOpen] = useState(false);
+  const [legalTab, setLegalTab] = useState<'mentions' | 'terms' | 'privacy'>('mentions');
   
   return (
     <div className="min-h-screen bg-[#05070A] text-white selection:bg-teal-500/30 relative overflow-hidden" dir={dir}>
@@ -622,16 +655,38 @@ export default function App() {
         />
       </div>
 
-      <Navbar />
+      <Navbar onBookCall={() => setIsBookingOpen(true)} />
+      
       <main>
-        <Hero />
+        <Hero onBookCall={() => setIsBookingOpen(true)} />
         <About />
         <Services />
         <Work />
-        <Pricing />
-        <Contact />
+        <CaseStudyAndTestimonial />
+        <PricingSection onBookCall={() => setIsBookingOpen(true)} />
+        <Founder />
+        <Contact onBookCall={() => setIsBookingOpen(true)} />
       </main>
-      <Footer />
+
+      <Footer 
+        onOpenLegal={(tab) => {
+          setLegalTab(tab);
+          setIsLegalOpen(true);
+        }} 
+      />
+
+      {/* Conversion Modals */}
+      <BookingModal 
+        isOpen={isBookingOpen} 
+        onClose={() => setIsBookingOpen(false)} 
+      />
+
+      <LegalModal 
+        isOpen={isLegalOpen} 
+        onClose={() => setIsLegalOpen(false)} 
+        initialTab={legalTab} 
+      />
+
       <Analytics />
     </div>
   );

@@ -119,7 +119,7 @@ export function ExpandableGallery({
       link: p.link,
       features: p.features,
       color: p.color,
-      isUnderConstruction: p.title === "Nightly" || p.title === "SportsArena",
+      isLive: ["Madibee", "Natura Jungle", "AGEFIC", "Zentia World"].includes(p.title),
       rotation,
       x,
       y,
@@ -252,13 +252,21 @@ export function ExpandableGallery({
                       )}
                       transition={transition}
                     >
-                      {item.isUnderConstruction && (
+                      {item.isLive ? (
                         <div className={cn(
-                          "absolute top-4 z-20 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-blue-500/30 text-[10px] font-bold text-blue-400 shadow-[0_0_15px_rgba(59,130,246,0.3)]",
-                          isRtl ? "left-4 normal-case tracking-normal" : "right-4 uppercase tracking-widest"
+                          "absolute top-4 z-20 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/70 backdrop-blur-md border border-emerald-500/40 text-[10px] font-bold text-emerald-400 shadow-[0_0_15px_rgba(16,185,129,0.25)]",
+                          isRtl ? "left-4 normal-case" : "right-4 uppercase tracking-wider"
                         )}>
-                          <Hammer className="w-3 h-3 animate-pulse" />
-                          {t.banner.underConstruction}
+                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                          {isRtl ? 'موقع مباشر' : 'Projet en Ligne'}
+                        </div>
+                      ) : (
+                        <div className={cn(
+                          "absolute top-4 z-20 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/70 backdrop-blur-md border border-cyan-500/40 text-[10px] font-bold text-cyan-300 shadow-[0_0_15px_rgba(6,182,212,0.2)]",
+                          isRtl ? "left-4 normal-case" : "right-4 uppercase tracking-wider"
+                        )}>
+                          <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
+                          {isRtl ? 'نموذج أولي / 3D' : 'Prototype UI / 3D'}
                         </div>
                       )}
                       <img
@@ -272,9 +280,7 @@ export function ExpandableGallery({
                       {/* Modern Clickable Button */}
                       <div className={cn(
                         "absolute top-4 z-20",
-                        item.isUnderConstruction 
-                          ? (isRtl ? "right-4" : "left-4") 
-                          : (isRtl ? "left-4" : "right-4")
+                        isRtl ? "right-4" : "left-4"
                       )}>
                         <motion.a
                           href={item.link || "#"}

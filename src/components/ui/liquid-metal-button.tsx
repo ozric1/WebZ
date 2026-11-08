@@ -283,6 +283,7 @@ export function LiquidMetalButton({
                 transition:
                   "all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), width 0.4s ease, height 0.4s ease, box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1)",
                 background: "rgba(255, 255, 255, 0.05)",
+                pointerEvents: "none",
               }}
             >
               <div
@@ -296,6 +297,7 @@ export function LiquidMetalButton({
                   maxWidth: `${dimensions.shaderWidth}px`,
                   height: `${dimensions.shaderHeight}px`,
                   transition: "width 0.4s ease, height 0.4s ease",
+                  pointerEvents: "none",
                 }}
               />
             </div>
@@ -303,6 +305,7 @@ export function LiquidMetalButton({
 
           <button
             ref={buttonRef}
+            type="button"
             onClick={handleClick}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}

@@ -19,66 +19,66 @@ const FAQ = () => {
         ar: "كم تكلفة موقع ويب جديد؟"
       },
       answer: {
-        fr: "Les projets commencent à 4 500 DH pour un site vitrine de 5 pages sur mesure en français. Quant à un site multilingue ou à des fonctionnalités spécifiques, les prix dépasseront généralement cette fourchette, se situant entre 6 000 et 20 000 DH +",
-        en: "Projects start at 4,500 DH for a custom 5-page showcase site in French. For multilingual sites or specific features, prices will generally exceed this range, typically between 6,000 and 20,000 DH +",
-        ar: "تبدأ المشاريع من 4500 درهم لموقع عرض مخصص مكون من 5 صفحات باللغة الفرنسية. بالنسبة للمواقع متعددة اللغات أو الميزات المحددة، ستتجاوز الأسعار عمومًا هذا النطاق، وتتراوح عادةً بين 6000 و 20000 درهم +"
+        fr: "Les projets commencent à 4 500 DH pour un site vitrine de 3 pages. Un site de 5 pages commence à 6 500 DH. Un e-commerce ou un projet sur mesure commence à 12 000 DH.",
+        en: "Projects start at 4,500 DH (~€450) for a 3-page showcase site. A 5-page site starts at 6,500 DH (~€650). An e-commerce store or custom web platform starts at 12,000 DH (~€1,200).",
+        ar: "تبدأ المشاريع من 4500 درهم لموقع تعريفي من 3 صفحات. موقع مكون من 5 صفحات يبدأ من 6500 درهم. المتجر الإلكتروني أو المشروع المخصص يبدأ من 12000 درهم."
       }
     },
     {
       question: {
-        fr: "Quelles sont mes options de paiement ?",
-        en: "What are my payment options?",
-        ar: "ما هي خيارات الدفع المتاحة لي؟"
+        fr: "Quelles sont mes options de paiement & conditions ?",
+        en: "What are my payment options & terms?",
+        ar: "ما هي خيارات وشروط الدفع المتاحة؟"
       },
       answer: {
         fr: (
           <div className="space-y-4">
-            <p>Nous proposons trois voies adaptées à vos besoins :</p>
+            <p>Trois modes d'engagement transparents selon vos besoins :</p>
             <div>
-              <p className="font-semibold text-[#15803d] mb-1">L'Essentiel (Paiement unique) :</p>
-              <p>Idéal pour un lancement rapide. Vous possédez le site avec un paiement en une seule fois.</p>
+              <p className="font-semibold text-emerald-400 mb-1">1. L'Essentiel (Paiement unique) :</p>
+              <p>4 500 DH (3 pages) ou 6 500 DH (5 pages). Acompte de 50% au lancement, 50% à la livraison finale après 2 rounds de révisions. Propriété totale du code cédée.</p>
             </div>
             <div>
-              <p className="font-semibold text-[#15803d] mb-1">Le Premium WaaS (Abonnement mensuel de 12 mois) :</p>
-              <p>Tout inclus, sans tracas. Nous gérons l'hébergement, le SEO et les futures mises à jour illimitées pour vous accompagner.</p>
+              <p className="font-semibold text-emerald-400 mb-1">2. Le Premium — Site géré (WaaS) :</p>
+              <p>2 500 DH de mise en place + 690 DH / mois (engagement 6 mois minimum). Hébergement cloud, sauvegardes quotidiennes, 2h/mois de mises à jour de contenu et support WhatsApp sous 24h ouvrées.</p>
             </div>
             <div>
-              <p className="font-semibold text-[#15803d] mb-1">Sur Mesure (Sur Devis) :</p>
-              <p>Pour des applications web avancées et des plateformes SaaS nécessitant une architecture cloud spécifique.</p>
+              <p className="font-semibold text-emerald-400 mb-1">3. Sur Mesure (E-Commerce & Apps) :</p>
+              <p>Dès 12 000 DH pour un e-commerce complet, dès 15 000 DH pour des applications SaaS. Règlement par jalons validés.</p>
             </div>
           </div>
         ),
         en: (
           <div className="space-y-4">
-            <p>We offer three flexible paths:</p>
+            <p>Three transparent working modes based on your needs:</p>
             <div>
-              <p className="font-semibold text-[#15803d] mb-1">The Essential (One-Time Payment):</p>
-              <p>Perfect for quick launches. You own the site with a single upfront payment.</p>
+              <p className="font-semibold text-emerald-400 mb-1">1. The Essential (One-Time Project):</p>
+              <p>4,500 DH (3 pages) or 6,500 DH (5 pages). 50% deposit at kickoff, 50% balance on final delivery after 2 revision rounds. 100% code ownership handed over.</p>
             </div>
             <div>
-              <p className="font-semibold text-[#15803d] mb-1">Premium WaaS (12-Month Monthly Subscription):</p>
-              <p>All-inclusive and hassle-free. We handle hosting, SEO, and unlimited future updates to support your growth.</p>
+              <p className="font-semibold text-emerald-400 mb-1">2. The Premium — Managed Site (WaaS):</p>
+              <p>2,500 DH setup + 690 DH/month (6-month min commitment). Includes high-speed hosting, daily backups, 2h/month updates, and WhatsApp support under 24h.</p>
             </div>
             <div>
-              <p className="font-semibold text-[#15803d] mb-1">Custom Build (Custom Quote):</p>
-              <p>For advanced web applications and SaaS platforms requiring custom cloud infrastructure.</p>
+              <p className="font-semibold text-emerald-400 mb-1">3. Custom Build (E-Commerce & SaaS):</p>
+              <p>From 12,000 DH for luxury e-commerce, from 15,000 DH for SaaS/web apps. Structured milestone-based delivery.</p>
             </div>
           </div>
         ),
         ar: (
           <div className="space-y-4">
-            <p>نقدم ثلاثة مسارات مرنة:</p>
+            <p>ثلاث باقات واضحة تلائم تطلعاتك:</p>
             <div>
-              <p className="font-semibold text-[#15803d] mb-1">الأساسي (دفع لمرة واحدة):</p>
-              <p>مثالي للانطلاقات السريعة. تمتلك الموقع من خلال دفعة واحدة.</p>
+              <p className="font-semibold text-emerald-400 mb-1">1. الأساسي (دفع لمرة واحدة):</p>
+              <p>4500 درهم (3 صفحات) أو 6500 درهم (5 صفحات). 50% عند البدء و 50% عند التسليم النهائي بعد جولتين من المراجعة مع تسليم الكود كاملاً.</p>
             </div>
             <div>
-              <p className="font-semibold text-[#15803d] mb-1">الاحترافي WaaS (اشتراك شهري لمدة 12 شهراً):</p>
-              <p>شامل كلياً وبدون متاعب. نتولى الاستضافة وتحسين محركات البحث والتحديثات المستقبلية غير المحدودة.</p>
+              <p className="font-semibold text-emerald-400 mb-1">2. الاحترافي — الموقع المدار (WaaS):</p>
+              <p>2500 درهم إعداد أولي + 690 درهم شهرياً (التزام 6 أشهر كحد أدنى). يشمل الاستضافة السحابية والنسخ الاحتياطي وساعتين تحديثات شهرياً ودعم واتساب سريع.</p>
             </div>
             <div>
-              <p className="font-semibold text-[#15803d] mb-1">بناء مخصص (تسعير حسب الطلب):</p>
-              <p>لتطبيقات الويب المتقدمة ومنصات SaaS التي تتطلب بنية تحتية سحابية مخصصة.</p>
+              <p className="font-semibold text-emerald-400 mb-1">3. بناء مخصص (متاجر وتطبيقات):</p>
+              <p>ابتداءً من 12000 درهم للمتاجر الإلكترونية، ومن 15000 درهم لمنصات SaaS، بدفعات مقسمة حسب مراحل الإنجاز المعتمدة.</p>
             </div>
           </div>
         )
@@ -141,7 +141,7 @@ const FAQ = () => {
   };
 
   return (
-    <div className="w-full max-w-3xl mx-auto mt-24 relative z-10">
+    <div id="faq" className="w-full max-w-3xl mx-auto mt-24 relative z-10 scroll-mt-28">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}

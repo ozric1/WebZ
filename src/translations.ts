@@ -105,28 +105,10 @@ export const translations = {
       viewCaseStudy: "Voir l'étude de cas",
       projects: [
         {
-          category: "Haute Parfumerie & Soins Capillaires de Luxe",
-          title: "Madibee",
-          description: "Une boutique e-commerce d'exception dédiée aux fragrances raffinées et aux soins capillaires botaniques de prestige. Une direction artistique élégante, des micro-interactions soignées et un parcours d'achat luxueux.",
-          features: ["Haute Parfumerie", "Soins Botaniques Rares", "E-Commerce de Luxe"]
-        },
-        {
-          category: "Analyses sur Mesure & Clubbing High-End",
-          title: "Nightly",
-          description: "Une plateforme analytique d'élite dédiée aux établissements de prestige. Optimisez l'expérience VIP et la gestion des réservations en temps réel via un tableau de bord haute performance et immersif.",
-          features: ["VIP Table Tracking", "Visualisation Temps Réel", "Analyses Prédictives"]
-        },
-        {
           category: "Eco-Luxe & Hôtellerie",
           title: "Natura Jungle",
-          description: "Une odyssée digitale captivante pour un éco-resort de luxe. Fusion d'animations fluides et d'interfaces épurées pour magnifier les expériences équestres et de bien-être du domaine.",
-          features: ["Expérience Immersive", "Réservations Intuitives", "Direction Artistique Web"]
-        },
-        {
-          category: "Complexes Sportifs Premium",
-          title: "SportsArena",
-          description: "Un écosystème de réservation nouvelle génération pour complexes sportifs haut de gamme. Intégration de cartes 3D interactives et d'un moteur de planification instantanée.",
-          features: ["Cartographie 3D", "Moteur de Réservation", "Paiement Sécurisé"]
+          description: "Une odyssée digitale captivante pour un éco-resort de luxe et club équestre. Vitrine immersive et application de commande locale reliant serveurs et cuisine en temps réel.",
+          features: ["Expérience Immersive", "Commande Locale Temps Réel", "Réservations Directes"]
         },
         {
           category: "E-Learning Corporatif & EdTech",
@@ -141,9 +123,27 @@ export const translations = {
           features: ["Design Minimaliste", "Conseil Stratégique", "Sécurité Intégrale"]
         },
         {
-          category: "Location de Voitures de Luxe",
+          category: "Haute Parfumerie & Soins Capillaires de Luxe",
+          title: "Madibee",
+          description: "Une boutique e-commerce d'exception dédiée aux fragrances raffinées et aux soins capillaires botaniques de prestige. Une direction artistique élégante et un parcours d'achat luxueux.",
+          features: ["Haute Parfumerie", "Soins Botaniques Rares", "E-Commerce de Luxe"]
+        },
+        {
+          category: "Complexes Sportifs Premium (Prototype UI)",
+          title: "SportsArena",
+          description: "Un prototype de réservation nouvelle génération pour complexes sportifs haut de gamme. Cartographie 3D interactive et moteur de planification instantanée.",
+          features: ["Cartographie 3D", "Moteur de Réservation", "Paiement Sécurisé"]
+        },
+        {
+          category: "Analyses VIP & Nightlife (Prototype UI)",
+          title: "Nightly",
+          description: "Une plateforme analytique dédiée aux établissements de prestige. Suivi des tables VIP et gestion des réservations en temps réel via un tableau de bord immersif.",
+          features: ["VIP Table Tracking", "Visualisation Temps Réel", "Analyses Prédictives"]
+        },
+        {
+          category: "Location de Voitures de Luxe (Prototype UI)",
           title: "Hilton VIP Rentals",
-          description: "Une plateforme haut de gamme de location de voitures de luxe et services de chauffeur privé. Offrant une flotte d'exception et une expérience de réservation fluide pour une clientèle VIP.",
+          description: "Une plateforme conceptuelle de location de voitures de luxe et services de chauffeur privé. Flotte d'exception et réservation fluide pour clientèle VIP.",
           features: ["Réservation en Ligne", "Chauffeur Privé", "Flotte Premium"]
         }
       ]
@@ -274,28 +274,10 @@ export const translations = {
       viewCaseStudy: "View Case Study",
       projects: [
         {
-          category: "Luxury Fragrance & Botanical Hair Care",
-          title: "Madibee",
-          description: "An ultra-premium e-commerce flagship celebrating bespoke fragrances and prestige botanical hair care. Featuring refined editorial aesthetics, fluid interactions, and an effortless luxury shopping journey.",
-          features: ["Haute Parfumerie", "Botanical Hair Care", "Luxury E-Commerce"]
-        },
-        {
-          category: "Bespoke Analytics & Nightlife",
-          title: "Nightly",
-          description: "An elite analytics platform engineered for prestige nightlife venues. Streamline VIP table management, reservations, and guest data through a high-performance, real-time dashboard.",
-          features: ["VIP Table Tracking", "Real-Time Analytics", "Predictive Revenue"]
-        },
-        {
           category: "Eco-Luxury & Hospitality",
           title: "Natura Jungle",
-          description: "A captivating digital experience crafted for an ultra-luxury eco-resort. Blending fluid motion and high-fidelity visuals to showcase equestrian prestige and private wellness spaces.",
-          features: ["Immersive Experiences", "Intuitive Booking", "Bespoke Art Direction"]
-        },
-        {
-          category: "Elite Sports Arenas & Booking",
-          title: "SportsArena",
-          description: "A next-generation booking ecosystem for elite sports complexes. Featuring interactive 3D field mapping and a real-time reservation engine built to scale.",
-          features: ["3D Field Mapping", "Instant Reservations", "Secure Payments"]
+          description: "A captivating digital experience crafted for an ultra-luxury eco-resort and equestrian club. Featuring bespoke storytelling and a real-time ordering system connecting staff to kitchen.",
+          features: ["Immersive Experience", "Real-Time Local Ordering", "Direct Bookings"]
         },
         {
           category: "Corporate EdTech & Training",
@@ -310,9 +292,27 @@ export const translations = {
           features: ["Minimalist Identity", "Strategic Counsel", "Full Data Security"]
         },
         {
-          category: "Luxury Car Rental",
+          category: "Luxury Fragrance & Botanical Hair Care",
+          title: "Madibee",
+          description: "An ultra-premium e-commerce flagship celebrating bespoke fragrances and prestige botanical hair care. Featuring refined editorial aesthetics and an effortless shopping journey.",
+          features: ["Haute Parfumerie", "Botanical Hair Care", "Luxury E-Commerce"]
+        },
+        {
+          category: "Elite Sports Arenas (UI Prototype)",
+          title: "SportsArena",
+          description: "A prototype reservation ecosystem for elite sports complexes. Featuring interactive 3D field mapping and a real-time scheduling engine built to scale.",
+          features: ["3D Field Mapping", "Instant Reservations", "Secure Payments"]
+        },
+        {
+          category: "VIP Table Tracking & Nightlife (UI Prototype)",
+          title: "Nightly",
+          description: "An analytics platform engineered for prestige nightlife venues. Streamline VIP table management, guest lists, and reservations through a high-performance dashboard.",
+          features: ["VIP Table Tracking", "Real-Time Analytics", "Predictive Revenue"]
+        },
+        {
+          category: "Luxury Car Rental (UI Prototype)",
           title: "Hilton VIP Rentals",
-          description: "A premium luxury car rental and private chauffeur service platform. Offering an exceptional fleet and a seamless booking experience tailored for VIP clients.",
+          description: "A concept luxury car rental and private chauffeur platform. Offering an exceptional fleet and a seamless booking flow tailored for VIP clients.",
           features: ["Online Booking", "Private Chauffeur", "Premium Fleet"]
         }
       ]
@@ -443,28 +443,10 @@ export const translations = {
       viewCaseStudy: "عرض دراسة الحالة",
       projects: [
         {
-          category: "العطور الفاخرة والعناية بالشعر",
-          title: "Madibee",
-          description: "منصة تجارة إلكترونية راقية متخصصة في العطور الفاخرة ومستحضرات العناية النباتية بالشعر. تجمع بين الجماليات التحريرية والتجربة الحسية الغامرة لتوفير رحلة تسوق استثنائية.",
-          features: ["تجارة إلكترونية فاخرة", "عناية نباتية فائقة", "عطور حصرية"]
-        },
-        {
-          category: "تحليلات مخصصة وقطاع السهر",
-          title: "Nightly",
-          description: "منصة تحليلات نخبوية مصممة لأرقى وجهات الحياة الليلية. تبسيط إدارة طاولات كبار الشخصيات والحجوزات عبر لوحة تحكم تفاعلية في الوقت الفعلي.",
-          features: ["تتبع طاولات كبار الشخصيات", "عرض البيانات الفوري", "التحليلات التنبؤية"]
-        },
-        {
           category: "الضيافة الفاخرة المستدامة",
           title: "Natura Jungle",
-          description: "تجربة رقمية آسرة مصممة لمنتجع بيئي فاخر. دمج الحركات الانسيابية والمرئيات عالية الدقة لاستعراض تجارب الفروسية والرفاهية الخاصة بالمحمية.",
-          features: ["تجربة تفاعلية غامرة", "حجز بديهي", "إخراج فني مخصص"]
-        },
-        {
-          category: "المنشآت الرياضية النخبوية",
-          title: "SportsArena",
-          description: "نظام حجز وجدولة متطور للمجمعات الرياضية النخبوية. يتميز بتخطيط ثلاثي الأبعاد تفاعلي ومحرك حجوزات فوري فائق السرعة.",
-          features: ["خرائط ثلاثية الأبعاد", "حجز فوري", "دفع آمن متعدد القنوات"]
+          description: "تجربة رقمية آسرة لمنتجع بيئي فاخر ونادٍ للفروسية. تجمع بين الواجهة التفاعلية وتطبيق طلبات محلي يربط النوادل بالمطبخ في الوقت الفعلي.",
+          features: ["تجربة تفاعلية غامرة", "نظام طلبات فوري", "حجوزات مباشرة"]
         },
         {
           category: "منصات التعليم المؤسسي",
@@ -479,9 +461,27 @@ export const translations = {
           features: ["هوية بصرية بسيطة", "استشارات استراتيجية", "أمان كامل للبيانات"]
         },
         {
-          category: "تأجير السيارات الفاخرة",
+          category: "العطور الفاخرة والعناية بالشعر",
+          title: "Madibee",
+          description: "منصة تجارة إلكترونية راقية متخصصة في العطور الفاخرة ومستحضرات العناية النباتية بالشعر. إخراج فني أنيق وتجربة تسوق استثنائية.",
+          features: ["تجارة إلكترونية فاخرة", "عناية نباتية فائقة", "عطور حصرية"]
+        },
+        {
+          category: "المنشآت الرياضية النخبوية (نموذج أولي)",
+          title: "SportsArena",
+          description: "نموذج أولي لنظام حجز وجدولة متطور للمجمعات الرياضية النخبوية. تخطيط ثلاثي الأبعاد تفاعلي ومحرك حجوزات فوري.",
+          features: ["خرائط ثلاثية الأبعاد", "حجز فوري", "دفع آمن متعدد القنوات"]
+        },
+        {
+          category: "تحليلات مخصصة وقطاع السهر (نموذج أولي)",
+          title: "Nightly",
+          description: "منصة تحليلات مصممة لأرقى وجهات السهر والضيافة. تبسيط إدارة طاولات كبار الشخصيات والحجوزات عبر لوحة تحكم تفاعلية.",
+          features: ["تتبع طاولات كبار الشخصيات", "عرض البيانات الفوري", "التحليلات التنبؤية"]
+        },
+        {
+          category: "تأجير السيارات الفاخرة (نموذج أولي)",
           title: "Hilton VIP Rentals",
-          description: "منصة راقية لتأجير السيارات الفاخرة وخدمات السائق الخاص. توفر أسطولاً استثنائياً وتجربة حجز سلسة مخصصة لكبار الشخصيات.",
+          description: "منصة تجريبية لتأجير السيارات الفاخرة وخدمات السائق الخاص. أسطول مميز وتجربة حجز سلسة مخصصة للعملاء المميزين.",
           features: ["الحجز عبر الإنترنت", "سائق خاص", "أسطول مميز"]
         }
       ]
