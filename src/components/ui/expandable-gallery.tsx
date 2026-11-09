@@ -49,8 +49,9 @@ export function ExpandableGallery({
   );
   const layoutGroupId = useId();
   const containerRef = useRef<HTMLDivElement>(null);
-  const { t, dir } = useLanguage();
+  const { t, dir, language } = useLanguage();
   const isRtl = dir === 'rtl';
+  const isFr = language === 'fr';
 
   useEffect(() => {
     const checkMobile = () => {
@@ -117,9 +118,13 @@ export function ExpandableGallery({
       category: p.category,
       description: p.description,
       link: p.link,
-      features: p.features,
-      color: p.color,
-      isLive: ["Madibee", "Natura Jungle", "AGEFIC", "Zentia World"].includes(p.title),
+      statusType: (["Natura Jungle", "Zentia World"].includes(p.title) 
+        ? 'live' 
+        : p.title === "AGEFIC" 
+        ? 'preview' 
+        : p.title === "Madibee" 
+        ? 'launch' 
+        : 'prototype') as 'live' | 'preview' | 'launch' | 'prototype',
       rotation,
       x,
       y,
@@ -252,13 +257,29 @@ export function ExpandableGallery({
                       )}
                       transition={transition}
                     >
-                      {item.isLive ? (
+                      {item.statusType === 'live' ? (
                         <div className={cn(
                           "absolute top-4 z-20 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/70 backdrop-blur-md border border-emerald-500/40 text-[10px] font-bold text-emerald-400 shadow-[0_0_15px_rgba(16,185,129,0.25)]",
                           isRtl ? "left-4 normal-case" : "right-4 uppercase tracking-wider"
                         )}>
                           <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                          {isRtl ? 'موقع مباشر' : 'Projet en Ligne'}
+                          {isRtl ? 'موقع مباشر' : isFr ? 'Projet en Ligne' : 'Live Project'}
+                        </div>
+                      ) : item.statusType === 'preview' ? (
+                        <div className={cn(
+                          "absolute top-4 z-20 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/70 backdrop-blur-md border border-amber-500/40 text-[10px] font-bold text-amber-300 shadow-[0_0_15px_rgba(245,158,11,0.2)]",
+                          isRtl ? "left-4 normal-case" : "right-4 uppercase tracking-wider"
+                        )}>
+                          <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+                          {isRtl ? 'معاينة العميل' : isFr ? 'Aperçu Client' : 'Client Preview'}
+                        </div>
+                      ) : item.statusType === 'launch' ? (
+                        <div className={cn(
+                          "absolute top-4 z-20 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/70 backdrop-blur-md border border-purple-500/40 text-[10px] font-bold text-purple-300 shadow-[0_0_15px_rgba(168,85,247,0.2)]",
+                          isRtl ? "left-4 normal-case" : "right-4 uppercase tracking-wider"
+                        )}>
+                          <span className="w-1.5 h-1.5 rounded-full bg-purple-400" />
+                          {isRtl ? 'قيد الإطلاق' : isFr ? 'En Lancement' : 'Pre-Launch'}
                         </div>
                       ) : (
                         <div className={cn(
@@ -266,7 +287,7 @@ export function ExpandableGallery({
                           isRtl ? "left-4 normal-case" : "right-4 uppercase tracking-wider"
                         )}>
                           <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
-                          {isRtl ? 'نموذج أولي / 3D' : 'Prototype UI / 3D'}
+                          {isRtl ? 'نموذج أولي / 3D' : isFr ? 'Prototype UI / 3D' : 'Prototype UI / 3D'}
                         </div>
                       )}
                       <img
@@ -292,7 +313,7 @@ export function ExpandableGallery({
                           whileTap={{ scale: 0.95 }}
                           className="flex items-center gap-1.5 px-3 py-1.5 bg-black/40 backdrop-blur-xl border border-white/10 rounded-full text-[9px] font-bold uppercase tracking-[0.1em] text-white/90 transition-all duration-300 shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
                         >
-                          <span>Visit Site</span>
+                          <span>{isRtl ? 'زيارة الموقع' : isFr ? 'Voir le site' : 'Visit Site'}</span>
                           <ExternalLink className="w-2.5 h-2.5" />
                         </motion.a>
                       </div>

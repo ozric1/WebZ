@@ -226,7 +226,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onBookCall }) =>
               <div className="mb-6 p-4 rounded-2xl bg-emerald-950/40 border border-emerald-500/30">
                 <div className="flex items-baseline gap-2 mb-1">
                   <span className="text-3xl font-black text-white font-mono">
-                    {currency === 'MAD' ? '690 MAD' : currency === 'EUR' ? '69 €' : '$79'}
+                    {currency === 'MAD' ? '890 MAD' : currency === 'EUR' ? '89 €' : '$99'}
                   </span>
                   <span className="text-xs text-zinc-400 font-medium">/ mois</span>
                 </div>
@@ -299,19 +299,19 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onBookCall }) =>
                 </div>
                 <div className="text-xl font-bold text-white font-mono">
                   {isFr ? 'À partir de ' : 'From '}
-                  {currency === 'MAD' ? '12 000 MAD' : currency === 'EUR' ? '1 200 €' : '$1,300'}
+                  {currency === 'MAD' ? '15 000 MAD' : currency === 'EUR' ? '1 500 €' : '$1,650'}
                 </div>
 
                 <div className="mt-3 pt-3 border-t border-white/5">
                   <div className="text-xs text-zinc-400 mb-1">
-                    {isFr ? 'Plateforme SaaS & App métier' : 'SaaS & Custom Apps'}
+                    {isFr ? 'Systèmes & Apps métier' : 'Business Systems & Apps'}
                   </div>
                   <div className="text-xl font-bold text-teal-400 font-mono">
                     {isFr ? 'À partir de ' : 'From '}
-                    {currency === 'MAD' ? '15 000 MAD' : currency === 'EUR' ? '1 500 €' : '$1,600'}
+                    {currency === 'MAD' ? '25 000 MAD' : currency === 'EUR' ? '2 500 €' : '$2,750'}
                   </div>
                   <div className="text-[11px] text-zinc-500 mt-0.5">
-                    {isFr ? 'Découpage par jalons validés' : 'Milestone-based delivery'}
+                    {isFr ? 'Périmètre défini après audit de 15 min' : 'Scope defined after 15-min audit'}
                   </div>
                 </div>
               </div>
@@ -343,6 +343,17 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onBookCall }) =>
             </button>
           </motion.div>
 
+        </div>
+
+        {/* Golden Pricing Rule */}
+        <div className="text-center my-10 max-w-2xl mx-auto px-4">
+          <p className="text-xs md:text-sm text-zinc-400 italic leading-relaxed">
+            {isFr
+              ? "« Le tarif dépend du problème opérationnel à résoudre et du gain de marge apporté, pas d'un simple décompte de pages. »"
+              : isAr
+              ? "« يعتمد السعر على المشكلة التشغيلية المطلوب حلها وقيمة العائد المحقق، وليس على مجرد عدد الصفحات. »"
+              : "“Pricing depends on the operational problem solved and the margin unlocked, not a raw page count.”"}
+          </p>
         </div>
 
         {/* Clear Terms & Guarantees Bar (The Trust Layer) */}

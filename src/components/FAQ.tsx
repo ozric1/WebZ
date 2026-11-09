@@ -19,9 +19,9 @@ const FAQ = () => {
         ar: "كم تكلفة موقع ويب جديد؟"
       },
       answer: {
-        fr: "Les projets commencent à 4 500 DH pour un site vitrine de 3 pages. Un site de 5 pages commence à 6 500 DH. Un e-commerce ou un projet sur mesure commence à 12 000 DH.",
-        en: "Projects start at 4,500 DH (~€450) for a 3-page showcase site. A 5-page site starts at 6,500 DH (~€650). An e-commerce store or custom web platform starts at 12,000 DH (~€1,200).",
-        ar: "تبدأ المشاريع من 4500 درهم لموقع تعريفي من 3 صفحات. موقع مكون من 5 صفحات يبدأ من 6500 درهم. المتجر الإلكتروني أو المشروع المخصص يبدأ من 12000 درهم."
+        fr: "Les projets commencent à 4 500 DH pour un site vitrine de 3 pages. Un site de 5 pages commence à 6 500 DH. Un e-commerce commence à 15 000 DH, et les systèmes ou applications métier sur mesure commencent à 25 000 DH (périmètre défini après audit de 15 min).",
+        en: "Projects start at 4,500 DH (~€450) for a 3-page showcase site. A 5-page site starts at 6,500 DH (~€650). E-commerce starts at 15,000 DH (~€1,500), and custom business systems start at 25,000 DH (~€2,500) scoped after a 15-min audit.",
+        ar: "تبدأ المشاريع من 4500 درهم لموقع تعريفي من 3 صفحات. موقع مكون من 5 صفحات يبدأ من 6500 درهم. المتاجر الإلكترونية تبدأ من 15000 درهم، وأنظمة الأعمال المخصصة تبدأ من 25000 درهم تحدد بدقة بعد تدقيق 15 دقيقة."
       }
     },
     {
@@ -40,11 +40,11 @@ const FAQ = () => {
             </div>
             <div>
               <p className="font-semibold text-emerald-400 mb-1">2. Le Premium — Site géré (WaaS) :</p>
-              <p>3 500 DH de mise en place + 690 DH / mois (abonnement de 12 mois). Hébergement cloud, sauvegardes quotidiennes, 2h/mois de mises à jour de contenu et support WhatsApp sous 24h ouvrées.</p>
+              <p>3 500 DH de mise en place + 890 DH / mois (abonnement de 12 mois). Hébergement cloud, sauvegardes quotidiennes, 2h/mois de mises à jour de contenu et support WhatsApp sous 24h ouvrées.</p>
             </div>
             <div>
-              <p className="font-semibold text-emerald-400 mb-1">3. Sur Mesure (E-Commerce & Apps) :</p>
-              <p>Dès 12 000 DH pour un e-commerce complet, dès 15 000 DH pour des applications SaaS. Règlement par jalons validés.</p>
+              <p className="font-semibold text-emerald-400 mb-1">3. Sur Mesure (E-Commerce & Systèmes Métier) :</p>
+              <p>Dès 15 000 DH pour un e-commerce complet, dès 25 000 DH pour des systèmes et applications métier sur mesure (périmètre défini après audit de 15 min). Règlement par jalons validés.</p>
             </div>
           </div>
         ),
@@ -57,11 +57,11 @@ const FAQ = () => {
             </div>
             <div>
               <p className="font-semibold text-emerald-400 mb-1">2. The Premium — Managed Site (WaaS):</p>
-              <p>3,500 DH setup + 690 DH/month (12-month commitment). Includes high-speed hosting, daily backups, 2h/month updates, and WhatsApp support under 24h.</p>
+              <p>3,500 DH setup + 890 DH/month (12-month commitment). Includes high-speed hosting, daily backups, 2h/month updates, and WhatsApp support under 24h.</p>
             </div>
             <div>
-              <p className="font-semibold text-emerald-400 mb-1">3. Custom Build (E-Commerce & SaaS):</p>
-              <p>From 12,000 DH for luxury e-commerce, from 15,000 DH for SaaS/web apps. Structured milestone-based delivery.</p>
+              <p className="font-semibold text-emerald-400 mb-1">3. Custom Build (E-Commerce & Business Systems):</p>
+              <p>From 15,000 DH for luxury e-commerce, from 25,000 DH for bespoke business systems/apps (scope defined after 15-min audit). Structured milestone-based delivery.</p>
             </div>
           </div>
         ),
@@ -74,11 +74,11 @@ const FAQ = () => {
             </div>
             <div>
               <p className="font-semibold text-emerald-400 mb-1">2. الاحترافي — الموقع المدار (WaaS):</p>
-              <p>3500 درهم إعداد أولي + 690 درهم شهرياً (اشتراك لمدة 12 شهراً). يشمل الاستضافة السحابية والنسخ الاحتياطي وساعتين تحديثات شهرياً ودعم واتساب سريع.</p>
+              <p>3500 درهم إعداد أولي + 890 درهم شهرياً (اشتراك لمدة 12 شهراً). يشمل الاستضافة السحابية والنسخ الاحتياطي وساعتين تحديثات شهرياً ودعم واتساب سريع.</p>
             </div>
             <div>
-              <p className="font-semibold text-emerald-400 mb-1">3. بناء مخصص (متاجر وتطبيقات):</p>
-              <p>ابتداءً من 12000 درهم للمتاجر الإلكترونية، ومن 15000 درهم لمنصات SaaS، بدفعات مقسمة حسب مراحل الإنجاز المعتمدة.</p>
+              <p className="font-semibold text-emerald-400 mb-1">3. بناء مخصص (متاجر وأنظمة أعمال):</p>
+              <p>ابتداءً من 15000 درهم للمتاجر الإلكترونية، ومن 25000 درهم لأنظمة وتطبيقات الأعمال المخصصة (النطاق يحدد بدقة بعد تدقيق 15 دقيقة)، بدفعات مقسمة حسب مراحل الإنجاز المعتمدة.</p>
             </div>
           </div>
         )

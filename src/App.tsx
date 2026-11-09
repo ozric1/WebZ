@@ -17,7 +17,8 @@ import {
   Check,
   ShieldCheck,
   Calendar as CalendarIcon,
-  Phone
+  Phone,
+  Zap
 } from 'lucide-react';
 import { useLanguage } from './LanguageContext';
 import { GlobePulse } from './components/ui/cobe-globe-pulse';
@@ -33,11 +34,12 @@ import PricingSection from './components/PricingSection';
 import Founder from './components/Founder';
 
 // --- Assets Data ---
+// 1. Systèmes Métier & Automatisation, 2. Vitrines & E-Commerce, 3. Design & 3D, 4. Infrastructure & WaaS
 const serviceIcons = [
-  <Palette className="w-6 h-6" />,
-  <Code2 className="w-6 h-6" />,
-  <Box className="w-6 h-6" />,
-  <Rocket className="w-6 h-6" />
+  <Zap className="w-6 h-6 text-emerald-400" />,
+  <Rocket className="w-6 h-6 text-teal-400" />,
+  <Box className="w-6 h-6 text-cyan-400" />,
+  <ShieldCheck className="w-6 h-6 text-emerald-400" />
 ];
 
 // Curated Project Assets: Top 4 are Live, followed by UI/3D prototypes
@@ -259,6 +261,14 @@ const Hero: React.FC<HeroProps> = ({ onBookCall }) => {
   const isFr = language === 'fr';
   const isAr = language === 'ar';
 
+  const whatsappAuditHeroLink = `https://wa.me/212634175357?text=${encodeURIComponent(
+    isFr
+      ? "Bonjour Nezar, je souhaite bénéficier de l'audit gratuit de 15 min pour mon établissement (nom + ville)."
+      : isAr
+      ? "مرحباً نزار، أود الاستفادة من التدقيق المجاني (15 دقيقة) لمشروعي (الاسم + المدينة)."
+      : "Hi Nezar, I'd like the free 15-minute audit for my business (name + city)."
+  )}`;
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       <div className="absolute inset-0 z-0 pointer-events-none">
@@ -284,7 +294,7 @@ const Hero: React.FC<HeroProps> = ({ onBookCall }) => {
         >
           <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_rgba(52,211,153,0.8)]" />
           <span className="text-xs font-bold text-teal-100 uppercase tracking-widest">
-            {isFr ? 'Nezar Abdeljalil • Casablanca & International' : isAr ? 'نزار عبد الجليل • المغرب ودولياً' : 'Nezar Abdeljalil • Casablanca & International'}
+            {t.hero.available} • Casablanca & International
           </span>
         </motion.div>
 
@@ -304,33 +314,54 @@ const Hero: React.FC<HeroProps> = ({ onBookCall }) => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto mb-10 leading-relaxed"
+          className="text-lg md:text-xl text-zinc-300 max-w-2xl mx-auto mb-10 leading-relaxed font-normal"
         >
           {t.hero.description}
         </motion.p>
 
-        {/* Dual Primary Call-to-Actions */}
+        {/* Primary Call-to-Actions for Cold Traffic */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 pointer-events-auto mb-16"
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 pointer-events-auto mb-4"
         >
-          <button 
-            onClick={onBookCall}
+          <a 
+            href={whatsappAuditHeroLink}
+            target="_blank"
+            rel="noopener noreferrer"
             className="w-full sm:w-auto px-8 py-4 bg-emerald-500 hover:bg-emerald-400 text-black font-extrabold rounded-full transition-all duration-300 flex items-center justify-center gap-2.5 shadow-[0_0_25px_rgba(16,185,129,0.35)] hover:shadow-[0_0_35px_rgba(16,185,129,0.5)] active:scale-95 cursor-pointer group"
           >
-            <CalendarIcon className="w-4 h-4 text-black" />
-            <span>{isFr ? 'Réserver un Appel' : isAr ? 'احجز استشارة مجانية' : 'Book a Discovery Call'}</span>
+            <MessageCircle className="w-4 h-4 text-black" />
+            <span>{t.hero.auditCta}</span>
             <ArrowRight className={`w-4 h-4 transition-transform ${dir === 'rtl' ? 'group-hover:-translate-x-1 rotate-180' : 'group-hover:translate-x-1'}`} />
+          </a>
+          
+          <button 
+            onClick={onBookCall}
+            className="w-full sm:w-auto px-6 py-4 bg-white/5 hover:bg-white/10 border border-white/20 text-white font-medium rounded-full transition-colors flex items-center justify-center gap-2 cursor-pointer"
+          >
+            <CalendarIcon className="w-4 h-4 text-emerald-400" />
+            <span>{t.hero.bookCall}</span>
           </button>
           
           <a 
             href="#work" 
-            className="w-full sm:w-auto px-8 py-4 bg-white/5 hover:bg-white/10 border border-white/20 text-white font-medium rounded-full transition-colors flex items-center justify-center gap-2"
+            className="w-full sm:w-auto px-5 py-4 text-zinc-400 hover:text-white font-medium transition-colors flex items-center justify-center gap-1.5 text-sm"
           >
-            {t.hero.viewWork}
+            <span>{t.hero.viewWork}</span>
+            <ArrowRight className="w-3.5 h-3.5" />
           </a>
+        </motion.div>
+
+        {/* Response Guarantee Micro-copy */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="text-xs text-zinc-400 mb-14 pointer-events-auto"
+        >
+          <span>{t.hero.responseGuarantee}</span>
         </motion.div>
 
         {/* Tech Stack Marquee */}
@@ -350,6 +381,32 @@ const Hero: React.FC<HeroProps> = ({ onBookCall }) => {
         </motion.div>
       </motion.div>
     </section>
+  );
+};
+
+// --- Client Social Proof Bar ---
+const ClientSocialProofBar = () => {
+  const { language } = useLanguage();
+  const isFr = language === 'fr';
+  const isAr = language === 'ar';
+
+  return (
+    <div className="relative z-10 max-w-6xl mx-auto px-6 -mt-8 mb-16">
+      <div className="py-4 px-6 md:px-10 rounded-2xl bg-white/[0.02] border border-white/5 backdrop-blur-md flex flex-col md:flex-row items-center justify-between gap-4 shadow-lg">
+        <span className="text-[11px] font-bold uppercase tracking-widest text-zinc-500">
+          {isFr ? 'Ils nous font confiance' : isAr ? 'شركاء نجاح يثقون في أنظمتنا' : 'Trusted by business operators'}
+        </span>
+        <div className="flex flex-wrap items-center justify-center gap-6 md:gap-8 text-xs md:text-sm font-semibold text-zinc-300">
+          <span className="hover:text-emerald-400 transition-colors">Natura Jungle Eco-Resort</span>
+          <span className="text-zinc-600 hidden sm:inline">•</span>
+          <span className="hover:text-cyan-400 transition-colors">Zentia World</span>
+          <span className="text-zinc-600 hidden sm:inline">•</span>
+          <span className="hover:text-amber-400 transition-colors">AGEFIC Fiduciaire</span>
+          <span className="text-zinc-600 hidden sm:inline">•</span>
+          <span className="hover:text-purple-400 transition-colors">Madibee Parfumerie</span>
+        </div>
+      </div>
+    </div>
   );
 };
 
@@ -659,6 +716,7 @@ export default function App() {
       
       <main>
         <Hero onBookCall={() => setIsBookingOpen(true)} />
+        <ClientSocialProofBar />
         <About />
         <Services />
         <Work />

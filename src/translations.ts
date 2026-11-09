@@ -12,12 +12,15 @@ export const translations = {
       letsTalk: "Discutons",
     },
     hero: {
-      available: "Website/App Experts",
-      title1: "Création d'Expériences",
-      title2: "Digitales.",
-      description: "Chez webZ, nous créons des sites web hautement modernes et interactifs qui ne sont pas seulement beaux, mais performants. Nous élevons les marques grâce à un design stratégique et un développement robuste.",
-      viewWork: "Voir notre travail",
+      available: "Systèmes Digitaux & Automatisation",
+      title1: "Des systèmes,",
+      title2: "pas juste des sites.",
+      description: "webZ conçoit les outils digitaux qui font tourner votre entreprise : réservation directe sans commission, commandes rapides, stock synchronisé. Moins d'allers-retours, zéro ressaisie, plus de marge.",
+      viewWork: "Voir nos réalisations",
       whatIDo: "Ce que nous faisons",
+      auditCta: "Audit Gratuit — 15 min",
+      bookCall: "Réserver un Appel",
+      responseGuarantee: "⚡ Réponse garantie sous 2h ouvrées • Échange direct avec Nezar (Fondateur)",
     },
     about: {
       title: "Pourquoi webZ ?",
@@ -25,15 +28,15 @@ export const translations = {
       cards: [
         {
           title: "Moteurs de Croissance",
-          description: "Nous ne nous contentons pas de coder des sites ; nous bâtissons des moteurs de croissance pour les entreprises marocaines."
+          description: "Nous ne nous contentons pas de coder des sites ; nous bâtissons des moteurs opérationnels qui rapportent et suppriment la friction."
         },
         {
-          title: "Expertise Locale",
-          description: "Nous comprenons les défis du marché local. D'un complexe sportif à un parc d'aventure, notre mission est de convertir."
+          title: "Expertise Locale & Réalité Terrain",
+          description: "Nous comprenons les habitudes réelles du marché marocain. De la réservation WhatsApp au paiement CMI, nous bâtissons ce qui fonctionne."
         },
         {
-          title: "Tech & Proximité",
-          description: "Une technologie de pointe (React, Next.js), un design sur mesure, et un accompagnement transparent."
+          title: "Tech Robuste & Proximité",
+          description: "Une technologie moderne (React, Next.js, Node.js), un interlocuteur technique unique et un accompagnement transparent sans jargon."
         }
       ]
     },
@@ -58,8 +61,8 @@ export const translations = {
           price: "Abonnement mensuel de 12 mois",
           features: [
             "Tout inclus : Hébergement & SEO",
-            "Mises à jour illimitées",
-            "Support Prioritaire 7j/7",
+            "Mises à jour dédiées 2h/mois",
+            "Support WhatsApp garanti sous 24h",
             "Tableaux de bord personnalisés"
           ],
           popular: true,
@@ -68,47 +71,47 @@ export const translations = {
         {
           name: "Sur Mesure",
           description: "Pour les projets complexes",
-          price: "Sur Devis",
+          price: "Périmètre après audit",
           features: [
-            "Applications Web & SaaS",
-            "Architecture Cloud (Azure/AWS)"
+            "Applications Web, Réservations & SaaS",
+            "E-Commerce complet & Paiement CMI/Stripe"
           ],
-          button: "Demander un Devis"
+          button: "Demander une Étude"
         }
       ]
     },
     services: {
       title: "Notre Expertise.",
-      description: "Une approche complète de la création de produits numériques, du concept initial au déploiement final.",
+      description: "Des systèmes opérationnels pensés pour supprimer la friction, automatiser vos processus et maximiser vos marges.",
       items: [
         {
-          title: "Web Design",
-          description: "Création d'interfaces visuellement époustouflantes et centrées sur l'utilisateur qui captivent et convertissent. Accent sur l'esthétique moderne et l'UX intuitive."
+          title: "Systèmes Métier & Automatisation",
+          description: "Réservations directes WhatsApp/web sans commission, flux de commande, synchronisation stocks/équipes et back-offices sur mesure. L'outil qui élimine la double saisie et booste vos marges."
         },
         {
-          title: "Développement Web",
-          description: "Création d'applications web robustes, évolutives et ultra-rapides utilisant des technologies de pointe comme React, Next.js et Tailwind."
+          title: "Sites Vitrines & E-Commerce",
+          description: "Conception de boutiques en ligne à fort taux de conversion, intégration de paiement sécurisé CMI/Stripe, et vitrines professionnelles autonomes pensées pour vendre."
         },
         {
-          title: "Interactif & 3D",
-          description: "Amélioration des expériences avec des animations fluides, WebGL et des éléments interactifs qui rendent votre marque mémorable."
+          title: "Design & Expériences Interactives",
+          description: "Direction artistique haut de gamme, ergonomie mobile sans compromis, micro-interactions soignées et intégrations WebGL/3D pour marquer durablement les esprits."
         },
         {
-          title: "Déploiement & SEO",
-          description: "Garantir que votre site est sécurisé, optimisé pour les moteurs de recherche et déployé sans faille sur une infrastructure moderne."
+          title: "Infrastructure & Sérénité (WaaS)",
+          description: "Hébergement cloud ultra-rapide, sauvegardes automatiques quotidiennes, optimisation SEO technique et support réactif garanti sous 24h ouvrées."
         }
       ]
     },
     work: {
       title: "Projets Sélectionnés.",
-      description: "Un aperçu de nos projets récents, mettant en valeur le design interactif et l'ingénierie robuste.",
+      description: "Un aperçu de nos projets récents, illustrant l'intégration entre ergonomie soignée et ingénierie opérationnelle.",
       viewCaseStudy: "Voir l'étude de cas",
       projects: [
         {
-          category: "Eco-Luxe & Hôtellerie",
+          category: "Éco-Resort & Club Équestre",
           title: "Natura Jungle",
-          description: "Une odyssée digitale captivante pour un éco-resort de luxe et club équestre. Vitrine immersive et application de commande locale reliant serveurs et cuisine en temps réel.",
-          features: ["Expérience Immersive", "Commande Locale Temps Réel", "Réservations Directes"]
+          description: "Une odyssée digitale captivante pour un éco-resort de luxe. Vitrine immersive et réservation directe WhatsApp sans commission en production active depuis 6 mois.",
+          features: ["Expérience Immersive", "Réservations Directes 0%", "Production 6 Mois"]
         },
         {
           category: "E-Learning Corporatif & EdTech",
@@ -123,9 +126,9 @@ export const translations = {
           features: ["Design Minimaliste", "Conseil Stratégique", "Sécurité Intégrale"]
         },
         {
-          category: "Haute Parfumerie & Soins Capillaires de Luxe",
+          category: "Haute Parfumerie & Cosmétique",
           title: "Madibee",
-          description: "Une boutique e-commerce d'exception dédiée aux fragrances raffinées et aux soins capillaires botaniques de prestige. Une direction artistique élégante et un parcours d'achat luxueux.",
+          description: "Une boutique e-commerce d'exception dédiée aux fragrances raffinées et aux soins botaniques de prestige. Une direction artistique élégante et un parcours d'achat luxueux — en cours de lancement.",
           features: ["Haute Parfumerie", "Soins Botaniques Rares", "E-Commerce de Luxe"]
         },
         {
@@ -138,36 +141,54 @@ export const translations = {
           category: "Analyses VIP & Nightlife (Prototype UI)",
           title: "Nightly",
           description: "Une plateforme analytique dédiée aux établissements de prestige. Suivi des tables VIP et gestion des réservations en temps réel via un tableau de bord immersif.",
-          features: ["VIP Table Tracking", "Visualisation Temps Réel", "Analyses Prédictives"]
+          features: ["Suivi Tables VIP", "Analytiques Temps Réel", "Tableau de Bord"]
         },
         {
-          category: "Location de Voitures de Luxe (Prototype UI)",
+          category: "Location VIP & Chauffeur Privé (Prototype UI)",
           title: "Hilton VIP Rentals",
-          description: "Une plateforme conceptuelle de location de voitures de luxe et services de chauffeur privé. Flotte d'exception et réservation fluide pour clientèle VIP.",
-          features: ["Réservation en Ligne", "Chauffeur Privé", "Flotte Premium"]
+          description: "Un concept exclusif de location de véhicules haut de gamme avec chauffeur privé. Parcours de réservation haut de gamme adapté aux exigences VIP.",
+          features: ["Réservation en Ligne", "Chauffeur Privé", "Flotte Prestige"]
         }
       ]
     },
     contact: {
-      title1: "Comment Nous Construisons",
-      title2: "Votre Site Web.",
-      description: "Cessez de perdre des clients à cause d'une présence en ligne obsolète.",
-      startProject: "Réserver une Consultation Gratuite",
+      title1: "Comment nous",
+      title2: "collaborons.",
+      description: "Un processus clair, cadré et sans surprise pour transformer votre opération.",
+      startProject: "Demander un Audit Gratuit (15 min)",
       steps: [
-        { title: "Stratégie", description: "Nous définissons vos objectifs, votre public cible et les fonctionnalités dont vous avez besoin pour optimiser votre activité." },
-        { title: "Proposition & Devis", description: "Sur la base de notre échange stratégique, nous vous soumettons une proposition détaillée et une facturation transparente, parfaitement adaptées aux besoins de votre projet." },
-        { title: "Wireframing", description: "Nous créons une structure conçue spécifiquement pour maximiser l'expérience utilisateur et les conversions." },
-        { title: "Validation & Itération", description: "Nous vous présentons les premiers concepts pour validation, puis nous itérons et ajustons le design pour qu'il corresponde parfaitement à votre vision et à vos exigences." },
-        { title: "Design & Développement", description: "Votre site est entièrement conçu et développé avec un code propre et rapide, ainsi que des intégrations pratiques." },
-        { title: "Lancement & Suivi", description: "Votre site est en ligne. Vous choisissez si vous souhaitez une propriété totale avec un tableau de bord facile à utiliser, ou un abonnement mensuel où nous gérons les mises à jour." }
+        {
+          title: "Audit Diagnostic (15 min)",
+          description: "Nous échangeons directement pour identifier où votre entreprise perd du temps, de l'énergie ou des commissions. Sans engagement."
+        },
+        {
+          title: "Proposition & Périmètre Cadré",
+          description: "Nous définissons une solution pragmatique avec un calendrier clair et un devis transparent sans coût caché."
+        },
+        {
+          title: "Conception & Architecture",
+          description: "Nous concevons l'expérience utilisateur et l'architecture technique adaptées à vos contraintes de terrain."
+        },
+        {
+          title: "Développement & Tests",
+          description: "Développement avec du code moderne, performant et sécurisé, testé rigoureusement sur mobile et connexion 4G."
+        },
+        {
+          title: "Déploiement & Lancement",
+          description: "Mise en ligne, tests opérationnels avec vos équipes et prise en main immédiate sans courbe d'apprentissage lourde."
+        },
+        {
+          title: "Suivi & Évolution (WaaS)",
+          description: "Nous gérons l'hébergement, la sécurité et les mises à jour pour que votre outil reste toujours à la pointe."
+        }
       ]
     },
     footer: {
       rights: "webZ. Tous droits réservés."
     },
     banner: {
-      construction: "Nightly & SportsArena : En cours, en construction 🔨",
-      underConstruction: "En construction 🔨"
+      construction: "Sportsfields & Nightly : Prototypes interactifs en cours de finalisation 🔨",
+      underConstruction: "Prototype UI 🔨"
     }
   },
   en: {
@@ -181,28 +202,31 @@ export const translations = {
       letsTalk: "Let's Talk",
     },
     hero: {
-      available: "Website/App Experts",
-      title1: "Crafting Digital",
-      title2: "Experiences.",
-      description: "At webZ, we build highly modern, interactive websites that don't just look good—they perform. Elevating brands through strategic design and robust development.",
+      available: "Digital Systems & Automation",
+      title1: "Systems,",
+      title2: "not just websites.",
+      description: "webZ builds the digital systems that run your business: commission-free direct booking, fast ordering, synced inventory. Less back-and-forth, zero double data-entry, higher margins.",
       viewWork: "View Our Work",
       whatIDo: "What We Do",
+      auditCta: "Free 15-Min Audit",
+      bookCall: "Book a Call",
+      responseGuarantee: "⚡ Guaranteed response under 2h • Direct chat with Nezar (Founder)",
     },
     about: {
       title: "Why webZ?",
-      subtitle: "Technical Expertise Driving Your Growth.",
+      subtitle: "Technical Expertise Driving Real Business Margins.",
       cards: [
         {
-          title: "Growth Engines",
-          description: "We don't just code websites; we build scalable growth engines for local and global businesses."
+          title: "Growth & Profit Engines",
+          description: "We don't just code websites; we engineer systems that eliminate operational friction and increase bottom-line profit."
         },
         {
-          title: "Local Expertise",
-          description: "We understand market challenges. From sports arenas to adventure parks, our mission is to convert visitors."
+          title: "Real-World Ground Truth",
+          description: "We design around real user habits. From instant WhatsApp flows to direct payment gateways, we build what actually gets used."
         },
         {
-          title: "Tech & Proximity",
-          description: "Cutting-edge tech (React, Next.js), custom design, and incredibly transparent local support."
+          title: "Modern Tech & Proximity",
+          description: "Cutting-edge stack (React, Next.js, Node.js), a single direct technical partner, and zero agency fluff."
         }
       ]
     },
@@ -226,75 +250,75 @@ export const translations = {
           description: "The choice of growing businesses",
           price: "12-Month Monthly Subscription",
           features: [
-            "All-Inclusive: Hosting & SEO",
-            "Unlimited Updates",
-            "Priority Support 24/7",
-            "Custom Client Dashboards"
+            "All-Inclusive: Fast Hosting & SEO",
+            "2h/Month Dedicated Content Updates",
+            "Guaranteed WhatsApp Support (24h)",
+            "Custom Performance Reporting"
           ],
           popular: true,
           button: "Choose WaaS"
         },
         {
           name: "Custom Build",
-          description: "For complex web architecture",
-          price: "Custom Quote",
+          description: "For bespoke operational platforms",
+          price: "Scope defined after audit",
           features: [
-            "Web Applications & SaaS",
-            "Cloud Architecture (AWS/Azure)"
+            "Web Applications, Custom Booking & SaaS",
+            "Complete E-Commerce & Payment Gateways"
           ],
-          button: "Request a Quote"
+          button: "Request a Scoping Call"
         }
       ]
     },
     services: {
       title: "Our Expertise.",
-      description: "A comprehensive approach to digital product creation, from initial concept to final deployment.",
+      description: "Operational systems designed to eliminate friction, automate workflows, and boost your margins.",
       items: [
         {
-          title: "Web Design",
-          description: "Crafting visually stunning, user-centric interfaces that captivate and convert. Focusing on modern aesthetics and intuitive UX."
+          title: "Business Systems & Automation",
+          description: "Commission-free WhatsApp/web direct bookings, ordering pipelines, kitchen/stock sync, and custom back-offices. Tools that eliminate double data-entry and maximize margins."
         },
         {
-          title: "Web Development",
-          description: "Building robust, scalable, and lightning-fast web applications using cutting-edge technologies like React, Next.js, and Tailwind."
+          title: "Storefronts & E-Commerce",
+          description: "High-converting online stores, seamless CMI/Stripe payment gateway integration, and modern autonomous business websites designed to sell."
         },
         {
-          title: "Interactive & 3D",
-          description: "Elevating experiences with smooth animations, WebGL, and interactive elements that make your brand memorable."
+          title: "Interactive Design & 3D",
+          description: "Premium art direction, responsive UX design, fluid micro-interactions, and WebGL/3D elements that make your brand truly unforgettable."
         },
         {
-          title: "Deployment & SEO",
-          description: "Ensuring your site is secure, optimized for search engines, and deployed flawlessly on modern infrastructure."
+          title: "Managed Infrastructure (WaaS)",
+          description: "Blazing fast cloud hosting, daily automated backups, technical SEO optimization, and dedicated support within 24 business hours."
         }
       ]
     },
     work: {
       title: "Selected Work.",
-      description: "A showcase of our recent projects, highlighting interactive design and robust engineering.",
+      description: "A showcase of our recent projects, highlighting interactive design and robust operational engineering.",
       viewCaseStudy: "View Case Study",
       projects: [
         {
-          category: "Eco-Luxury & Hospitality",
+          category: "Eco-Resort & Hospitality",
           title: "Natura Jungle",
-          description: "A captivating digital experience crafted for an ultra-luxury eco-resort and equestrian club. Featuring bespoke storytelling and a real-time ordering system connecting staff to kitchen.",
-          features: ["Immersive Experience", "Real-Time Local Ordering", "Direct Bookings"]
+          description: "A captivating digital experience for a luxury eco-resort and equestrian club. Featuring an immersive showcase and zero-commission direct WhatsApp booking active for 6 months.",
+          features: ["Immersive Experience", "0% Direct Bookings", "6 Months Live"]
         },
         {
           category: "Corporate EdTech & Training",
           title: "Zentia World",
-          description: "A bespoke learning platform tailored for corporate leaders and executives. Combining interactive modules, intelligent progress tracking, and personalized dashboards.",
-          features: ["Corporate EdTech", "Smart Progression Tracking", "Executive Dashboard"]
+          description: "A bespoke learning platform tailored for corporate leaders and executives. Combining interactive modules, intelligent progress tracking, and executive dashboards.",
+          features: ["Corporate EdTech", "Smart Progression", "Executive Dashboard"]
         },
         {
           category: "Corporate Finance & Legal Advisory",
           title: "AGEFIC",
-          description: "A high-end institutional showcase designed for a premier legal and tax advisory firm. Combining minimalist design principles with high-performance navigation and structural layout.",
+          description: "A high-end institutional showcase designed for a premier legal and tax advisory firm. Combining minimalist design principles with high-performance navigation.",
           features: ["Minimalist Identity", "Strategic Counsel", "Full Data Security"]
         },
         {
-          category: "Luxury Fragrance & Botanical Hair Care",
+          category: "Luxury Fragrance & Botanicals",
           title: "Madibee",
-          description: "An ultra-premium e-commerce flagship celebrating bespoke fragrances and prestige botanical hair care. Featuring refined editorial aesthetics and an effortless shopping journey.",
+          description: "An ultra-premium e-commerce flagship celebrating bespoke fragrances and prestige botanical hair care. Seamless shopping flow and secure checkout — currently pre-launch.",
           features: ["Haute Parfumerie", "Botanical Hair Care", "Luxury E-Commerce"]
         },
         {
@@ -318,25 +342,43 @@ export const translations = {
       ]
     },
     contact: {
-      title1: "How We Build",
-      title2: "Your Website.",
-      description: "Stop losing customers to an outdated web presence.",
-      startProject: "Book a Free Consultation",
+      title1: "How We",
+      title2: "Collaborate.",
+      description: "A structured, transparent roadmap to transform your digital operations without friction.",
+      startProject: "Book a Free 15-Min Audit",
       steps: [
-        { title: "Strategy", description: "We define your goals, target audience, and the features you need to streamline your business." },
-        { title: "Proposal & Invoicing", description: "Based on our strategic discussion, we provide a tailored proposal and transparent invoicing aligned with your specific project requirements." },
-        { title: "Wireframing", description: "We create a structured layout designed specifically to maximize user experience and conversions." },
-        { title: "Review & Refinement", description: "We present the initial concepts for your review, iterating and refining the design to ensure it perfectly aligns with your vision and requirements." },
-        { title: "Build & Design", description: "Your site is fully designed and developed with clean, fast code and practical integrations." },
-        { title: "Launch & Handover", description: "Your site goes live. You choose whether you want total ownership with an easy-to-use editing dashboard, or a hands-off monthly subscription where we manage the updates." }
+        {
+          title: "15-Min Diagnostic Audit",
+          description: "We review your operational workflow to identify where your business is losing time or paying unnecessary commissions. Zero commitment."
+        },
+        {
+          title: "Scoping & Fixed Proposal",
+          description: "We propose a clear scope, timeline, and upfront pricing with zero hidden costs or ambiguities."
+        },
+        {
+          title: "UI Architecture & Strategy",
+          description: "We structure the user journey and engineering specs tailored to your actual field operations."
+        },
+        {
+          title: "Development & Testing",
+          description: "Engineered with clean, fast, and secure code, thoroughly verified across mobile devices and variable networks."
+        },
+        {
+          title: "Deployment & Onboarding",
+          description: "Seamless launch, staff handover, and zero heavy training curve for your team."
+        },
+        {
+          title: "Ongoing Care & Scale (WaaS)",
+          description: "We handle cloud hosting, monitoring, and regular updates so your systems remain flawless."
+        }
       ]
     },
     footer: {
       rights: "webZ. All rights reserved."
     },
     banner: {
-      construction: "Nightly & SportsArena: On-Going, Under Construction 🔨",
-      underConstruction: "Under Construction 🔨"
+      construction: "Sportsfields & Nightly: Interactive prototypes in active development 🔨",
+      underConstruction: "UI Prototype 🔨"
     }
   },
   ar: {
@@ -350,28 +392,31 @@ export const translations = {
       letsTalk: "لنتحدث",
     },
     hero: {
-      available: "Website/App Experts",
-      title1: "صناعة تجارب",
-      title2: "رقمية.",
-      description: "في webZ، نقوم ببناء مواقع ويب تفاعلية وحديثة للغاية لا تبدو جيدة فحسب، بل تؤدي أداءً ممتازاً. نرتقي بالعلامات التجارية من خلال التصميم الاستراتيجي والتطوير القوي.",
+      available: "أنظمة رقمية وأتمتة للأعمال",
+      title1: "أنظمة أعمال،",
+      title2: "وليست مجرد مواقع.",
+      description: "تبني webZ الأنظمة الرقمية التي تدير أعمالك بكفاءة: حجز مباشر بدون عمولات وساطة، إدارة وتدفق الطلبات، ومزامنة المخزون. وقت أقل، دقة أعلى، وهوامش ربح أكبر.",
       viewWork: "شاهد أعمالنا",
       whatIDo: "ماذا نفعل",
+      auditCta: "تدقيق مجاني — 15 دقيقة",
+      bookCall: "احجز استشارة",
+      responseGuarantee: "⚡ رد مضمون خلال ساعتين من أوقات العمل • تواصل مباشر مع نزار (المؤسس)",
     },
     about: {
       title: "لماذا webZ؟",
-      subtitle: "الخبرة التقنية في خدمة نموك.",
+      subtitle: "الخبرة التقنية في خدمة نموك وهوامش أرباحك.",
       cards: [
         {
-          title: "محركات النمو",
-          description: "نحن لا نكتفي ببرمجة المواقع فحسب؛ بل نبني محركات نمو قابلة للتطوير للشركات."
+          title: "محركات نمو وأرباح",
+          description: "نحن لا نكتفي ببرمجة المواقع فحسب؛ بل نبني محركات تشغيلية تقضي على هدر الوقت وتضاعف المبيعات."
         },
         {
-          title: "خبرة محلية",
-          description: "نتفهم تحديات السوق المحلي. مهمتنا هي تحويل زوار موقعك إلى عملاء مخلصين."
+          title: "فهم عميق للسوق المحلي",
+          description: "نبني حلولاً تلائم العادات اليومية للعميل وفريق العمل، من الحجز المباشر عبر واتساب إلى بوابات الدفع الآمنة."
         },
         {
-          title: "تكنولوجيا وقرب",
-          description: "أحدث التقنيات (React, Next.js)، تصميم مخصص، ودعم شفاف وقريب منك."
+          title: "تكنولوجيا حديثة وقرب دائم",
+          description: "أحدث التقنيات (React, Next.js, Node.js)، تواصل مباشر مع المطور، ودعم شفاف بدون تعقيدات تقنية."
         }
       ]
     },
@@ -396,57 +441,57 @@ export const translations = {
           price: "اشتراك شهري لمدة 12 شهراً",
           features: [
             "شامل كلياً: استضافة و SEO",
-            "تحديثات غير محدودة",
-            "دعم أولوي على مدار الساعة",
-            "لوحات تحكم مخصصة"
+            "ساعتان شهرياً من التحديثات المخصصة",
+            "دعم واتساب مضمون خلال 24 ساعة",
+            "تقارير دورية للأداء"
           ],
           popular: true,
           button: "اختر WaaS"
         },
         {
           name: "بناء مخصص",
-          description: "للمشاريع المعقدة",
-          price: "تسعير حسب الطلب",
+          description: "للمشاريع والأنظمة المعقدة",
+          price: "تسعير محدد بعد التدقيق",
           features: [
-            "تطبيقات الويب و SaaS",
-            "البنية التحتية السحابية (Azure/AWS)"
+            "تطبيقات الويب وأنظمة الحجز و SaaS",
+            "متاجر إلكترونية متكاملة وبوابات دفع"
           ],
-          button: "طلب عرض سعر"
+          button: "طلب دراسة للمشروع"
         }
       ]
     },
     services: {
       title: "خبراتنا.",
-      description: "نهج شامل لإنشاء المنتجات الرقمية، من المفهوم الأولي إلى النشر النهائي.",
+      description: "أنظمة تشغيلية مصممة للقضاء على هدر الوقت وأتمتة العمليات ومضاعفة الأرباح.",
       items: [
         {
-          title: "تصميم الويب",
-          description: "صياغة واجهات مذهلة بصرياً وتتمحور حول المستخدم وتأسر الانتباه وتحقق التحويلات. التركيز على الجماليات الحديثة وتجربة المستخدم البديهية."
+          title: "أنظمة الأعمال والأتمتة",
+          description: "أنظمة حجز مباشر عبر واتساب والموقع بدون عمولات، تدفق الطلبات، ومزامنة المخزون وفرق العمل. أدوات تقضي على التكرار وتضاعف أرباحك."
         },
         {
-          title: "تطوير الويب",
-          description: "بناء تطبيقات ويب قوية وقابلة للتطوير وسريعة للغاية باستخدام أحدث التقنيات مثل React و Next.js و Tailwind."
+          title: "المتاجر والمواقع المؤسسية",
+          description: "متاجر إلكترونية عالية التحويل، بوابات دفع آمنة (CMI/Stripe)، ومواقع مؤسسية متقدمة مصممة لجلب العملاء والطلبات المباشرة."
         },
         {
-          title: "تفاعلي وثلاثي الأبعاد",
-          description: "الارتقاء بالتجارب من خلال الرسوم المتحركة السلسة و WebGL والعناصر التفاعلية التي تجعل علامتك التجارية لا تُنسى."
+          title: "تصميم تفاعلي وثلاثي الأبعاد",
+          description: "تصميم واجهات وتجارب استخدام فائقة، تفاعلية ثلاثية الأبعاد سلسة، وتجارب بصرية ترسخ علامتك التجارية في الأذهان."
         },
         {
-          title: "النشر وتحسين محركات البحث",
-          description: "ضمان أن موقعك آمن ومُحسّن لمحركات البحث ومنشور بشكل لا تشوبه شائبة على بنية تحتية حديثة."
+          title: "إدارة البنية التحتية والاستضافة (WaaS)",
+          description: "استضافة سحابية فائقة السرعة، نسخ احتياطي يومي، تحسين محركات البحث، ودعم فني مخصص خلال 24 ساعة عمل."
         }
       ]
     },
     work: {
       title: "أعمال مختارة.",
-      description: "عرض لمشاريعنا الأخيرة، يسلط الضوء على التصميم التفاعلي والهندسة القوية.",
+      description: "عرض لمشاريعنا الأخيرة، يبرز التوازن بين الجمالية البصرية والهندسة التشغيلية القوية.",
       viewCaseStudy: "عرض دراسة الحالة",
       projects: [
         {
-          category: "الضيافة الفاخرة المستدامة",
+          category: "الضيافة والمنتجعات البيئية",
           title: "Natura Jungle",
-          description: "تجربة رقمية آسرة لمنتجع بيئي فاخر ونادٍ للفروسية. تجمع بين الواجهة التفاعلية وتطبيق طلبات محلي يربط النوادل بالمطبخ في الوقت الفعلي.",
-          features: ["تجربة تفاعلية غامرة", "نظام طلبات فوري", "حجوزات مباشرة"]
+          description: "تجربة رقمية آسرة لمنتجع بيئي فاخر ونادٍ للفروسية. واجهة غامرة ونظام حجز مباشر عبر واتساب بدون عمولات يعمل منذ 6 أشهر.",
+          features: ["تجربة تفاعلية غامرة", "حجوزات مباشرة 0% عمولة", "في الإنتاج منذ 6 أشهر"]
         },
         {
           category: "منصات التعليم المؤسسي",
@@ -463,7 +508,7 @@ export const translations = {
         {
           category: "العطور الفاخرة والعناية بالشعر",
           title: "Madibee",
-          description: "منصة تجارة إلكترونية راقية متخصصة في العطور الفاخرة ومستحضرات العناية النباتية بالشعر. إخراج فني أنيق وتجربة تسوق استثنائية.",
+          description: "منصة تجارة إلكترونية راقية متخصصة في العطور الفاخرة ومستحضرات العناية النباتية بالشعر. تجربة تسوق استثنائية ودفع آمن — قيد الإطلاق حالياً.",
           features: ["تجارة إلكترونية فاخرة", "عناية نباتية فائقة", "عطور حصرية"]
         },
         {
@@ -488,24 +533,24 @@ export const translations = {
     },
     contact: {
       title1: "كيف نبني",
-      title2: "موقعك الإلكتروني.",
-      description: "توقف عن خسارة العملاء بسبب وجود رقمي قديم.",
-      startProject: "احجز استشارة مجانية",
+      title2: "أنظمتك الرقمية.",
+      description: "خطوات مدروسة لتحويل وتطوير عمليات مشروعك بدون أي تعقيد أو مفاجآت.",
+      startProject: "طلب تدقيق مجاني (15 دقيقة)",
       steps: [
-        { title: "الاستراتيجية", description: "نحدد أهدافك، والجمهور المستهدف، والميزات التي تحتاجها لتبسيط عملك." },
-        { title: "عرض السعر والاتفاق", description: "بناءً على مناقشتنا الاستراتيجية، نقدم لك عرضاً مخصصاً وفواتير شفافة تتوافق تماماً مع متطلبات مشروعك المحددة." },
-        { title: "تخطيط الهيكل", description: "نقوم بإنشاء تخطيط هيكلي مصمم خصيصًا لزيادة تجربة المستخدم ومعدلات التحويل." },
-        { title: "المراجعة والتطوير", description: "نقدم لك المفاهيم الأولية للمراجعة، ثم نقوم بالتعديل والتطوير لضمان توافق التصميم تماماً مع رؤيتك ومتطلباتك." },
-        { title: "البناء والتصميم", description: "يتم تصميم وتطوير موقعك بالكامل باستخدام كود نظيف وسريع وتكاملات عملية." },
-        { title: "الإطلاق والتسليم", description: "يصبح موقعك متاحًا للجمهور. يمكنك اختيار ما إذا كنت تريد ملكية كاملة مع لوحة تحكم سهلة الاستخدام، أو اشتراكًا شهريًا حيث ندير نحن التحديثات." }
+        { title: "تدقيق تشغيلي (15 دقيقة)", description: "نحلل سير عملك الحالي ونحدد مواضع هدر الوقت أو العمولات الزائدة، دون أي التزام." },
+        { title: "خطة وتحديد النطاق", description: "نقدم عرضاً واضحاً يحدد النطاق الزمني والتكلفة بشفافية تامة دون أي تكاليف خفية." },
+        { title: "الهندسة وتجربة المستخدم", description: "نصمم واجهة الاستخدام والبنية التقنية بما يتوافق مع طبيعة العمل على أرض الواقع." },
+        { title: "التطوير والاختبار الميداني", description: "بناء الأنظمة بأحدث المعايير البرمجية، واختبارها على مختلف الأجهزة وشبكات الهاتف." },
+        { title: "الإطلاق والتشغيل الفعلي", description: "إطلاق فوري وتسليم للفرق المعنية دون أي حاجة لفترة تدريب طويلة أو معقدة." },
+        { title: "المتابعة والتطوير (WaaS)", description: "ندير الاستضافة والأمان والتحديثات الدورية لضمان استمرار عمل نظامك بكفاءة دائمة." }
       ]
     },
     footer: {
       rights: "webZ. جميع الحقوق محفوظة."
     },
     banner: {
-      construction: "Nightly & SportsArena: قيد التنفيذ، تحت الإنشاء 🔨",
-      underConstruction: "تحت الإنشاء 🔨"
+      construction: "Sportsfields & Nightly: نماذج أولية تفاعلية قيد الإنجاز 🔨",
+      underConstruction: "نموذج أولي 🔨"
     }
   }
 };

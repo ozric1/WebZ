@@ -10,8 +10,9 @@ import {
   Quote, 
   Star,
   ShieldCheck,
-  UtensilsCrossed,
-  Smartphone
+  Smartphone,
+  ArrowRight,
+  MessageCircle
 } from 'lucide-react';
 import { useLanguage } from '../LanguageContext';
 
@@ -20,6 +21,14 @@ export const CaseStudyAndTestimonial: React.FC = () => {
 
   const isFr = language === 'fr';
   const isAr = language === 'ar';
+
+  const whatsappAuditLink = `https://wa.me/212634175357?text=${encodeURIComponent(
+    isFr
+      ? "Bonjour Nezar, j'ai vu l'étude de cas Natura Jungle. Je souhaite bénéficier de l'audit gratuit de 15 min pour mon établissement."
+      : isAr
+      ? "مرحباً نزار، اطلعت على دراسة حالة Natura Jungle. أود الحصول على التدقيق المجاني (15 دقيقة) لمشروعي."
+      : "Hi Nezar, I saw the Natura Jungle case study. I'd like the free 15-minute audit for my business."
+  )}`;
 
   return (
     <section id="casestudy" className="py-20 md:py-28 relative z-10 bg-transparent scroll-mt-24">
@@ -35,7 +44,7 @@ export const CaseStudyAndTestimonial: React.FC = () => {
           >
             <ShieldCheck className="w-4 h-4 text-emerald-400" />
             <span className="text-xs font-bold text-emerald-300 uppercase tracking-widest">
-              {isFr ? 'Preuve par les Résultats' : isAr ? 'أدلة ونتائج ملموسة' : 'Proven Business Impact'}
+              {isFr ? 'Preuve par la Réalité Terrain' : isAr ? 'أدلة ونتائج من الواقع' : 'Proven Real-World Impact'}
             </span>
           </motion.div>
 
@@ -63,10 +72,10 @@ export const CaseStudyAndTestimonial: React.FC = () => {
             className="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto"
           >
             {isFr
-              ? "De la vitrine éco-luxe à l'application locale de commande en cuisine reliant serveurs et chefs."
+              ? "Une vitrine immersive, et une réservation directe par WhatsApp qui tourne sans accroc depuis 6 mois."
               : isAr
-              ? "من الواجهة الرقمية الفاخرة إلى تطبيق الطلبات المحلي الذي يربط النوادل بالمطبخ في الوقت الفعلي."
-              : "From an immersive luxury storefront to a real-time local ordering system connecting staff to kitchen."}
+              ? "واجهة غامرة ونظام حجز مباشر عبر واتساب يعمل بكفاءة تامة وتواصل مستمر منذ 6 أشهر."
+              : "An immersive storefront and zero-commission direct WhatsApp bookings active for 6 months."}
           </motion.p>
         </div>
 
@@ -86,7 +95,7 @@ export const CaseStudyAndTestimonial: React.FC = () => {
             <div className="lg:col-span-7 space-y-6">
               <div className="flex flex-wrap items-center gap-3">
                 <span className="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
-                  {isFr ? 'Hospitalité & Tech de Restauration' : isAr ? 'ضيافة وتكنولوجيا مطاعم' : 'Hospitality & Restaurant Tech'}
+                  {isFr ? 'Éco-Resort & Hôtellerie' : isAr ? 'ضيافة ومنتجعات بيئية' : 'Eco-Resort & Hospitality'}
                 </span>
                 <span className="text-xs text-zinc-500 font-medium">
                   Benslimane, Maroc
@@ -95,25 +104,25 @@ export const CaseStudyAndTestimonial: React.FC = () => {
 
               <h3 className="text-2xl md:text-3xl font-bold text-white tracking-tight leading-snug">
                 {isFr
-                  ? "Réservation directe de bungalows sans commissions et commande ultra-rapide aux tables."
+                  ? "Réservation directe sans commission, construite autour des habitudes réelles de l'équipe."
                   : isAr
-                  ? "حجز مباشر للأكواخ بدون عمولات ونظام طلبات فائق السرعة للطاولات."
-                  : "Direct bungalow bookings with zero OTA fees and lightning-fast table ordering."}
+                  ? "حجز مباشر بدون عمولات وساطة، مبني وفق عادات العمل الفعلية للفريق."
+                  : "Zero-commission direct bookings, built directly around the team's real workflow."}
               </h3>
 
               <div className="space-y-4 text-zinc-300 text-[15px] leading-relaxed">
                 <p>
                   {isFr ? (
                     <>
-                      <strong className="text-white">Le Défi :</strong> Natura Jungle dispose d'un vaste domaine (bungalows de luxe, restaurant panoramique, club équestre). Le resort perdait de lourdes marges en commissions auprès des plateformes de réservation hôtelières tierces, tandis que la prise de commande manuelle au restaurant entraînait de l'attente pour les clients dispersés aux tables et transats.
+                      <strong className="text-white">Le Défi :</strong> Un domaine d'exception de 12 hectares (bungalows de charme, restaurant panoramique, club équestre, parc animalier). Le resort dépendait des plateformes de réservation hôtelières tierces, avec 20% à 25% de commissions prélevées sur chaque séjour.
                     </>
                   ) : isAr ? (
                     <>
-                      <strong className="text-white">التحدي :</strong> يمتد منتجع Natura Jungle على مساحة شاسعة تضم أكواخاً فندقية ومطعماً ونادياً للفروسية. كان المنتجع يدفع عمولات باهظة لمنصات الحجز الخارجية، بينما تسببت المسافات الكبيرة في تأخر خدمة الطلبات للضيوف.
+                      <strong className="text-white">التحدي :</strong> يمتد منتجع Natura Jungle على 12 هكتاراً (أكواخ فاخرة، مطعم بانورامي، نادٍ للفروسية وحديقة حيوانات). كان المنتجع يدفع عمولات باهظة تصل إلى 25% لمنصات الحجز الوسيطة.
                     </>
                   ) : (
                     <>
-                      <strong className="text-white">The Challenge:</strong> Natura Jungle features luxury bungalows, fine dining, and equestrian facilities. The resort was losing substantial revenue to third-party OTA commissions, while distant table seating slowed manual restaurant service.
+                      <strong className="text-white">The Challenge:</strong> A 12-hectare estate (luxury bungalows, scenic dining, equestrian club, wildlife park). The resort paid 20% to 25% in heavy commissions to third-party travel booking platforms on every reservation.
                     </>
                   )}
                 </p>
@@ -121,30 +130,30 @@ export const CaseStudyAndTestimonial: React.FC = () => {
                 <p>
                   {isFr ? (
                     <>
-                      <strong className="text-white">La Solution Globale webZ :</strong>
-                      <br />
-                      1. <strong>Système de réservation de bungalows intégré directement sur le site :</strong> un parcours fluide et intuitif qui permet aux clients de réserver leurs séjours en direct en quelques clics, garantissant <strong>zéro commission perdue</strong> au profit d'intermédiaires.
-                      <br />
-                      2. <strong>Application locale de commande en cuisine :</strong> les serveurs transmettent instantanément les commandes depuis leur smartphone vers les écrans du bar et de la cuisine, réduisant drastiquement les allers-retours et les temps d'attente.
+                      <strong className="text-white">La Solution webZ :</strong> Une vitrine immersive valorisant le cadre naturel, reliée à un parcours de réservation directe qui ouvre WhatsApp avec un message pré-rempli et qualifié. Le propriétaire ne voulait pas d'un énième moteur de réservation complexe : il voulait que ses clients réservent là où son équipe traite déjà les demandes au quotidien.
                     </>
                   ) : isAr ? (
                     <>
-                      <strong className="text-white">الحل المتكامل من webZ :</strong>
-                      <br />
-                      1. <strong>نظام حجز أكواخ متكامل ومباشر على الموقع:</strong> تجربة حجز سهلة وسلسة تتيح للضيوف حجز إقاماتهم مباشرة، مما وفر عمولات منصات الحجز الخارجية بالكامل.
-                      <br />
-                      2. <strong>تطبيق طلبات محلي فائق السرعة:</strong> يرسل النوادل الطلبات فوراً من الهاتف إلى شاشة المطبخ والبار، مما قضى على التأخير والجهد الضائع.
+                      <strong className="text-white">حل webZ :</strong> واجهة تفاعلية غامرة تبرز جمال الطبيعة، مرتبطة بمسار حجز مباشر يفتح تطبيق واتساب برسالة مؤهلة مسبقاً. لم يرغب المالك في نظام معقد، بل في توجيه الحجوزات إلى القناة التي يستخدمها فريقه يومياً.
                     </>
                   ) : (
                     <>
-                      <strong className="text-white">The webZ Integrated Solution:</strong>
-                      <br />
-                      1. <strong>Integrated direct bungalow booking system:</strong> an intuitive, effortless flow allowing guests to book directly on-site, ensuring <strong>zero commission fees</strong> lost to third-party travel platforms.
-                      <br />
-                      2. <strong>Real-time kitchen ordering web application:</strong> staff instantly transmit table orders from smartphones to kitchen displays, eliminating back-and-forth walks and lag.
+                      <strong className="text-white">The webZ Solution:</strong> An immersive visual showcase connected to a frictionless direct booking path that launches WhatsApp with pre-filled details. The owner didn't need another rigid booking engine: he wanted guests to book where his staff was already operating daily.
                     </>
                   )}
                 </p>
+
+                {/* Transparency Note on In-Progress Restaurant Ordering System */}
+                <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5 text-xs text-zinc-400 leading-relaxed">
+                  <span className="text-emerald-400 font-semibold block mb-1">
+                    {isFr ? "Phase R&D en cours : Système de commande restaurant" : isAr ? "قيد التطوير : نظام طلبات المطعم" : "In Progress: Local Restaurant Ordering System"}
+                  </span>
+                  {isFr
+                    ? "Phase de conception active. Contrainte identifiée sur le terrain : le resort étant en zone rurale, la couverture 4G peut être fluctuante. L'architecture est donc développée pour fonctionner en réseau local et hors-ligne avant son déploiement complet."
+                    : isAr
+                    ? "مرحلة التصميم جارية. ونظراً لأن المنتجع يقع في منطقة ريفية بشبكة 4G متفاوتة، يجري تطوير بنية تعمل على الشبكة المحلية دون انقطاع قبل التشغيل النهائي."
+                    : "Currently in design phase. Key constraint: rural cellular 4G fluctuates across the estate. The architecture is engineered to run seamlessly over local network and offline before rollout."}
+                </div>
               </div>
 
               {/* Action Link */}
@@ -164,7 +173,7 @@ export const CaseStudyAndTestimonial: React.FC = () => {
               </div>
             </div>
 
-            {/* Right: Quantified Results Grid */}
+            {/* Right: Quantified Results Grid (Honest & High-Impact) */}
             <div className="lg:col-span-5 grid grid-cols-2 gap-4">
               <div className="p-6 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-emerald-500/30 transition-colors flex flex-col justify-between">
                 <div className="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 mb-4">
@@ -172,10 +181,10 @@ export const CaseStudyAndTestimonial: React.FC = () => {
                 </div>
                 <div>
                   <div className="text-3xl md:text-4xl font-extrabold text-white mb-1 font-mono tracking-tight text-emerald-400">
-                    -60%
+                    6 Mois
                   </div>
                   <div className="text-xs text-zinc-400 font-medium leading-snug">
-                    {isFr ? "Temps d'attente sur les commandes restaurant" : isAr ? "انخفاض وقت انتظار الطلبات" : "Order-to-kitchen latency"}
+                    {isFr ? "En production continue et réservations actives" : isAr ? "في الإنتاج الحي المستمر واستقبال الحجوزات" : "Continuous live production & bookings"}
                   </div>
                 </div>
               </div>
@@ -186,24 +195,24 @@ export const CaseStudyAndTestimonial: React.FC = () => {
                 </div>
                 <div>
                   <div className="text-3xl md:text-4xl font-extrabold text-white mb-1 font-mono tracking-tight text-teal-300">
-                    +45%
+                    0%
                   </div>
                   <div className="text-xs text-zinc-400 font-medium leading-snug">
-                    {isFr ? "Réservations directes via l'interface web" : isAr ? "زيادة الحجوزات المباشرة" : "Direct web bookings without commissions"}
+                    {isFr ? "De commission versée aux plateformes tierces" : isAr ? "عمولة مدفوعة لمنصات الحجز الوسيطة" : "Commission paid to third-party OTAs"}
                   </div>
                 </div>
               </div>
 
               <div className="p-6 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-emerald-500/30 transition-colors flex flex-col justify-between">
                 <div className="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 mb-4">
-                  <Zap className="w-5 h-5" />
+                  <Smartphone className="w-5 h-5" />
                 </div>
                 <div>
                   <div className="text-3xl md:text-4xl font-extrabold text-white mb-1 font-mono tracking-tight text-white">
-                    0.8s
+                    1 Clic
                   </div>
                   <div className="text-xs text-zinc-400 font-medium leading-snug">
-                    {isFr ? "Vitesse de chargement mobile sur 4G" : isAr ? "سرعة التحميل على الهاتف" : "Fast load time on mobile networks"}
+                    {isFr ? "Réservation directe WhatsApp qualifiée" : isAr ? "حجز مباشر وسريع عبر واتساب" : "Instant pre-filled WhatsApp booking"}
                   </div>
                 </div>
               </div>
@@ -214,10 +223,10 @@ export const CaseStudyAndTestimonial: React.FC = () => {
                 </div>
                 <div>
                   <div className="text-3xl md:text-4xl font-extrabold text-white mb-1 font-mono tracking-tight text-white">
-                    10 Jours
+                    0 Jours
                   </div>
                   <div className="text-xs text-zinc-400 font-medium leading-snug">
-                    {isFr ? "Du premier brief au déploiement opérationnel" : isAr ? "من الفكرة إلى النشر الفعلي" : "From scoping to live deployment"}
+                    {isFr ? "De formation : l'équipe utilise son outil quotidien" : isAr ? "وقت تدريب : الفريق يستخدم أداته اليومية" : "Training required : uses existing habits"}
                   </div>
                 </div>
               </div>
@@ -232,32 +241,31 @@ export const CaseStudyAndTestimonial: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="rounded-[2rem] bg-gradient-to-r from-emerald-950/30 via-zinc-900/60 to-black/80 border border-emerald-500/20 p-8 md:p-12 relative overflow-hidden shadow-2xl"
+          className="rounded-[2rem] bg-gradient-to-r from-emerald-950/30 via-zinc-900/60 to-black/80 border border-emerald-500/20 p-8 md:p-12 relative overflow-hidden shadow-2xl mb-12"
         >
           <Quote className="w-16 h-16 text-emerald-400/10 absolute -top-2 -left-2 pointer-events-none" />
 
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 relative z-10">
             <div className="space-y-4 max-w-3xl">
-              <div className="flex items-center gap-1 text-emerald-400">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-emerald-400" />
-                ))}
-                <span className="text-xs text-zinc-400 font-semibold ml-2">5.0 • Avis Vérifié</span>
+              <div className="flex items-center gap-2">
+                <span className="px-3 py-1 rounded-full text-[11px] font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                  {isFr ? 'Partenariat Actif • En production depuis 6 mois' : isAr ? 'شراكة نشطة • في الإنتاج منذ 6 أشهر' : 'Active Partnership • 6 Months in Production'}
+                </span>
               </div>
 
               <blockquote className="text-lg md:text-xl text-zinc-100 font-medium italic leading-relaxed">
                 {isFr ? (
-                  "« webZ a complètement transformé l'expérience et l'activité de Natura Jungle. Le système de réservation directe des bungalows intégré à notre vitrine immersive permet à nos clients de réserver leurs séjours en quelques clics, nous évitant les lourdes commissions des plateformes tierces. De plus, l'application locale de commande en cuisine développée pour nos serveurs a fluidifié tout notre service restaurant. Un travail d'ingénierie et de design remarquable. »"
+                  "« webZ a construit exactement ce qu'on utilisait déjà. La réservation directe sur WhatsApp tourne tous les jours sans aucune commission versée aux plateformes, et nos clients adorent la vitrine immersive. Un travail d'ingénierie et de design remarquable. »"
                 ) : isAr ? (
-                  "« أحدثت webZ تحولاً حقيقياً في نشاط وتجربة ضيوف Natura Jungle. نظام الحجز المباشر للأكواخ المدمج في موقعنا الغامر مكن ضيوفنا من حجز إقاماتهم بسهولة تامة ووفر علينا عمولات المنصات الوسيطة. كما أن تطبيق الطلبات المحلي الذي طوروه لنادلينا جعل الخدمة في المطبخ والمطعم تعمل بسلاسة فائقة. عمل هندسي وتصميمي يستحق كل التقدير. »"
+                  "« قامت webZ ببناء ما نستخدمه بالفعل في عملنا اليومي. الحجز المباشر عبر واتساب يعمل يومياً دون أي عمولات للمنصات الوسيطة، مع واجهة استثنائية تجذب الزوار. عمل هندسي وتصميمي يستحق كل التقدير. »"
                 ) : (
-                  "“webZ completely transformed Natura Jungle's operations and revenue. The direct bungalow booking engine built into our immersive storefront allows guests to book stays effortlessly, saving us thousands in third-party OTA commissions. Furthermore, the local kitchen-ordering app built for our waitstaff made restaurant service seamless. Truly outstanding engineering and design execution.”"
+                  "“webZ built exactly what our team was already used to. Direct WhatsApp reservations run daily with zero commissions paid to booking platforms, and guests love the immersive showcase. Truly outstanding engineering and design execution.”"
                 )}
               </blockquote>
 
               <div className="pt-2">
                 <div className="text-base font-bold text-white">
-                  {isFr ? "Propriétaire & Direction Générale" : isAr ? "الإدارة العامة والمالك" : "Owner & Executive Management"}
+                  {isFr ? "Direction" : isAr ? "الإدارة" : "Management"}
                 </div>
                 <div className="text-xs text-emerald-400 font-medium">
                   Natura Jungle Eco-Resort & Club Équestre
@@ -274,6 +282,43 @@ export const CaseStudyAndTestimonial: React.FC = () => {
               </span>
             </div>
           </div>
+        </motion.div>
+
+        {/* Cold Outreach Bridge Banner */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="rounded-2xl bg-gradient-to-r from-emerald-900/20 via-zinc-900/40 to-teal-950/20 border border-emerald-500/20 p-6 md:p-8 flex flex-col sm:flex-row items-center justify-between gap-6"
+        >
+          <div className="text-center sm:text-left">
+            <h4 className="text-lg md:text-xl font-bold text-white mb-1">
+              {isFr
+                ? "Vous avez un établissement ou un business avec des défis similaires ?"
+                : isAr
+                ? "هل تدير منشأة أو مشروعاً يواجه تحديات مماثلة في الحجز والمبيعات؟"
+                : "Facing similar booking or operational challenges in your business?"}
+            </h4>
+            <p className="text-xs md:text-sm text-zinc-400">
+              {isFr
+                ? "Je regarde votre fonctionnement et je vous montre où vous perdez du temps ou des commissions. Sans engagement."
+                : isAr
+                ? "أحلل نموذج عملك الحالي وأوضح لك مواضع هدر الوقت أو العمولات، دون أي التزام."
+                : "I will review your operation and identify where you lose time or margin. Zero commitment."}
+            </p>
+          </div>
+
+          <a
+            href={whatsappAuditLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="shrink-0 px-6 py-3 rounded-full bg-emerald-500 hover:bg-emerald-400 text-black text-xs font-bold transition-all shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_25px_rgba(16,185,129,0.5)] flex items-center gap-2 group"
+          >
+            <MessageCircle className="w-4 h-4 text-black" />
+            <span>{isFr ? 'Demander un Audit Gratuit (15 min)' : isAr ? 'طلب تدقيق مجاني (15 دقيقة)' : 'Request Free 15-Min Audit'}</span>
+            <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+          </a>
         </motion.div>
 
       </div>
