@@ -112,7 +112,7 @@ export const Founder: React.FC = () => {
               
               <div className="flex items-center gap-2 text-xs text-zinc-400 mb-6 bg-white/5 py-1.5 px-4 rounded-full border border-white/5">
                 <MapPin className="w-3.5 h-3.5 text-emerald-400" />
-                <span>Casablanca, Maroc • International (FR, EU, US)</span>
+                <span>{isFr ? 'Basé à Mohammedia · Intervention à Casablanca et à distance' : isAr ? 'مستقر في المحمدية · تدخل في الدار البيضاء وعن بُعد' : 'Based in Mohammedia · Serving Casablanca & Remote Worldwide'}</span>
               </div>
 
               {/* Direct Channels */}
@@ -169,11 +169,11 @@ export const Founder: React.FC = () => {
 
                 <p className="text-zinc-400 text-sm md:text-base">
                   {isFr ? (
-                    "Mon engagement est clair : concevoir des vitrines et applications web ultra-rapides, visuellement mémorables, et taillées pour générer des résultats économiques concrets pour votre entreprise."
+                    "Mon engagement est clair : concevoir des vitrines et applications web ultra-rapides, visuellement mémorables, et taillées pour générer des résultats économiques concrets pour votre entreprise. Et je livre le back-office avec le site. Vous repartez avec un système que votre équipe peut utiliser le lendemain, pas avec une vitrine que personne ne peut mettre à jour."
                   ) : isAr ? (
-                    "التزامي واضح: بناء مواقع وتطبيقات ويب فائقة السرعة ومميزة بصرياً، ومصممة خصيصاً لتحقيق عوائد وأرباح ملموسة لنشاطك التجاري."
+                    "التزامي واضح: بناء مواقع وتطبيقات ويب فائقة السرعة ومميزة بصرياً، ومصممة خصيصاً لتحقيق عوائد وأرباح ملموسة لنشاطك التجاري. وأسلم لوحة التحكم الإدارية كاملة مع الموقع، لتبدأ فريقك العمل عليها من الغد دون عوائق."
                   ) : (
-                    "My mission is simple: engineer blazingly fast, visually arresting digital assets engineered to generate real measurable revenue for your business."
+                    "My mission is simple: engineer blazingly fast, visually arresting digital systems built to generate measurable revenue. And I deliver the back-office along with the site: you walk away with a system your team can actually run the very next day, not a showcase no one can update."
                   )}
                 </p>
               </div>
@@ -190,11 +190,11 @@ export const Founder: React.FC = () => {
                     </h4>
                     <p className="text-xs text-zinc-400 leading-relaxed">
                       {isFr ? (
-                        "Prestataire digital immatriculé au Maroc (Statut Auto-Entrepreneur). Facturation professionnelle avec ICE disponible sur simple demande pour les entreprises locales et internationales."
+                        "Prestataire digital immatriculé au Maroc (Statut Auto-Entrepreneur). Basé à Mohammedia · Intervention à Casablanca et à distance. Facturation professionnelle avec ICE disponible sur simple demande."
                       ) : isAr ? (
-                        "مقدم خدمات رقمية معتمد في المغرب (صفة المقاول الذاتي). فوترة احترافية تتضمن رقم التعريف الموحد (ICE) للشركات المحلية والدولية."
+                        "مقدم خدمات رقمية معتمد في المغرب (صفة المقاول الذاتي). مستقر في المحمدية · تدخل في الدار البيضاء وعن بُعد. فوترة احترافية تتضمن رقم التعريف الموحد (ICE)."
                       ) : (
-                        "Registered digital service provider in Morocco. Professional commercial invoices with ICE available for corporate and international clients."
+                        "Registered digital service provider in Morocco. Based in Mohammedia · Serving Casablanca and remote worldwide. Professional invoices with ICE provided on demand."
                       )}
                     </p>
                   </div>

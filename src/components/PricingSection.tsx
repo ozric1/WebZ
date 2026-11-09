@@ -319,9 +319,10 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onBookCall }) =>
               {/* Features */}
               <div className="space-y-3 mb-8">
                 {[
+                  isFr ? "Boutique complète + back-office (produits, stock, commandes)" : "Complete e-commerce store + back-office (products, stock, orders)",
                   isFr ? "Architecture React / Next.js & bases de données cloud" : "Next.js & scalable cloud architecture",
                   isFr ? "Passerelle de paiement sécurisée (CMI, Stripe, PayPal)" : "Payment gateways (Stripe, CMI, PayPal)",
-                  isFr ? "Systèmes de réservation, catalogues ou espaces membres" : "Booking engines, catalogs & member portals",
+                  isFr ? "Systèmes de réservation, flux de commande ou espaces membres" : "Booking engines, order flows & member portals",
                   isFr ? "Support multilingue complet (FR, EN, AR) avec RTL" : "Full multilingual & RTL support (FR/EN/AR)",
                   isFr ? "Accompagnement stratégique & formation vidéo" : "Strategic advisory & custom handover training"
                 ].map((feat, i) => (
@@ -346,13 +347,13 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onBookCall }) =>
         </div>
 
         {/* Golden Pricing Rule */}
-        <div className="text-center my-10 max-w-2xl mx-auto px-4">
+        <div className="text-center my-10 max-w-3xl mx-auto px-4">
           <p className="text-xs md:text-sm text-zinc-400 italic leading-relaxed">
             {isFr
-              ? "« Le tarif dépend du problème opérationnel à résoudre et du gain de marge apporté, pas d'un simple décompte de pages. »"
+              ? "« Le prix dépend du problème à régler, pas du nombre de pages. Un back-office qui supprime une ressaisie de données ne se compare pas à un site vitrine. »"
               : isAr
-              ? "« يعتمد السعر على المشكلة التشغيلية المطلوب حلها وقيمة العائد المحقق، وليس على مجرد عدد الصفحات. »"
-              : "“Pricing depends on the operational problem solved and the margin unlocked, not a raw page count.”"}
+              ? "« يعتمد السعر على المشكلة المطلوب حلها، وليس على عدد الصفحات. لوحة التحكم التي تلغي إعادة إدخال البيانات يدوياً لا تقارن بمجرد موقع تعريفي. »"
+              : "“Pricing depends on the problem solved, not page counts. A back-office that eliminates manual double entry cannot be compared to a basic showcase site.”"}
           </p>
         </div>
 

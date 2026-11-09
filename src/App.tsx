@@ -18,7 +18,8 @@ import {
   ShieldCheck,
   Calendar as CalendarIcon,
   Phone,
-  Zap
+  Zap,
+  ShoppingBag
 } from 'lucide-react';
 import { useLanguage } from './LanguageContext';
 import { GlobePulse } from './components/ui/cobe-globe-pulse';
@@ -34,15 +35,17 @@ import PricingSection from './components/PricingSection';
 import Founder from './components/Founder';
 
 // --- Assets Data ---
-// 1. Systèmes Métier & Automatisation, 2. Vitrines & E-Commerce, 3. Design & 3D, 4. Infrastructure & WaaS
+// 1. Sites vitrines, 2. E-commerce, 3. Back-offices, 4. Réservation, 5. Apps métier, 6. Intégrations
 const serviceIcons = [
-  <Zap className="w-6 h-6 text-emerald-400" />,
-  <Rocket className="w-6 h-6 text-teal-400" />,
+  <Globe className="w-6 h-6 text-teal-400" />,
+  <ShoppingBag className="w-6 h-6 text-emerald-400" />,
   <Box className="w-6 h-6 text-cyan-400" />,
-  <ShieldCheck className="w-6 h-6 text-emerald-400" />
+  <CalendarIcon className="w-6 h-6 text-emerald-400" />,
+  <Code2 className="w-6 h-6 text-teal-300" />,
+  <Zap className="w-6 h-6 text-amber-400" />
 ];
 
-// Curated Project Assets: Top 4 are Live, followed by UI/3D prototypes
+// Curated Project Assets: Top 4 (Natura Jungle, Madibee, Zentia, AGEFIC), followed by UI prototypes
 const projectAssets = [
   {
     id: 1,
@@ -52,21 +55,21 @@ const projectAssets = [
   },
   {
     id: 2,
+    image: "/madibee.webp",
+    color: "from-[#eeff96] to-[#233102]",
+    link: "https://madibee.netlify.app/"
+  },
+  {
+    id: 3,
     image: "/zentiaa.webp",
     color: "from-blue-500 to-cyan-600",
     link: "https://zentia.world/"
   },
   {
-    id: 3,
+    id: 4,
     image: "/agefic.webp",
     color: "from-slate-800 to-indigo-950",
     link: "https://agefic.vercel.app/"
-  },
-  {
-    id: 4,
-    image: "/madibee.webp",
-    color: "from-[#eeff96] to-[#233102]",
-    link: "https://madibee.netlify.app/"
   },
   {
     id: 5,
@@ -337,20 +340,12 @@ const Hero: React.FC<HeroProps> = ({ onBookCall }) => {
             <ArrowRight className={`w-4 h-4 transition-transform ${dir === 'rtl' ? 'group-hover:-translate-x-1 rotate-180' : 'group-hover:translate-x-1'}`} />
           </a>
           
-          <button 
-            onClick={onBookCall}
-            className="w-full sm:w-auto px-6 py-4 bg-white/5 hover:bg-white/10 border border-white/20 text-white font-medium rounded-full transition-colors flex items-center justify-center gap-2 cursor-pointer"
-          >
-            <CalendarIcon className="w-4 h-4 text-emerald-400" />
-            <span>{t.hero.bookCall}</span>
-          </button>
-          
           <a 
             href="#work" 
-            className="w-full sm:w-auto px-5 py-4 text-zinc-400 hover:text-white font-medium transition-colors flex items-center justify-center gap-1.5 text-sm"
+            className="w-full sm:w-auto px-8 py-4 bg-white/5 hover:bg-white/10 border border-white/20 text-white font-semibold rounded-full transition-all duration-300 flex items-center justify-center gap-2 hover:border-white/40 active:scale-95 cursor-pointer"
           >
             <span>{t.hero.viewWork}</span>
-            <ArrowRight className="w-3.5 h-3.5" />
+            <ArrowRight className="w-4 h-4 text-zinc-400" />
           </a>
         </motion.div>
 
@@ -386,26 +381,14 @@ const Hero: React.FC<HeroProps> = ({ onBookCall }) => {
 
 // --- Client Social Proof Bar ---
 const ClientSocialProofBar = () => {
-  const { language } = useLanguage();
-  const isFr = language === 'fr';
-  const isAr = language === 'ar';
-
   return (
-    <div className="relative z-10 max-w-6xl mx-auto px-6 -mt-8 mb-16">
-      <div className="py-4 px-6 md:px-10 rounded-2xl bg-white/[0.02] border border-white/5 backdrop-blur-md flex flex-col md:flex-row items-center justify-between gap-4 shadow-lg">
-        <span className="text-[11px] font-bold uppercase tracking-widest text-zinc-500">
-          {isFr ? 'Ils nous font confiance' : isAr ? 'شركاء نجاح يثقون في أنظمتنا' : 'Trusted by business operators'}
-        </span>
-        <div className="flex flex-wrap items-center justify-center gap-6 md:gap-8 text-xs md:text-sm font-semibold text-zinc-300">
-          <span className="hover:text-emerald-400 transition-colors">Natura Jungle Eco-Resort</span>
-          <span className="text-zinc-600 hidden sm:inline">•</span>
-          <span className="hover:text-cyan-400 transition-colors">Zentia World</span>
-          <span className="text-zinc-600 hidden sm:inline">•</span>
-          <span className="hover:text-amber-400 transition-colors">AGEFIC Fiduciaire</span>
-          <span className="text-zinc-600 hidden sm:inline">•</span>
-          <span className="hover:text-purple-400 transition-colors">Madibee Parfumerie</span>
-        </div>
-      </div>
+    <div className="relative z-10 max-w-4xl mx-auto px-6 -mt-8 mb-16 text-center">
+      <p className="text-xs md:text-sm font-medium tracking-wide text-zinc-500">
+        <span className="text-zinc-400 font-semibold">Natura Jungle</span> ·{' '}
+        <span className="text-zinc-400 font-semibold">Madibee</span> ·{' '}
+        <span className="text-zinc-400 font-semibold">Zentia</span> ·{' '}
+        <span className="text-zinc-400 font-semibold">AGEFIC</span>
+      </p>
     </div>
   );
 };
@@ -470,7 +453,7 @@ const Services = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {t.services.items.map((service: any, index: number) => (
             <motion.div
               key={index}
@@ -478,22 +461,32 @@ const Services = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="p-8 rounded-3xl bg-[#0a0f18] border border-white/10 hover:border-emerald-500/30 transition-colors group shadow-lg"
+              className="p-8 rounded-3xl bg-[#0a0f18] border border-white/10 hover:border-emerald-500/30 transition-colors group shadow-lg flex flex-col justify-between"
             >
-              <div className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center mb-6 text-white group-hover:scale-110 group-hover:bg-emerald-500/20 group-hover:text-emerald-400 transition-all duration-300">
-                {serviceIcons[index]}
+              <div>
+                <div className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center mb-6 text-white group-hover:scale-110 group-hover:bg-emerald-500/20 group-hover:text-emerald-400 transition-all duration-300">
+                  {serviceIcons[index]}
+                </div>
+                <div className="mb-4">
+                  <h3 className="text-xl font-bold text-white tracking-tight">
+                    {service.title}
+                  </h3>
+                </div>
+                <p className="text-zinc-300 leading-relaxed text-sm">
+                  {service.description}
+                </p>
               </div>
-              <div className="mb-4">
-                <h3 className="text-2xl font-bold text-white tracking-tight">
-                  {service.title}
-                </h3>
-              </div>
-              <p className="text-zinc-300 leading-relaxed text-[15px]">
-                {service.description}
-              </p>
             </motion.div>
           ))}
         </div>
+
+        {t.services.footerNote && (
+          <div className="mt-12 text-center max-w-3xl mx-auto">
+            <p className="text-zinc-400 text-sm md:text-base italic border-l-2 border-emerald-500/40 pl-4 py-2 bg-white/[0.02] rounded-r-xl">
+              {t.services.footerNote}
+            </p>
+          </div>
+        )}
       </div>
     </section>
   );
@@ -536,8 +529,16 @@ const Contact: React.FC<ContactProps> = ({ onBookCall }) => {
   const isFr = language === 'fr';
   const isAr = language === 'ar';
 
+  const whatsappProjectLink = `https://wa.me/212634175357?text=${encodeURIComponent(
+    isFr
+      ? "Bonjour Nezar, j'ai un projet à vous décrire : "
+      : isAr
+      ? "مرحباً نزار، لدي مشروع أود وصفه في بضعة أسطر : "
+      : "Hi Nezar, I have a project to describe: "
+  )}`;
+
   return (
-    <section id="contact" className="py-20 md:py-24 relative z-10 bg-transparent scroll-mt-24">
+    <section id="contact" className="py-20 md:py-28 relative z-10 bg-transparent scroll-mt-24">
       <div className="max-w-5xl mx-auto px-6 md:px-12">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -548,44 +549,44 @@ const Contact: React.FC<ContactProps> = ({ onBookCall }) => {
         >
           <div className="absolute inset-0 bg-gradient-to-b from-emerald-500/5 to-transparent pointer-events-none" />
           
-          <h2 className="text-4xl md:text-6xl font-display font-bold tracking-tight mb-14 relative z-10">
-            {t.contact.title1} <br className="hidden md:block" />
-            <span className="text-zinc-500">{t.contact.title2}</span>
+          <h2 className="text-4xl md:text-6xl font-display font-bold tracking-tight mb-4 relative z-10">
+            {t.contact.title1} {t.contact.title2}
           </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left mb-14 relative z-10 w-full">
-            {t.contact.steps?.map((step: any, index: number) => (
-              <div key={index} className="bg-black/40 p-7 rounded-2xl border border-white/5 hover:border-emerald-500/20 transition-colors">
-                <div className="text-emerald-400 font-mono text-xs font-bold mb-2">0{index + 1}</div>
-                <h3 className="text-lg font-bold text-white mb-2">{step.title}</h3>
-                <p className="text-zinc-400 text-sm leading-relaxed">{step.description}</p>
-              </div>
-            ))}
-          </div>
 
-          <p className="text-zinc-300 text-lg md:text-xl font-medium mb-8 max-w-2xl mx-auto relative z-10">
+          <p className="text-zinc-300 text-lg md:text-xl font-medium mb-10 max-w-2xl mx-auto relative z-10">
             {t.contact.description}
           </p>
           
-          {/* Working Next Steps: Dual Option */}
-          <div className="relative z-10 flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
-            <button
-              onClick={onBookCall}
-              className="w-full sm:w-auto px-10 py-4 rounded-full bg-emerald-500 hover:bg-emerald-400 text-black font-extrabold text-sm flex items-center justify-center gap-2 shadow-[0_0_25px_rgba(16,185,129,0.35)] transition-all cursor-pointer active:scale-95"
-            >
-              <CalendarIcon className="w-4 h-4 text-black" />
-              <span>{isFr ? 'Réserver une Consultation Gratuite' : isAr ? 'احجز استشارة مجانية' : 'Book a Free Consultation'}</span>
-            </button>
-
+          {/* Main WhatsApp CTA Button */}
+          <div className="relative z-10 flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto mb-6">
             <a
-              href="https://wa.me/212634175357"
+              href={whatsappProjectLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto px-8 py-4 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-white font-bold text-sm flex items-center justify-center gap-2 transition-all"
+              className="w-full sm:w-auto px-10 py-5 rounded-full bg-emerald-500 hover:bg-emerald-400 text-black font-extrabold text-sm md:text-base flex items-center justify-center gap-3 shadow-[0_0_30px_rgba(16,185,129,0.35)] hover:shadow-[0_0_40px_rgba(16,185,129,0.5)] transition-all cursor-pointer active:scale-95 group"
             >
-              <MessageCircle className="w-4 h-4 text-emerald-400" />
-              <span>WhatsApp</span>
+              <MessageCircle className="w-5 h-5 text-black" />
+              <span>{t.contact.startProject}</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </a>
+          </div>
+
+          {/* Sub-CTA Call Option */}
+          <div className="relative z-10 text-xs md:text-sm text-zinc-400 flex flex-col sm:flex-row items-center gap-2 mb-12">
+            <span>
+              {isFr
+                ? "Ou réservez directement un appel de 15 minutes si vous préférez parler de vive voix."
+                : isAr
+                ? "أو احجز مباشرة مكالمة لمدة 15 دقيقة إذا كنت تفضل التحدث صوتياً."
+                : "Or book a direct 15-minute call if you prefer to speak live."}
+            </span>
+            <button
+              onClick={onBookCall}
+              className="text-emerald-400 hover:text-emerald-300 font-bold underline underline-offset-4 cursor-pointer inline-flex items-center gap-1.5 ml-1"
+            >
+              <CalendarIcon className="w-3.5 h-3.5" />
+              <span>{isFr ? 'Réserver un appel' : isAr ? 'حجز مكالمة' : 'Book a call'}</span>
+            </button>
           </div>
 
           <FAQ />

@@ -118,12 +118,12 @@ export function ExpandableGallery({
       category: p.category,
       description: p.description,
       link: p.link,
-      statusType: (["Natura Jungle", "Zentia World"].includes(p.title) 
+      statusType: (["Natura Jungle", "Zentia"].some(t => p.title.includes(t)) 
         ? 'live' 
-        : p.title === "AGEFIC" 
-        ? 'preview' 
-        : p.title === "Madibee" 
+        : p.title.includes("Madibee") 
         ? 'launch' 
+        : p.title.includes("AGEFIC") 
+        ? 'preview' 
         : 'prototype') as 'live' | 'preview' | 'launch' | 'prototype',
       rotation,
       x,
@@ -263,15 +263,7 @@ export function ExpandableGallery({
                           isRtl ? "left-4 normal-case" : "right-4 uppercase tracking-wider"
                         )}>
                           <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                          {isRtl ? 'موقع مباشر' : isFr ? 'Projet en Ligne' : 'Live Project'}
-                        </div>
-                      ) : item.statusType === 'preview' ? (
-                        <div className={cn(
-                          "absolute top-4 z-20 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/70 backdrop-blur-md border border-amber-500/40 text-[10px] font-bold text-amber-300 shadow-[0_0_15px_rgba(245,158,11,0.2)]",
-                          isRtl ? "left-4 normal-case" : "right-4 uppercase tracking-wider"
-                        )}>
-                          <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
-                          {isRtl ? 'معاينة العميل' : isFr ? 'Aperçu Client' : 'Client Preview'}
+                          {isRtl ? 'في الإنتاج' : isFr ? 'EN PRODUCTION' : 'IN PRODUCTION'}
                         </div>
                       ) : item.statusType === 'launch' ? (
                         <div className={cn(
@@ -279,7 +271,15 @@ export function ExpandableGallery({
                           isRtl ? "left-4 normal-case" : "right-4 uppercase tracking-wider"
                         )}>
                           <span className="w-1.5 h-1.5 rounded-full bg-purple-400" />
-                          {isRtl ? 'قيد الإطلاق' : isFr ? 'En Lancement' : 'Pre-Launch'}
+                          {isRtl ? 'قيد الإطلاق' : isFr ? 'EN COURS DE LANCEMENT' : 'PRE-LAUNCH'}
+                        </div>
+                      ) : item.statusType === 'preview' ? (
+                        <div className={cn(
+                          "absolute top-4 z-20 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/70 backdrop-blur-md border border-amber-500/40 text-[10px] font-bold text-amber-300 shadow-[0_0_15px_rgba(245,158,11,0.2)]",
+                          isRtl ? "left-4 normal-case" : "right-4 uppercase tracking-wider"
+                        )}>
+                          <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+                          {isRtl ? 'تم التسليم — بانتظار الإطلاق' : isFr ? 'LIVRÉ — LANCEMENT EN ATTENTE' : 'DELIVERED — PENDING LAUNCH'}
                         </div>
                       ) : (
                         <div className={cn(
@@ -287,7 +287,7 @@ export function ExpandableGallery({
                           isRtl ? "left-4 normal-case" : "right-4 uppercase tracking-wider"
                         )}>
                           <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
-                          {isRtl ? 'نموذج أولي / 3D' : isFr ? 'Prototype UI / 3D' : 'Prototype UI / 3D'}
+                          {isRtl ? 'نموذج أولي / 3D' : isFr ? 'APERÇU / PROTOTYPE' : 'UI PROTOTYPE'}
                         </div>
                       )}
                       <img
