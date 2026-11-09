@@ -89,7 +89,7 @@ export const CaseStudyAndTestimonial: React.FC = () => {
                   {isFr ? 'Hospitalité & Tech de Restauration' : isAr ? 'ضيافة وتكنولوجيا مطاعم' : 'Hospitality & Restaurant Tech'}
                 </span>
                 <span className="text-xs text-zinc-500 font-medium">
-                  Marrakech / Bouskoura • Maroc
+                  Benslimane, Maroc
                 </span>
               </div>
 
@@ -270,7 +270,7 @@ export const CaseStudyAndTestimonial: React.FC = () => {
                 {isFr ? 'Client Partenaire' : isAr ? 'عميل شريك' : 'Partner Client'}
               </span>
               <span className="text-xs text-zinc-400">
-                {isFr ? 'Maroc (Bouskoura)' : 'Morocco'}
+                {isFr ? 'Benslimane, Maroc' : isAr ? 'بنسليمان، المغرب' : 'Benslimane, Morocco'}
               </span>
             </div>
           </div>
